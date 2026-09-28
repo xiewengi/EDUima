@@ -1,0 +1,61 @@
+name: IMA 数据自动同步 + 部署
+on:
+  schedule:
+    - cron: '0 19 * * *'  # UTC → UTC+8 每天 03:00
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
+      - name: Install Python deps
+        run: |
+          pip3 install requests beautifulsoup4 --quiet
+          pip3 install python-docx pypdf --quiet
+
+      - name: IMA credentials
+        run: |
+          mkdir -p ~/.config/ima
+          echo "${{ secrets.IMA_CLIENT_ID }}" > ~/.config/ima/client_id
+          echo "${{ secrets.IMA_API_KEY }}"    > ~/.config/ima/api_key
+          chmod 600 ~/.config/ima/*
+
+      - name: Run sync
+        run: bash scripts/run.sh
+        env:
+          IMA_CLIENT_ID: ${{ secrets.IMA_CLIENT_ID }}
+          IMA_API_KEY:    ${{ secrets.IMA_API_KEY }}
+
+      - name: Build frontend
+        run: |
+          npm ci || npm install
+          npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

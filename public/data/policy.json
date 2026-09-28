@@ -1,0 +1,351 @@
+{
+  "site": {
+    "title": "教育政策资料库",
+    "updated": "2026-09-23"
+  },
+  "updated": "2026-09-28",
+  "categories": [
+    {
+      "id": "guangdong",
+      "name": "广东省内政策",
+      "source": "https://edu.gd.gov.cn/gkmlpt/policy/",
+      "items": [
+        {
+          "title": "广东省教育厅关于明确中小学生社会竞赛活动若干管理要求的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_ad80dd27e9540f6f25ba9ae2ef900ba97508334806566436",
+          "doc_no": "粤教监管函〔2024〕4号",
+          "date": "2024-12-13",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4616/post_4616351.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅等六部门关于印发《广东省特殊教育幼儿园（部）建设指南》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_02ee953daf79d3caf92719b9d810de727508334806566436",
+          "doc_no": "",
+          "date": "2024-12-06",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4612/post_4612201.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅 中共广东省委机构编制委员会办公室 广东省财政厅 广东省人力资源和社会保障厅关于印发高校毕业生到农村从教上岗退费实施办法的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_440068bd9f7f2b0f8ad04b0b8ebaad127508334806566436",
+          "doc_no": "粤教师〔2025〕3号",
+          "date": "2025-03-24",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4685/post_4685306.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅关于延用《广东省教育厅关于高等学校学生公寓的工作指南》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_f8fdbd6e123c7e8b513d4966bef863c97508334806566436",
+          "doc_no": "粤教后勤〔2024〕2号",
+          "date": "2024-12-19",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4636/post_4636226.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅 广东省发展和改革委员会 广东省财政厅 广东省市场监督管理局关于印发《校园商超规范管理指导意见（试行）》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_2a58f338373732c06935ffb8e78f942f7508334806566436",
+          "doc_no": "粤教后勤〔2025〕2号",
+          "date": "2024-11-25",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4615/post_4615668.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅关于印发高等教育学分认定和转换工作实施意见的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_1e684bbe2f6903223c8380e64ebf75f57508334806566436",
+          "doc_no": "粤教职〔2025〕2号",
+          "date": "2025-04-16",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4697/post_4697783.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅关于印发《广东省中小学教师人工智能素养框架（试行）》《广东省中小学学生人工智能素养框架（试行）》《广东省中小学人工智能课程指导纲要（试行）》以及《国家中小学智慧教育平台与人工智能融合应用指南（试行）》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_e9e583460c820342be7a45fd0eecbf627508334806566436",
+          "doc_no": "粤教基函〔2025〕12号",
+          "date": "2025-04-10",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4694/post_4694716.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅关于印发《广东省幼儿园课程建设指导纲要（试行）》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_f1210c6ce8ecc5f47061a0eaae1334d67508334806566436",
+          "doc_no": "粤教基函〔2025〕18号",
+          "date": "2025-06-16",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4733/post_4733376.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅关于印发《广东省中小学地方课程教材管理实施细则》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_eb233f1669863dfb0802585def1defb77508334806566436",
+          "doc_no": "粤教基〔2025〕6号",
+          "date": "2025-06-03",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4719/post_4719442.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅 广东省发展和改革委员会 广东省工业和信息化厅 广东省财政厅 广东省市场监督管理局关于加强中小学生校服管理工作的指导意见",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_a81455ed44e757e6eedfbdfde210ff787508334806566436",
+          "doc_no": "粤教后勤〔2025〕2号",
+          "date": "2025-05-21",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4714/post_4714064.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅关于印发《广东省学校学生食堂陪餐工作指引》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_13f2664cffc108f986ed5c4fbbf23f817508334806566436",
+          "doc_no": "粤教后勤〔2026〕4号",
+          "date": "2026-06-12",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4910/post_4910912.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅关于印发《广东省基础教育人工智能全域场景应用指南》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_d1b9e52edaf45653c17edc1b1eed3ae37508334806566436",
+          "doc_no": "",
+          "date": "2025-12-16",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4833/post_4833995.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅等五部门关于印发《广东省民办学校财务清算办法》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_55a19b76262f5e76957d82ac09a4ca397508334806566436",
+          "doc_no": "粤教策〔2026〕8号",
+          "date": "2026-08-06",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4919/post_4919382.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅关于印发《广东省高等学历继续教育专业设置管理实施细则》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_c3b120238cc57bd7448a3ff03314acd17508334806566436",
+          "doc_no": "粤教职〔2025〕1号",
+          "date": "2025-04-16",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4697/post_4697784.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅关于印发《广东省校外线上培训机构监督管理办法》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_a077916bfaa584339da94a1b550f05c27508334806566436",
+          "doc_no": "粤教监管〔2025〕1号",
+          "date": "2025-06-23",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4732/post_4732689.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅关于进一步规范普通中小学招生入学工作的指导意见",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_9d2b123d5b52f9a7e382c43716c2a7bf7508334806566436",
+          "doc_no": "粤教基〔2026〕1号",
+          "date": "2026-02-09",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4854/post_4854830.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅关于印发《广东省全面加强中小学实验教学工作行动方案》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_6baccc779b8db9023713b93f109283987508334806566436",
+          "doc_no": "粤教装备函〔2026〕4号",
+          "date": "2026-06-16",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4907/post_4907346.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅等五部门关于印发《广东省民办学校重大事项变更与退出办法》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_1c652ff987a5b5d449cebef9c9755ac87508334806566436",
+          "doc_no": "粤教策〔2026〕8号",
+          "date": "2026-08-06",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4938/post_4938010.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅关于印发《广东省中小学教学装备配置指南》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_a8789882e5b9561d96b8779560d3457b7508334806566436",
+          "doc_no": "粤教装备函〔2026〕8号",
+          "date": "2026-09-15",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4954/post_4954072.html",
+          "source": "广东省教育厅"
+        },
+        {
+          "title": "广东省教育厅关于印发《广东省幼儿园玩教具配备指南（试行）》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_d870a098fcc8f413740a24a9403fbcbb7508334806566436",
+          "doc_no": "粤教装备函〔2026〕6号",
+          "date": "2026-07-29",
+          "url": "https://edu.gd.gov.cn/gkmlpt/content/4/4934/post_4934995.html",
+          "source": "广东省教育厅"
+        }
+      ]
+    },
+    {
+      "id": "national",
+      "name": "全国通用政策",
+      "source": "http://www.moe.gov.cn/jyb_xxgk/zywj_btlj/index.html",
+      "items": [
+        {
+          "title": "教育部关于印发《2027年全国硕士研究生招生工作管理规定》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_79771923f29cdcaccd94990b4e844a137508334806566436",
+          "doc_no": "教学〔2026〕2号",
+          "date": "2026-09-23",
+          "url": "http://www.moe.gov.cn/srcsite/A15/moe_778/s3261/202609/t20260923_1451734.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部办公厅关于开展2026年“小我融入大我，青春献给祖国”高校师生主题社会实践的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_2ac1328b12492f15760d631976b238617508334806566436",
+          "doc_no": "教思政厅函〔2026〕12号",
+          "date": "2026-07-06",
+          "url": "http://www.moe.gov.cn/srcsite/A12/s7060/202607/t20260706_1442807.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部办公厅关于公布第四批全国高校“百个研究生样板党支部”和“百名研究生党员标兵”创建名单的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_61e651aab07e417ccae62cd932437de37508334806566436",
+          "doc_no": "教思政厅函〔2026〕11号",
+          "date": "2026-07-06",
+          "url": "http://www.moe.gov.cn/srcsite/A12/moe_1416/s255/202607/t20260706_1442809.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部办公厅关于做好2026年中小学、幼儿园暑期安全工作的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_9c5c1bb156dba7164d2c30f561c6e8347508334806566436",
+          "doc_no": "教基厅函〔2026〕17号",
+          "date": "2026-07-01",
+          "url": "http://www.moe.gov.cn/srcsite/A06/s3321/202607/t20260701_1442258.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部办公厅关于公布第五批全国党建工作示范高校、标杆院系、样板支部培育创建单位名单的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_91bfb27ca2820fa9b28cc7177c00981a7508334806566436",
+          "doc_no": "教思政厅函〔2026〕13号",
+          "date": "2026-07-15",
+          "url": "http://www.moe.gov.cn/srcsite/A12/moe_1416/s255/202607/t20260715_1443837.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部关于公布2026年高等学历继续教育拟招生专业备案结果和校外教学点设置备案结果的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_ca16080e3584ce4922c60e43803f79857508334806566436",
+          "doc_no": "教职成函〔2026〕5号",
+          "date": "2026-07-21",
+          "url": "http://www.moe.gov.cn/srcsite/A07/moe_743/202607/t20260721_1444551.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部办公厅关于2026年度教育部大中小学课程教材研究项目立项的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_b5dd50ba46d723dc8abb9fdd12ed98107508334806566436",
+          "doc_no": "教材厅〔2025〕1号",
+          "date": "2026-07-27",
+          "url": "http://www.moe.gov.cn/srcsite/A26/s8001/202607/t20260727_1445187.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部办公厅关于公布第四届全国高校思政课教学展示活动评审结果的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_f894db10c8e26ddd9b5078ceec98063b7508334806566436",
+          "doc_no": "教社科厅函〔2026〕16号",
+          "date": "2026-07-15",
+          "url": "http://www.moe.gov.cn/srcsite/A13/moe_772/202607/t20260715_1443834.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部办公厅关于做好2026年全国成人高校招生工作的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_2f39db62a1651f5a95db605f73822ec17508334806566436",
+          "doc_no": "教学厅〔2025〕6号",
+          "date": "2026-09-03",
+          "url": "http://www.moe.gov.cn/srcsite/A15/moe_777/202609/t20260903_1448954.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部关于印发《2026年世界职业院校技能大赛实施方案》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_2e6be4204631179445592bdeb06e29587508334806566436",
+          "doc_no": "教职成函〔2026〕6号",
+          "date": "2026-08-20",
+          "url": "http://www.moe.gov.cn/srcsite/A07/s7055/202608/t20260820_1447374.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部办公厅关于印发《义务教育阶段科学教育“做中学”领航行动指南》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_f2e173275451336c0db931d586a770b97508334806566436",
+          "doc_no": "教监管厅〔2026〕1号",
+          "date": "2026-08-03",
+          "url": "http://www.moe.gov.cn/srcsite/A29/202608/t20260803_1445982.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部办公厅关于公布第三届全国儿童青少年近视防控宣讲团成员名单的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_aa159fcba7c8fd288a168db6ea74d61d7508334806566436",
+          "doc_no": "教育部办公厅〔2026〕36号",
+          "date": "2026-09-11",
+          "url": "http://www.moe.gov.cn/srcsite/A17/moe_943/s3285/202609/t20260909_1449937.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部关于公布第三届全国大学生职业规划大赛全国总决赛获奖名单的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_8f438806bf02faba89634254c975531c7508334806566436",
+          "doc_no": "教学函〔2026〕1号",
+          "date": "2026-09-02",
+          "url": "http://www.moe.gov.cn/srcsite/A15/s7063/202609/t20260902_1448809.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部关于举办中国国际大学生创新大赛（2026）的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_b1b429ef187d8ae7f09b8ec9de9aeb8d7508334806566436",
+          "doc_no": "教高函〔2026〕26号",
+          "date": "2026-07-31",
+          "url": "https://www.moe.gov.cn/srcsite/A08/s5672/202607/t20260731_1445670.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部 中国福利会 中国宋庆龄基金会关于颁发第十七届宋庆龄奖学金的决定",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_d744625904e8e369ae933335560805867508334806566436",
+          "doc_no": "",
+          "date": "2026-09-08",
+          "url": "http://www.moe.gov.cn/srcsite/A06/s7053/202609/t20260908_1449693.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部等九部门关于开展2026年国家通用语言文字推广普及宣传周的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_c39e52916c05c6924aea7fa144f6a54e7508334806566436",
+          "doc_no": "教语用函〔2026〕2号",
+          "date": "2026-07-27",
+          "url": "http://www.moe.gov.cn/srcsite/A18/s3135/202607/t20260727_1445203.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部办公厅关于开展第12个全国近视防控宣传教育月活动的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_58700d8308277dcad4f75d9c22eecce27508334806566436",
+          "doc_no": "",
+          "date": "2026-09-09",
+          "url": "http://www.moe.gov.cn/srcsite/A17/moe_943/s3285/202609/t20260909_1449929.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部办公厅关于做好庆祝第42个教师节有关工作的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_fda544ee702c962a1fb01a4df2a0e2127508334806566436",
+          "doc_no": "",
+          "date": "2026-08-21",
+          "url": "http://www.moe.gov.cn/srcsite/A10/s7002/202608/t20260821_1447456.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部办公厅 中央网信办秘书局关于开展首个全国校园网络文明月活动的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_923fe9dadfa66d21b82b4c97811bb4377508334806566436",
+          "doc_no": "教育部办公厅、中央网信办秘书局〔2026〕20号",
+          "date": "2026-09-16",
+          "url": "http://www.moe.gov.cn/srcsite/A12/s7060/202609/t20260916_1450989.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部等七部门关于印发《特殊教育发展提升“十五五”行动计划》的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_92bbcee22e6400ae1ccae0e8d7157b367508334806566436",
+          "doc_no": "教育部等七部门〔2026〕9号",
+          "date": "2026-08-31",
+          "url": "http://www.moe.gov.cn/srcsite/A06/s3331/202608/t20260831_1448305.html",
+          "source": "教育部"
+        },
+        {
+          "title": "教育部办公厅关于开展2026年“基础教育精品课”遴选工作的通知",
+          "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_0e695cbc0b6bba600e825084d9de090d7508334806566436",
+          "doc_no": "教育部办公厅〔2026〕22号",
+          "date": "2026-09-16",
+          "url": "http://www.moe.gov.cn/srcsite/A06/s3321/202609/t20260916_1451040.html",
+          "source": "教育部"
+        }
+      ]
+    }
+  ]
+}

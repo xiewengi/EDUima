@@ -1,0 +1,27 @@
+# Node
+node_modules/
+dist/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# 本地数据（云端会重新拉）
+.sync_tmp/
+.sync_progress.json
+.scheduler.pid
+.sync_lock
+
+# macOS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# 本地日志
+logs/*.log
+!logs/.gitkeep
