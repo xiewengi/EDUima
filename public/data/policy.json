@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "教育政策资料库",
-    "updated": "2026-09-23"
+    "updated": "2026-09-29"
   },
   "updated": "2026-09-29",
   "categories": [
@@ -202,6 +202,14 @@
           "source": "教育部"
         },
         {
+          "title": "moe_关于公布第三届全国儿童青少年近视防控宣讲团成员名单的通知.docx",
+          "mediaId": "word_3deb9906c10f388deed86711b305f0e8_49c73abf166e8cc6cf3aba564dee10207508334806566436",
+          "doc_no": "教体艺厅函〔2026〕36号",
+          "date": "2026-09-11",
+          "url": "http://www.moe.gov.cn/srcsite/A17/moe_943/s3285/202609/t20260909_1449937.html",
+          "source": "教育部"
+        },
+        {
           "title": "教育部办公厅关于公布第三届全国儿童青少年近视防控宣讲团成员名单的通知",
           "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_aa159fcba7c8fd288a168db6ea74d61d7508334806566436",
           "doc_no": "教育部办公厅〔2026〕36号",
@@ -226,6 +234,22 @@
           "source": "教育部"
         },
         {
+          "title": "moe_关于颁发第十七届宋庆龄奖学金的决定.doc",
+          "mediaId": "word_3deb9906c10f388deed86711b305f0e8_a5b4fd8bdda0f5d6277dcc71d492ee8c7508334806566436",
+          "doc_no": "",
+          "date": "2026-09-04",
+          "url": "http://www.moe.gov.cn/srcsite/A06/s7053/202609/t20260908_1449693.html",
+          "source": "教育部"
+        },
+        {
+          "title": "moe_关于做好2026年全国成人高校招生工作的通知.docx",
+          "mediaId": "word_3deb9906c10f388deed86711b305f0e8_d52b0d4d55defb11db35b446ca4525b47508334806566436",
+          "doc_no": "教学厅函〔2026〕15号",
+          "date": "2026-09-03",
+          "url": "http://www.moe.gov.cn/srcsite/A15/moe_777/202609/t20260903_1448954.html",
+          "source": "教育部"
+        },
+        {
           "title": "教育部办公厅关于做好2026年全国成人高校招生工作的通知",
           "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_2f39db62a1651f5a95db605f73822ec17508334806566436",
           "doc_no": "教学厅〔2025〕6号",
@@ -234,11 +258,27 @@
           "source": "教育部"
         },
         {
+          "title": "moe_关于公布第三届全国大学生职业规划大赛全国总决赛获奖名单的通知.pdf",
+          "mediaId": "pdf_3deb9906c10f388deed86711b305f0e8_a3e07e340bda6bf4f21b7197483c0a917508334806566436",
+          "doc_no": "教学函〔2026〕1号",
+          "date": "2026-09-02",
+          "url": "http://www.moe.gov.cn/srcsite/A15/s7063/202609/t20260902_1448809.html",
+          "source": "教育部"
+        },
+        {
           "title": "教育部关于公布第三届全国大学生职业规划大赛全国总决赛获奖名单的通知",
           "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_8f438806bf02faba89634254c975531c7508334806566436",
           "doc_no": "教学函〔2026〕1号",
           "date": "2026-09-02",
           "url": "http://www.moe.gov.cn/srcsite/A15/s7063/202609/t20260902_1448809.html",
+          "source": "教育部"
+        },
+        {
+          "title": "moe_关于印发《特殊教育发展提升“十五五”行动计划》的通知.html",
+          "mediaId": "html_3deb9906c10f388deed86711b305f0e8_6e295f2fc3978a56bf4ccef3a4dda0127508334806566436",
+          "doc_no": "",
+          "date": "2026-08-31",
+          "url": "http://www.moe.gov.cn/srcsite/A06/s3331/202608/t20260831_1448305.html",
           "source": "教育部"
         },
         {
@@ -346,67 +386,27 @@
           "source": "教育部"
         },
         {
-          "title": "moe_关于公布第三届全国大学生职业规划大赛全国总决赛获奖名单的通知.pdf",
-          "mediaId": "pdf_3deb9906c10f388deed86711b305f0e8_a3e07e340bda6bf4f21b7197483c0a917508334806566436",
-          "doc_no": "教学函〔2026〕1号",
-          "date": "2026-09-02",
-          "url": "http://www.moe.gov.cn/srcsite/A15/s7063/202609/t20260902_1448809.html",
-          "source": "教育部"
-        },
-        {
-          "title": "moe_关于颁发第十七届宋庆龄奖学金的决定.doc",
-          "mediaId": "word_3deb9906c10f388deed86711b305f0e8_a5b4fd8bdda0f5d6277dcc71d492ee8c7508334806566436",
-          "doc_no": "",
-          "date": "2026-09-04",
-          "url": "http://www.moe.gov.cn/srcsite/A06/s7053/202609/t20260908_1449693.html",
-          "source": "教育部"
-        },
-        {
-          "title": "moe_关于公布第三届全国儿童青少年近视防控宣讲团成员名单的通知.docx",
-          "mediaId": "word_3deb9906c10f388deed86711b305f0e8_49c73abf166e8cc6cf3aba564dee10207508334806566436",
-          "doc_no": "教体艺厅函〔2026〕36号",
-          "date": "2026-09-11",
-          "url": "http://www.moe.gov.cn/srcsite/A17/moe_943/s3285/202609/t20260909_1449937.html",
-          "source": "教育部"
-        },
-        {
-          "title": "moe_关于印发《特殊教育发展提升“十五五”行动计划》的通知.html",
-          "mediaId": "html_3deb9906c10f388deed86711b305f0e8_6e295f2fc3978a56bf4ccef3a4dda0127508334806566436",
-          "doc_no": "",
-          "date": "2026-08-31",
-          "url": "http://www.moe.gov.cn/srcsite/A06/s3331/202608/t20260831_1448305.html",
-          "source": "教育部"
-        },
-        {
-          "title": "moe_关于做好2026年全国成人高校招生工作的通知.docx",
-          "mediaId": "word_3deb9906c10f388deed86711b305f0e8_d52b0d4d55defb11db35b446ca4525b47508334806566436",
-          "doc_no": "教学厅函〔2026〕15号",
-          "date": "2026-09-03",
-          "url": "http://www.moe.gov.cn/srcsite/A15/moe_777/202609/t20260903_1448954.html",
-          "source": "教育部"
-        },
-        {
           "title": "moe_关于开展第12个全国近视防控宣传教育月活动的通知.html",
           "mediaId": "html_3deb9906c10f388deed86711b305f0e8_17094236e955b838fc2873f2af1f02057508334806566436",
-          "doc_no": "",
-          "date": "",
-          "url": "",
+          "doc_no": "教体艺厅函〔2026〕37号",
+          "date": "2026-09-11",
+          "url": "http://www.moe.gov.cn/srcsite/A17/moe_943/s3285/202609/t20260909_1449929.html",
           "source": "教育部"
         },
         {
           "title": "moe_关于开展首个全国校园网络文明月活动的通知.docx",
           "mediaId": "word_3deb9906c10f388deed86711b305f0e8_f10112a5fa3f7b023ab79dbe008266937508334806566436",
-          "doc_no": "",
-          "date": "",
-          "url": "",
+          "doc_no": "教思政厅函〔2026〕20号",
+          "date": "2026-09-16",
+          "url": "http://www.moe.gov.cn/srcsite/A12/s7060/202609/t20260916_1450989.html",
           "source": "教育部"
         },
         {
           "title": "moe_关于开展2026年“基础教育精品课”遴选工作的通知.docx",
           "mediaId": "word_3deb9906c10f388deed86711b305f0e8_54270e7783c7d8ed1dad82e4909de5c97508334806566436",
-          "doc_no": "",
-          "date": "",
-          "url": "",
+          "doc_no": "教基厅函〔2026〕22号",
+          "date": "2026-09-16",
+          "url": "http://www.moe.gov.cn/srcsite/A06/s3321/202609/t20260916_1451040.html",
           "source": "教育部"
         },
         {

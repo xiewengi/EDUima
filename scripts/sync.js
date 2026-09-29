@@ -182,9 +182,10 @@ function updatePolicyJson(gdList, natList) {
     }).sort((a, b) => (b.date || '').localeCompare(a.date || ''))  // 按日期倒序
   }
 
+  const today = new Date().toISOString().slice(0, 10)
   const policy = {
-    site: oldPolicy?.site || { title: '教育政策资料库' },
-    updated: new Date().toISOString().slice(0, 10),
+    site: { ...(oldPolicy?.site || { title: '教育政策资料库' }), updated: today },
+    updated: today,
     categories: [
       { id: 'guangdong', name: '广东省内政策', source: 'https://edu.gd.gov.cn/gkmlpt/policy/',
         items: merge(gdList, oldGdMap, '广东省教育厅') },

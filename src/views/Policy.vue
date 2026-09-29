@@ -196,9 +196,9 @@ const openOriginal = (item) => {
 
 onMounted(async () => {
   try {
-    const res = await fetch(import.meta.env.BASE_URL + 'data/policy.json')
+    const res = await fetch(import.meta.env.BASE_URL + 'data/policy.json?v=' + Date.now())
     rawData.value = await res.json()
-    updated.value = rawData.value.site?.updated || rawData.value.updated || '—'
+    updated.value = rawData.value.updated || rawData.value.site?.updated || '—'
   } catch (e) {
     console.error('Failed to load policy data:', e)
   }
