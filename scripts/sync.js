@@ -179,7 +179,7 @@ function updatePolicyJson(gdList, natList) {
         url: oldMatch?.url || '',
         source,
       }
-    })
+    }).sort((a, b) => (b.date || '').localeCompare(a.date || ''))  // 按日期倒序
   }
 
   const policy = {

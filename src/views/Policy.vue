@@ -196,7 +196,7 @@ const openOriginal = (item) => {
 
 onMounted(async () => {
   try {
-    const res = await fetch('/data/policy.json')
+    const res = await fetch(import.meta.env.BASE_URL + 'data/policy.json')
     rawData.value = await res.json()
     updated.value = rawData.value.site?.updated || rawData.value.updated || '—'
   } catch (e) {

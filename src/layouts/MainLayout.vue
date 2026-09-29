@@ -159,7 +159,7 @@ const isFresh = computed(() => {
 
 async function fetchDataStatus() {
   try {
-    const res = await fetch(`/data/bidding.json?v=${Date.now()}`)
+    const res = await fetch(import.meta.env.BASE_URL + `data/bidding.json?v=${Date.now()}`)
     if (!res.ok) throw new Error('fetch failed')
     const data = await res.json()
     dataStatus.value = {

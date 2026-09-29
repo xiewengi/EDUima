@@ -238,7 +238,7 @@ const resetFilter = () => {
 
 onMounted(async () => {
   try {
-    const res = await fetch('/data/bidding.json')
+    const res = await fetch(import.meta.env.BASE_URL + 'data/bidding.json')
     rawData.value = await res.json()
     updated.value = rawData.value.updated || '—'
   } catch (e) {

@@ -191,8 +191,8 @@ const latestWinnings = computed(() => {
 onMounted(async () => {
   try {
     const [pRes, bRes] = await Promise.all([
-      fetch('/data/policy.json').then(r => r.json()),
-      fetch('/data/bidding.json').then(r => r.json())
+      fetch(import.meta.env.BASE_URL + 'data/policy.json').then(r => r.json()),
+      fetch(import.meta.env.BASE_URL + 'data/bidding.json').then(r => r.json())
     ])
     policyData.value = pRes
     biddingData.value = bRes
