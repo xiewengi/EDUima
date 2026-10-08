@@ -1,6 +1,6 @@
 Run cd scripts
   File "/home/runner/work/EDUima/EDUima/scripts/gd_winning_ima_sync.py", line 28
-    BASE_LIST = 'https://broken-wildflower-accf.304997019.workers.dev'/gpcms/rest/web/v2/info/selectInfoForIndex'
+    BASE_LIST = 'https://broken-wildflower-accf.304997019.workers.dev'
                                                                                                                 ^
 SyntaxError: unterminated string literal (detected at line 28)
 Error: Process completed with exit code 1.import sys
