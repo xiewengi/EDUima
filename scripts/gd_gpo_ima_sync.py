@@ -21,8 +21,8 @@ from datetime import datetime, timedelta
 
 # ========== 配置 ==========
 SKILL_DIR = os.environ.get('IMA_SKILL_DIR', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ima-skill'))
-CLIENT_ID = os.environ.get('IMA_CLIENT_ID', open(os.path.expanduser('~/.config/ima/client_id')).read().strip())
-API_KEY = os.environ.get('IMA_API_KEY', open(os.path.expanduser('~/.config/ima/api_key')).read().strip())
+CLIENT_ID = os.environ.get('IMA_CLIENT_ID') or open(os.path.expanduser('~/.config/ima/client_id')).read().strip()
+API_KEY = os.environ.get('IMA_API_KEY') or open(os.path.expanduser('~/.config/ima/api_key')).read().strip()
 OPTS = json.dumps({"clientId": CLIENT_ID, "apiKey": API_KEY})
 
 # IMA 目标位置
