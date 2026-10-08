@@ -5,6 +5,7 @@ on:
     branches: [main]
   schedule:
     - cron: '00 18 * * *'   # UTC → 北京 02:00  爬教育政策
+    - cron: '15 18 * * *'   # UTC → 北京 02:15  爬中标公告（学校）
     - cron: '30 18 * * *'   # UTC → 北京 02:30  爬采购公告
   workflow_dispatch:
     description: 手动触发采集上传
@@ -33,6 +34,34 @@ jobs:
         run: |
           cd scripts
           python3 gd_policy_ima_sync.py --days 5 --pages 5
+
+  # ========== 中标公告自动采集上传 ==========
+  upload-winning:
+    name: 中标公告采集 → IMA
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Node deps (COS SDK)
+        run: |
+          npm install cos-nodejs-sdk-v5 --no-save --silent
+
+      - name: Install Python deps
+        run: |
+          pip3 install requests beautifulsoup4 --quiet
+
+      - name: Run winning upload (keyword=学校, 7天)
+        env:
+          IMA_CLIENT_ID: ${{ secrets.IMA_CLIENT_ID }}
+          IMA_API_KEY: ${{ secrets.IMA_API_KEY }}
+        run: |
+          cd scripts
+          python3 gd_winning_ima_sync.py --days 7
 
   # ========== 采购公告自动采集上传 ==========
   upload-procurement:
