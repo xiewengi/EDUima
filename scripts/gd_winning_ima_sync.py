@@ -107,10 +107,19 @@ def fetch_list(days=7, keyword=''):
     all_rows, page = [], 1
     while True:
         params = dict(params_base, currPage=page, pageSize=20)
-        try:
-            d = gpo_get(f"{BASE_LIST}?{urlencode(params)}")
-        except Exception as e:
-            log.error(f"列表查询失败 page={page}: {e}")
+        d = None
+        for attempt in range(1, 4):
+            try:
+                d = gpo_get(f"{BASE_LIST}?{urlencode(params)}")
+                break
+            except Exception as e:
+                if attempt < 3:
+                    log.warning(f"  列表查询 page={page} 超时，第{attempt}次重试...")
+                    time.sleep(2)
+                else:
+                    log.error(f"列表查询失败 page={page} (3次都超时): {e}")
+                    break
+        if d is None:
             break
         rows = d.get('data', {}).get('rows', [])
         total = d.get('data', {}).get('total', 0)
@@ -124,12 +133,17 @@ def fetch_list(days=7, keyword=''):
     return all_rows
 
 def fetch_detail(rid):
-    try:
-        d = gpo_get(f"{BASE_DETAIL}?id={rid}")
-        if d.get('code') == '200' and d.get('data'):
-            return d['data']
-    except Exception as e:
-        log.error(f"详情失败 id={rid}: {e}")
+    for attempt in range(1, 4):
+        try:
+            d = gpo_get(f"{BASE_DETAIL}?id={rid}")
+            if d.get('code') == '200' and d.get('data'):
+                return d['data']
+            return None
+        except Exception as e:
+            if attempt < 3:
+                time.sleep(2)
+            else:
+                log.error(f"详情失败 id={rid} (3次超时): {e}")
     return None
 
 # ========= 上传到 IMA =========
