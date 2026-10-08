@@ -1,9 +1,4 @@
-Run cd scripts
-  File "/home/runner/work/EDUima/EDUima/scripts/gd_winning_ima_sync.py", line 28
-    BASE_LIST = 'https://broken-wildflower-accf.304997019.workers.dev'
-                                                                                                                ^
-SyntaxError: unterminated string literal (detected at line 28)
-Error: Process completed with exit code 1.import sys
+import sys
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -30,7 +25,7 @@ GPO_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
 }
 
-BASE_LIST = 'https://broken-wildflower-accf.304997019.workers.dev'
+BASE_LIST = 'https://gdgpo.czt.gd.gov.cn/gpcms/rest/web/v2/info/selectInfoForIndex'
 BASE_DETAIL = 'https://gdgpo.czt.gd.gov.cn/gpcms/rest/web/v2/info/getInfoById'
 
 # ========= 日志 =========
@@ -96,21 +91,10 @@ cos.uploadFile({
     return True
 
 def gpo_get(url):
-    """用系统 curl 发请求，绕过 Python TLS 指纹封锁"""
-    import subprocess as sp
-    cmd = [
-        'curl', '-s', '-m', '30', '--connect-timeout', '20',
-        '-H', 'Accept: application/json',
-        '-H', 'Cookie: regionCode=440001',
-        '-H', 'Referer: https://gdgpo.czt.gd.gov.cn/maincms-web/noticeInformationGd',
-        '-H', 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131.0.0.0 Safari/537.36',
-        '-H', 'X-Requested-With: XMLHttpRequest',
-        url
-    ]
-    result = sp.run(cmd, capture_output=True, text=True, timeout=40)
-    if result.returncode != 0:
-        raise Exception(f"curl exit {result.returncode}: {result.stderr[:200]}")
-    return json.loads(result.stdout)
+    req = urllib.request.Request(url, headers=GPO_HEADERS)
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        return json.loads(resp.read().decode('utf-8'))
+
 def fetch_list(days=7, keyword=''):
     end = datetime.now()
     start = end - timedelta(days=days)
