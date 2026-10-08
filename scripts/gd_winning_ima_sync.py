@@ -1,3 +1,4 @@
+import sys
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -222,6 +223,7 @@ def main():
     rows = fetch_list(days=args.days, keyword=args.keyword)
     if not rows:
         log.warning("没有找到中标公告")
+        sys.exit(1)
         return
 
     if args.limit > 0:
