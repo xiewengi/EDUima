@@ -1,0 +1,116 @@
+name: 🔬 网络连通性测试（探路）
+
+on:
+  workflow_dispatch:
+    description: 测试 GitHub Actions 云端能否连通 IMA / 政府采购网 / 教育部 / 广东教育厅
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🧪 连通性测试
+        env:
+          IMA_CLIENT_ID: ${{ secrets.IMA_CLIENT_ID }}
+          IMA_API_KEY: ${{ secrets.IMA_API_KEY }}
+        run: |
+          echo "══════════════════════════════════════════════"
+          echo "  GitHub Actions 云端网络探路测试"
+          echo "══════════════════════════════════════════════"
+          echo ""
+
+          ALL_OK=true
+
+          echo "【1/5】IMA API https://ima.qq.com"
+          if [ -z "$IMA_CLIENT_ID" ] || [ -z "$IMA_API_KEY" ]; then
+            echo "  ⚠️  Skipped: IMA_CLIENT_ID / IMA_API_KEY 未配置"
+          else
+            HTTP_CODE=$(curl -s -o /tmp/ima_resp.txt -w "%{http_code}" \
+              -X POST "https://ima.qq.com/openapi/wiki/v1/get_knowledge_list" \
+              -H "ima-openapi-clientid: $IMA_CLIENT_ID" \
+              -H "ima-openapi-apikey: $IMA_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d '{"knowledge_base_id":"test","folder_id":"test","limit":1}' \
+              --connect-timeout 10 --max-time 30 || true)
+            BODY_HEAD=$(head -c 200 /tmp/ima_resp.txt)
+            echo "  HTTP $HTTP_CODE"
+            echo "  Body: $BODY_HEAD"
+            if [ "$HTTP_CODE" = "200" ]; then
+              echo "  ✅ IMA API 可达"
+            elif [ "$HTTP_CODE" = "401" ] || [ "$HTTP_CODE" = "403" ]; then
+              echo "  ✅ IMA API 可达（鉴权失败是正常的，说明网络通）"
+            else
+              echo "  ❌ 可能被阻断"
+              ALL_OK=false
+            fi
+          fi
+          echo ""
+
+          echo "【2/5】广东政府采购网 https://gdgpo.czt.gd.gov.cn"
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            -X POST "https://gdgpo.czt.gd.gov.cn/gpcms/rest/web/v2/info/selectInfoForIndex" \
+            -H "Accept: application/json" \
+            -H "Content-Type: application/json" \
+            -H "User-Agent: Mozilla/5.0" \
+            -H "Cookie: regionCode=440001" \
+            -d '{"pageNo":1,"pageSize":1,"noticeType":"00101"}' \
+            --connect-timeout 10 --max-time 30 || true)
+          echo "  HTTP $HTTP_CODE"
+          if [ "$HTTP_CODE" != "000" ] && [ "$HTTP_CODE" != "403" ]; then
+            echo "  ✅ 政府采购网可达"
+          else
+            echo "  ❌ 可能被阻断"
+            ALL_OK=false
+          fi
+          echo ""
+
+          echo "【3/5】教育部 http://www.moe.gov.cn"
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "User-Agent: Mozilla/5.0" \
+            "http://www.moe.gov.cn/jyb_xxgk/zywj_btlj/index.html" \
+            --connect-timeout 10 --max-time 30 || true)
+          echo "  HTTP $HTTP_CODE"
+          if [ "$HTTP_CODE" != "000" ]; then
+            echo "  ✅ 教育部可达"
+          else
+            echo "  ❌ 可能被阻断"
+            ALL_OK=false
+          fi
+          echo ""
+
+          echo "【4/5】广东教育厅 https://edu.gd.gov.cn"
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "User-Agent: Mozilla/5.0" \
+            "https://edu.gd.gov.cn/gkmlpt/policy/" \
+            --connect-timeout 10 --max-time 30 || true)
+          echo "  HTTP $HTTP_CODE"
+          if [ "$HTTP_CODE" != "000" ]; then
+            echo "  ✅ 广东教育厅可达"
+          else
+            echo "  ❌ 可能被阻断"
+            ALL_OK=false
+          fi
+          echo ""
+
+          echo "【5/5】IMA 主站连通性"
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "User-Agent: Mozilla/5.0" \
+            -H "X-IMA-Platform: H5" \
+            "https://ima.qq.com" \
+            --connect-timeout 10 --max-time 15 || true)
+          echo "  HTTP $HTTP_CODE"
+          if [ "$HTTP_CODE" != "000" ]; then
+            echo "  ✅ IMA 主站可达"
+          else
+            echo "  ❌ 可能被阻断"
+            ALL_OK=false
+          fi
+          echo ""
+
+          echo "══════════════════════════════════════════════"
+          if [ "$ALL_OK" = true ]; then
+            echo "  🎉 所有节点可达！可以搬到 GitHub Actions"
+          else
+            echo "  ⚠️  部分节点被阻断，需要排查"
+            exit 1
+          fi
+          echo "══════════════════════════════════════════════"
