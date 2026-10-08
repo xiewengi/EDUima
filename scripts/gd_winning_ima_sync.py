@@ -1,4 +1,9 @@
-import sys
+Run cd scripts
+  File "/home/runner/work/EDUima/EDUima/scripts/gd_winning_ima_sync.py", line 28
+    BASE_LIST = 'https://broken-wildflower-accf.304997019.workers.dev'/gpcms/rest/web/v2/info/selectInfoForIndex'
+                                                                                                                ^
+SyntaxError: unterminated string literal (detected at line 28)
+Error: Process completed with exit code 1.import sys
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -25,7 +30,7 @@ GPO_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
 }
 
-BASE_LIST = 'https://broken-wildflower-accf.304997019.workers.dev'/gpcms/rest/web/v2/info/selectInfoForIndex'
+BASE_LIST = 'https://broken-wildflower-accf.304997019.workers.dev'
 BASE_DETAIL = 'https://gdgpo.czt.gd.gov.cn/gpcms/rest/web/v2/info/getInfoById'
 
 # ========= 日志 =========
