@@ -7,7 +7,7 @@ noticeType=00102，上传完整 HTML content
 import os, sys, json, re, time, tempfile, argparse, subprocess, logging
 from datetime import datetime, timedelta
 from urllib.parse import urlencode
-import urllib.request
+import requests
 
 # ========= 配置 =========
 SKILL_DIR = os.environ.get('IMA_SKILL_DIR', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ima-skill'))
@@ -18,11 +18,20 @@ KB_ID = "o9q3d7B3xA1WPfSaOLqGrp-EeJ9kTXGTWM0kqf9S274="   # 教育平台（跟采
 NOTICE_TYPE = "00102"
 
 GPO_HEADERS = {
-    'Accept': 'application/json',
+    'Accept': 'application/json, text/plain, */*',
+    'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+    'Origin': 'https://gdgpo.czt.gd.gov.cn',
     'Cookie': 'regionCode=440001; regionFullName=%E7%9C%81%E6%9C%AC%E7%BA%A7; regionRemark=1',
     'Referer': 'https://gdgpo.czt.gd.gov.cn/maincms-web/noticeInformationGd',
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+    'X-Requested-With': 'XMLHttpRequest',
 }
+_GPO_SESSION = requests.Session()
+_GPO_SESSION.headers.update(GPO_HEADERS)
+try:
+    _GPO_SESSION.get('https://gdgpo.czt.gd.gov.cn/maincms-web/noticeInformationGd', timeout=15)
+except Exception:
+    pass
 
 BASE_LIST = 'https://gdgpo.czt.gd.gov.cn/gpcms/rest/web/v2/info/selectInfoForIndex'
 BASE_DETAIL = 'https://gdgpo.czt.gd.gov.cn/gpcms/rest/web/v2/info/getInfoById'
@@ -90,9 +99,9 @@ cos.uploadFile({
     return True
 
 def gpo_get(url):
-    req = urllib.request.Request(url, headers=GPO_HEADERS)
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return json.loads(resp.read().decode('utf-8'))
+    resp = _GPO_SESSION.get(url, timeout=30)
+    resp.raise_for_status()
+    return resp.json()
 
 def fetch_list(days=7, keyword=''):
     end = datetime.now()
@@ -107,10 +116,19 @@ def fetch_list(days=7, keyword=''):
     all_rows, page = [], 1
     while True:
         params = dict(params_base, currPage=page, pageSize=20)
-        try:
-            d = gpo_get(f"{BASE_LIST}?{urlencode(params)}")
-        except Exception as e:
-            log.error(f"列表查询失败 page={page}: {e}")
+        d = None
+        for attempt in range(1, 4):
+            try:
+                d = gpo_get(f"{BASE_LIST}?{urlencode(params)}")
+                break
+            except Exception as e:
+                if attempt < 3:
+                    log.warning(f"  page={page} 超时，第{attempt}次重试...")
+                    time.sleep(3)
+                else:
+                    log.error(f"列表查询失败 page={page} (3次超时): {e}")
+                    break
+        if d is None:
             break
         rows = d.get('data', {}).get('rows', [])
         total = d.get('data', {}).get('total', 0)
@@ -124,12 +142,17 @@ def fetch_list(days=7, keyword=''):
     return all_rows
 
 def fetch_detail(rid):
-    try:
-        d = gpo_get(f"{BASE_DETAIL}?id={rid}")
-        if d.get('code') == '200' and d.get('data'):
-            return d['data']
-    except Exception as e:
-        log.error(f"详情失败 id={rid}: {e}")
+    for attempt in range(1, 4):
+        try:
+            d = gpo_get(f"{BASE_DETAIL}?id={rid}")
+            if d.get('code') == '200' and d.get('data'):
+                return d['data']
+            return None
+        except Exception as e:
+            if attempt < 3:
+                time.sleep(2)
+            else:
+                log.error(f"详情失败 id={rid} (3次超时): {e}")
     return None
 
 # ========= 上传到 IMA =========
