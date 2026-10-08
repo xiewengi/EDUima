@@ -54,7 +54,9 @@ jobs:
       - name: Install Python deps
         run: |
           pip3 install requests beautifulsoup4 --quiet
-
+      - name: 🧪 curl vs Python 连通性诊断
+        run: bash scripts/gpo_curl_test.sh
+        continue-on-error: true
       - name: Run winning upload (keyword=学校, 7天)
         env:
           IMA_CLIENT_ID: ${{ secrets.IMA_CLIENT_ID }}
