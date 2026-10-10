@@ -36,7 +36,10 @@
     <!-- 数据指标条 -->
     <section class="edu-container">
       <div class="home-stats">
-        <div v-for="s in statItems" :key="s.label" class="home-stat">
+        <div v-for="s in statItems" :key="s.label"
+             class="home-stat"
+             :class="{ 'home-stat--link': s.path }"
+             @click="s.path && router.push(s.path)">
           <div class="home-stat__icon">
             <el-icon :size="22"><component :is="s.icon" /></el-icon>
           </div>
@@ -148,12 +151,12 @@ const metrics = computed(() => ({
 }))
 
 const statItems = computed(() => [
-  { label: '政策条目', value: metrics.value.totalPolicies + ' 项', icon: Document },
-  { label: '中标公告', value: metrics.value.totalWinning + ' 条', icon: Trophy },
-  { label: '采购公告', value: metrics.value.totalProcurement + ' 条', icon: ShoppingCart },
-  { label: '匹配对数', value: metrics.value.matchedCount + ' 对', icon: CircleCheck },
-  { label: '最近更新', value: metrics.value.updatedAt, icon: Calendar },
-  { label: '数据来源', value: '省教育厅', icon: Link },
+  { label: '政策条目', value: metrics.value.totalPolicies + ' 项', icon: Document, path: '/policy' },
+  { label: '中标公告', value: metrics.value.totalWinning + ' 条', icon: Trophy, path: '/bidding' },
+  { label: '采购公告', value: metrics.value.totalProcurement + ' 条', icon: ShoppingCart, path: '/bidding' },
+  { label: '匹配对数', value: metrics.value.matchedCount + ' 对', icon: CircleCheck, path: '/bidding' },
+  { label: '解决方案', value: '8 项', icon: Lightning, path: '/solutions' },
+  { label: '生态图谱', value: '浏览 →', icon: Share, path: '/ecosystem' },
 ])
 
 const latestPolicies = computed(() => {
@@ -358,6 +361,8 @@ onMounted(async () => {
 }
 .home-stat:last-child { border-right: none; }
 .home-stat:hover { background: #F8FAFC; }
+.home-stat--link { cursor: pointer; }
+.home-stat--link:hover { background: #EFF6FF; }
 .home-stat__icon {
   width: 44px;
   height: 44px;
