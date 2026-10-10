@@ -25,3 +25,8 @@ Thumbs.db
 # 本地日志
 logs/*.log
 !logs/.gitkeep
+
+# FC 部署包
+fc-gpo*/
+fc-gpo-deploy.zip
+dist/fc-*/
