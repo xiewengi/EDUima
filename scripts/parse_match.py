@@ -19,6 +19,12 @@ except ImportError:
     print("⚠️  pypdf 未安装，请运行: pip3 install pypdf")
     sys.exit(1)
 
+try:
+    from bs4 import BeautifulSoup
+except ImportError:
+    print("⚠️  bs4 未安装，请运行: pip3 install beautifulsoup4")
+    sys.exit(1)
+
 # 路径
 ROOT = dirname(dirname(os.path.abspath(__file__)))
 TMP  = join(ROOT, '.sync_tmp')
@@ -99,6 +105,75 @@ def parse_pdf(path, max_pages=3):
     if m:
         d = m.group(1).replace('年','-').replace('月','-').replace('/','-').replace('日','')
         r['publish_date'] = d
+    return r
+
+# ==================== HTML 解析 ====================
+def parse_html(path):
+    try:
+        html = open(path, 'r', encoding='utf-8').read()
+        soup = BeautifulSoup(html, 'html.parser')
+        # 去除 script/style
+        for tag in soup.find_all(['script', 'style']):
+            tag.decompose()
+        text = soup.get_text(separator='\n')
+        # 清理多余空行
+        text = re.sub(r'\n{3,}', '\n\n', text)
+        text = re.sub(r'[ \t]+', ' ', text)
+    except Exception as e:
+        print(f"  [warn] html 解析失败 {os.path.basename(path)}: {e}")
+        return {}
+    r = {}
+    # 项目编号
+    for pat in [r'项目编号[：:\s]*([A-Za-z0-9\-]+)',
+                r'采购[项目计划]*编号[：:\s]*([0-9]{6}-[0-9]{4}-[0-9]+)',
+                r'采购[项目计划]*编号[：:\s]*(CZ\d{4}[-—]\d+)']:
+        m = re.search(pat, text)
+        if m: r['code'] = m.group(1).replace('—', '-'); break
+    # 项目名称
+    m = re.search(r'项目名称[：:\s]*([^\n\r]{4,80})', text)
+    if m: r['project_name'] = m.group(1).strip()
+    # 采购人：匹配"采购人信息"下的"名  称："后面
+    m = re.search(r'采购人信息.*?名\s*称[：:]\s*\n\s*([^\n\r]{2,40})', text, re.DOTALL)
+    if m: r['buyer'] = m.group(1).strip()
+    # 合同包
+    m = re.search(r'(?:合同包|采购包)[：:\s]*(\d)', text)
+    if m: r['contract_no'] = '合同包' + m.group(1)
+    # 发布日期
+    m = re.search(r'(202[0-9])年([0-9]{1,2})月([0-9]{1,2})日', text)
+    if m:
+        r['publish_date'] = f"{m.group(1)}-{m.group(2).zfill(2)}-{m.group(3).zfill(2)}"
+    elif '发布日期' in text:
+        m2 = re.search(r'发布日期[：:\s]*([0-9]{4}[-/年][0-9]{1,2}[-/月][0-9]{1,2})', text)
+        if m2:
+            d = m2.group(1).replace('年','-').replace('月','-').replace('/','-').replace('日','')
+            r['publish_date'] = d
+
+    # ---- 从 HTML 表格提取中标供应商和金额 ----
+    tables = soup.find_all('table')
+    for tbl in tables:
+        rows = tbl.find_all('tr')
+        if len(rows) < 2:
+            continue
+        # 找表头包含"供应商名称"和"中标"的表格
+        header_cells = [c.get_text(strip=True) for c in rows[0].find_all(['th', 'td'])]
+        if '供应商名称' in header_cells and any('中标' in h or '成交' in h for h in header_cells):
+            # 定位金额列（表头含"金额"）
+            amt_col = -1
+            for i, h in enumerate(header_cells):
+                if '金额' in h:
+                    amt_col = i
+                    break
+            # 从第一行数据提取
+            data_cells = [c.get_text(strip=True) for c in rows[1].find_all(['th', 'td'])]
+            if len(data_cells) >= 1 and data_cells[0]:
+                r['winner'] = data_cells[0]
+            # 从金额列提取
+            if amt_col >= 0 and amt_col < len(data_cells):
+                m_amt = re.search(r'([0-9][0-9,.]*)', data_cells[amt_col])
+                if m_amt:
+                    r['amount'] = m_amt.group(1).replace(',', '')
+            break
+
     return r
 
 # ==================== 文件名解析 ====================
@@ -208,12 +283,23 @@ def main():
         print(f"  {item['id']} [{item['procCode'] or '':16s}] {item['school']}")
 
     # ---- 中标公告 ----
-    print("\n🏆 解析中标公告 pdf...")
+    print("\n🏆 解析中标公告...")
     win_items = []
     for m in meta['winning']:
         path = join(TMP, m['file'])
-        num = m['title'].split('_')[0] if m['title'].startswith(tuple('0123456789')) else ''
-        parsed = parse_pdf(path) if os.path.exists(path) else {}
+        # 合并 key：用 title 去掉扩展名（同一个公告的不同附件 title 相同）
+        merge_key = re.sub(r'\.[^.]+$', '', m['title'])
+        parsed = {}
+        if os.path.exists(path):
+            ext = m['file'].rsplit('.', 1)[-1].lower() if '.' in m['file'] else ''
+            if ext == 'pdf':
+                parsed = parse_pdf(path)
+            elif ext in ('html', 'htm'):
+                parsed = parse_html(path)
+            elif ext in ('docx', 'doc'):
+                parsed = parse_docx(path)
+            else:
+                parsed = parse_pdf(path)  # 兜底尝试 PDF
         ff = extract_from_filename(m['title'])
         attach = {'type': 'main', 'file': m['title'], 'mediaId': m['media_id']}
         if '报价明细' in m['title']: attach['type'] = '报价明细附件'
@@ -221,7 +307,7 @@ def main():
         elif '本国产品' in m['title']: attach['type'] = '本国产品声明函'
         elif '分项报价' in m['title']: attach['type'] = '分项报价表'
 
-        existing = next((x for x in win_items if x['num'] == num), None)
+        existing = next((x for x in win_items if x['merge_key'] == merge_key), None)
         if existing:
             existing['attachments'].append(attach)
             if parsed.get('contract_no') and parsed['contract_no'] not in existing['contractNos']:
@@ -236,8 +322,7 @@ def main():
                 existing['title'] = parsed.get('project_name') or ff['title']
         else:
             item = {
-                'id': f"W{num.zfill(3)}",
-                'num': num,
+                'merge_key': merge_key,
                 'title': parsed.get('project_name') or ff['title'],
                 'school': parsed.get('buyer') or ff['school'],
                 'region': ff['region'],
@@ -251,12 +336,15 @@ def main():
             }
             win_items.append(item)
 
-    # 排序
-    win_items.sort(key=lambda x: int(x['num'] or 0))
-    for w in win_items:
+    # 排序 + 分配序号 id
+    win_items.sort(key=lambda x: x.get('school') or '')
+    for i, w in enumerate(win_items):
+        w['id'] = f"W{i+1:03d}"
+        w['num'] = str(i + 1)
         w['contractNo'] = '/'.join(sorted(set(w['contractNos'])))
         w['attachCount'] = len(w['attachments'])
         del w['contractNos']
+        del w['merge_key']
         print(f"  {w['id']} [{w.get('projectCode') or '':16s}] {w['school']} | 中标:{(w.get('winningBidder') or '?')[:15]} | {w['attachCount']}附件")
 
     # ---- 精准匹配 ----

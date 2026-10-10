@@ -1,9 +1,9 @@
 {
   "site": {
     "title": "教育政策资料库",
-    "updated": "2026-09-29"
+    "updated": "2026-10-09"
   },
-  "updated": "2026-09-29",
+  "updated": "2026-10-09",
   "categories": [
     {
       "id": "guangdong",
@@ -186,6 +186,22 @@
           "source": "教育部"
         },
         {
+          "title": "moe_关于开展首个全国校园网络文明月活动的通知.docx",
+          "mediaId": "word_3deb9906c10f388deed86711b305f0e8_f10112a5fa3f7b023ab79dbe008266937508334806566436",
+          "doc_no": "教思政厅函〔2026〕20号",
+          "date": "2026-09-16",
+          "url": "http://www.moe.gov.cn/srcsite/A12/s7060/202609/t20260916_1450989.html",
+          "source": "教育部"
+        },
+        {
+          "title": "moe_关于开展2026年“基础教育精品课”遴选工作的通知.docx",
+          "mediaId": "word_3deb9906c10f388deed86711b305f0e8_54270e7783c7d8ed1dad82e4909de5c97508334806566436",
+          "doc_no": "教基厅函〔2026〕22号",
+          "date": "2026-09-16",
+          "url": "http://www.moe.gov.cn/srcsite/A06/s3321/202609/t20260916_1451040.html",
+          "source": "教育部"
+        },
+        {
           "title": "教育部办公厅 中央网信办秘书局关于开展首个全国校园网络文明月活动的通知",
           "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_923fe9dadfa66d21b82b4c97811bb4377508334806566436",
           "doc_no": "教育部办公厅、中央网信办秘书局〔2026〕20号",
@@ -199,6 +215,14 @@
           "doc_no": "教育部办公厅〔2026〕22号",
           "date": "2026-09-16",
           "url": "http://www.moe.gov.cn/srcsite/A06/s3321/202609/t20260916_1451040.html",
+          "source": "教育部"
+        },
+        {
+          "title": "moe_关于开展第12个全国近视防控宣传教育月活动的通知.html",
+          "mediaId": "html_3deb9906c10f388deed86711b305f0e8_17094236e955b838fc2873f2af1f02057508334806566436",
+          "doc_no": "教体艺厅函〔2026〕37号",
+          "date": "2026-09-11",
+          "url": "http://www.moe.gov.cn/srcsite/A17/moe_943/s3285/202609/t20260909_1449929.html",
           "source": "教育部"
         },
         {
@@ -386,34 +410,10 @@
           "source": "教育部"
         },
         {
-          "title": "moe_关于开展第12个全国近视防控宣传教育月活动的通知.html",
-          "mediaId": "html_3deb9906c10f388deed86711b305f0e8_17094236e955b838fc2873f2af1f02057508334806566436",
-          "doc_no": "教体艺厅函〔2026〕37号",
-          "date": "2026-09-11",
-          "url": "http://www.moe.gov.cn/srcsite/A17/moe_943/s3285/202609/t20260909_1449929.html",
-          "source": "教育部"
-        },
-        {
-          "title": "moe_关于开展首个全国校园网络文明月活动的通知.docx",
-          "mediaId": "word_3deb9906c10f388deed86711b305f0e8_f10112a5fa3f7b023ab79dbe008266937508334806566436",
-          "doc_no": "教思政厅函〔2026〕20号",
-          "date": "2026-09-16",
-          "url": "http://www.moe.gov.cn/srcsite/A12/s7060/202609/t20260916_1450989.html",
-          "source": "教育部"
-        },
-        {
-          "title": "moe_关于开展2026年“基础教育精品课”遴选工作的通知.docx",
-          "mediaId": "word_3deb9906c10f388deed86711b305f0e8_54270e7783c7d8ed1dad82e4909de5c97508334806566436",
-          "doc_no": "教基厅函〔2026〕22号",
-          "date": "2026-09-16",
-          "url": "http://www.moe.gov.cn/srcsite/A06/s3321/202609/t20260916_1451040.html",
-          "source": "教育部"
-        },
-        {
           "title": "moe_关于印发《2027年全国硕士研究生招生工作管理规定》的通知.html",
           "mediaId": "html_3deb9906c10f388deed86711b305f0e8_c92b295be3dfdeb0969cfd6e69c259367508334806566436",
           "doc_no": "",
-          "date": "",
+          "date": "2026-09-24",
           "url": "",
           "source": "教育部"
         }
