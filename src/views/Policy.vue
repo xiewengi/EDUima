@@ -44,13 +44,6 @@
           style="width: 280px"
           @input="applyFilter"
         />
-        <el-select v-model="typeFilter" placeholder="政策类型" clearable style="width: 160px" @change="applyFilter">
-          <el-option label="通知" value="通知" />
-          <el-option label="办法" value="办法" />
-          <el-option label="意见" value="意见" />
-          <el-option label="规划" value="规划" />
-          <el-option label="指南" value="指南" />
-        </el-select>
         <el-date-picker
           v-model="dateRange"
           type="daterange"
@@ -66,7 +59,7 @@
       <!-- 政策列表 -->
       <div class="edu-policy-list">
         <div
-          v-for="item in filteredList"
+          v-for="item in pagedList"
           :key="item.title"
           class="edu-policy-item edu-card"
           @click="openOriginal(item)"
@@ -109,21 +102,33 @@
         </div>
         <el-empty v-if="filteredList.length === 0" description="暂无匹配的政策数据" />
       </div>
+
+      <!-- 分页 -->
+      <div v-if="filteredList.length > pageSize" class="edu-pagination">
+        <el-pagination
+          v-model:current-page="currentPage"
+          :page-size="pageSize"
+          :total="filteredList.length"
+          layout="prev, pager, next, total"
+          background
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { Document, Grid, LocationFilled, School, Search, Refresh, Link, Clock, OfficeBuilding } from '@element-plus/icons-vue'
 import { ElMessage } from 'element-plus'
 
 const rawData = ref({ categories: [], site: {} })
 const activeTab = ref('all')
 const keyword = ref('')
-const typeFilter = ref('')
 const dateRange = ref([])
 const updated = ref('—')
+const currentPage = ref(1)
+const pageSize = 10
 
 const gdCategory = computed(() => rawData.value.categories.find(c => c.id === 'guangdong') || { items: [] })
 const nationalCategory = computed(() => rawData.value.categories.find(c => c.id === 'national') || { items: [] })
@@ -153,6 +158,11 @@ const filteredList = computed(() => {
   return list
 })
 
+const pagedList = computed(() => {
+  const start = (currentPage.value - 1) * pageSize
+  return filteredList.value.slice(start, start + pageSize)
+})
+
 const total = computed(() => allList.value.length)
 const gdCount = computed(() => gdCategory.value.items?.length || 0)
 const nationalCount = computed(() => nationalCategory.value.items?.length || 0)
@@ -167,12 +177,24 @@ const formatMonth = (date) => {
 }
 
 const handleTabChange = () => applyFilter()
+
+// 筛选条件变化（关键词/日期/tab）→ 回到第 1 页
+watch([keyword, dateRange, activeTab], () => {
+  currentPage.value = 1
+})
+
+// 筛选后总条数变少时，防止当前页码超出最大页
+watch(filteredList, (list) => {
+  const maxPage = Math.max(1, Math.ceil(list.length / pageSize))
+  if (currentPage.value > maxPage) currentPage.value = maxPage
+})
+
 const applyFilter = () => { /* 计算属性自动响应 */ }
 const resetFilter = () => {
   keyword.value = ''
-  typeFilter.value = ''
   dateRange.value = []
   activeTab.value = 'all'
+  currentPage.value = 1
 }
 
 const openDetail = (item) => {
@@ -270,6 +292,12 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   gap: var(--edu-space-3);
+}
+
+.edu-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--edu-space-5);
 }
 
 .edu-policy-item {
