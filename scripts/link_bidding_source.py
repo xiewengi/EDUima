@@ -23,6 +23,9 @@ BIDDING_JSON = os.path.join(ROOT, "public", "data", "bidding.json")
 
 BASE = "https://gdgpo.czt.gd.gov.cn"
 SITE_HOST = "gdgpo.czt.gd.gov.cn"
+# 海外 runner（GitHub Actions）直连 gdgpo 会超时——每日爬虫同款 Cloudflare Workers 反代兜底
+WORKER_BASE = "https://broken-wildflower-accf.304997019.workers.dev"
+SITE_ID_FALLBACK = "cd64e06a-21a7-4620-aebc-0576bab7e07a"  # 与 gd_winning_ima_sync.py 一致
 # 频道 ID：来自 gdgpo-award-ledger skill 实测可用的取值，别改
 CHANNEL = ("fca71be5-fc0c-45db-96af-f513e9abda9d,"
            "95ff31f3-a1af-4bc4-b1a2-54c894476193")
@@ -38,11 +41,39 @@ def curl_json(url):
         raise RuntimeError(f"curl exit {p.returncode}: {p.stderr[:120]}")
     return json.loads(p.stdout)
 
+_direct_ok = True  # 直连一次失败后置 False，后续直接走反代，省掉每条 20s 超时
+
+def fetch_json(url):
+    """直连优先（本机可用）；超时/连不上时换 Workers 反代（Actions 海外 runner 用）。
+
+    反代只映射根路径 → gdgpo selectInfoForIndex（每日爬虫同款拼法 WORKER?params），
+    故兜底时丢掉 /gpcms/... 路径、只保留查询串。
+    """
+    global _direct_ok
+    last = None
+    if _direct_ok:
+        try:
+            return curl_json(url)
+        except Exception as direct_err:
+            _direct_ok = False
+            last = direct_err
+    if url.startswith(BASE) and "?" in url:
+        alt = WORKER_BASE + "?" + url.split("?", 1)[1]
+        try:
+            return curl_json(alt)
+        except Exception as proxy_err:
+            raise RuntimeError(f"直连失败({last}) 且反代失败({proxy_err})")
+    raise RuntimeError(f"直连失败({last}) 且 URL 不支持反代兜底: {url[:80]}")
+
 _site = None
 def site_id():
     global _site
     if not _site:
-        _site = curl_json(f"{BASE}/gpcms/rest/web/v2/index/getDeploymentSiteId?domain={SITE_HOST}")["data"]["id"]
+        try:
+            _site = fetch_json(f"{BASE}/gpcms/rest/web/v2/index/getDeploymentSiteId?domain={SITE_HOST}")["data"]["id"]
+        except Exception:
+            # siteId 实践中恒定，直连+反代都挂不成就用爬虫同款兜底值
+            _site = SITE_ID_FALLBACK
     return _site
 
 def clean_title(title):
@@ -60,7 +91,7 @@ def query(code, kw):
                "agency": "", "purchaseNature": "",
                "operationStartTime": "", "operationEndTime": "",
                "verifyCode": "", "subChannel": "false"}))
-    d = curl_json(url)
+    d = fetch_json(url)
     return (d.get("data") or {}).get("rows") or []
 
 def pick_row(rows, code, kw):
