@@ -7,31 +7,31 @@
           <h1 class="edu-page-title">
             <el-icon><Files /></el-icon> 招投标信息
           </h1>
-          <p class="edu-page-subtitle">广东省教育行业采购公告与中标公告智能配对视图。<span v-if="activeProcurement">当前选中：<strong>{{ activeProcurement.title }}</strong></span></p>
+          <p class="edu-page-subtitle">广东省教育行业招投标<b>中标（成交）结果公告</b>信息库，支持一键跳转政府采购网原文。</p>
         </div>
         <div class="edu-page-meta">
           <el-tag type="info">更新：{{ updated }}</el-tag>
-          <el-tag type="success">匹配 {{ matchedCount }} 项</el-tag>
+          <el-tag type="success">中标 {{ winningCount }} 条</el-tag>
         </div>
       </div>
 
       <!-- 统计摘要 -->
       <div class="edu-bidding-summary edu-card">
         <div class="edu-bidding-summary__item">
-          <div class="edu-bidding-summary__value edu-bidding-summary__value--blue">{{ procurementCount }}</div>
-          <div class="edu-bidding-summary__label">📋 采购公告</div>
-        </div>
-        <div class="edu-bidding-summary__item">
           <div class="edu-bidding-summary__value edu-bidding-summary__value--orange">{{ winningCount }}</div>
-          <div class="edu-bidding-summary__label">🏆 中标项目</div>
+          <div class="edu-bidding-summary__label">🏆 中标公告</div>
         </div>
         <div class="edu-bidding-summary__item">
-          <div class="edu-bidding-summary__value edu-bidding-summary__value--green">{{ matchedCount }}</div>
-          <div class="edu-bidding-summary__label">✅ 已匹配</div>
+          <div class="edu-bidding-summary__value edu-bidding-summary__value--blue">{{ regionCount }}</div>
+          <div class="edu-bidding-summary__label">📍 覆盖地区</div>
         </div>
         <div class="edu-bidding-summary__item">
-          <div class="edu-bidding-summary__value edu-bidding-summary__value--gray">{{ unmatchedProcurement }}</div>
-          <div class="edu-bidding-summary__label">⏳ 待匹配</div>
+          <div class="edu-bidding-summary__value edu-bidding-summary__value--green">{{ schoolCount }}</div>
+          <div class="edu-bidding-summary__label">🏫 涉及学校</div>
+        </div>
+        <div class="edu-bidding-summary__item">
+          <div class="edu-bidding-summary__value edu-bidding-summary__value--gray">{{ linkedCount }}</div>
+          <div class="edu-bidding-summary__label">🔗 原文链接</div>
         </div>
       </div>
 
@@ -47,73 +47,22 @@
           <el-option label="高等教育" value="高等教育" />
           <el-option label="学前教育" value="学前教育" />
         </el-select>
-        <el-select v-model="matchFilter" placeholder="匹配状态" clearable class="edu-filter-select">
-          <el-option label="已匹配" value="matched" />
-          <el-option label="待匹配" value="unmatched" />
-        </el-select>
         <div class="edu-filter-bar__spacer"></div>
         <el-button :icon="Refresh" @click="resetFilter">重置</el-button>
       </div>
 
-      <!-- ⭐ 核心：左右配对视图 -->
+      <!-- 中标公告列表（全宽单列） -->
       <div class="edu-paired-view">
-        <!-- 左侧：采购公告 -->
-        <div class="edu-paired-view__col">
-          <div class="edu-paired-view__header edu-paired-view__header--left">
-            <el-icon><ShoppingCart /></el-icon>
-            <span>采购公告</span>
-            <el-tag size="small" type="info">{{ filteredProcurement.length }}</el-tag>
-          </div>
-          <div class="edu-paired-list edu-paired-list--left">
-            <div
-              v-for="item in filteredProcurement"
-              :key="item.id"
-              class="edu-paired-item"
-              :class="{ 'is-matched': hasMatched(item), 'is-active': activeProcurementId === item.id }"
-              @click="selectProcurement(item.id)"
-            >
-              <div class="edu-paired-item__status">
-                <el-icon v-if="hasMatched(item)" class="is-matched"><CircleCheckFilled /></el-icon>
-                <el-icon v-else class="is-unmatched"><QuestionFilled /></el-icon>
-              </div>
-              <div class="edu-paired-item__body">
-                <h4 class="edu-paired-item__title">{{ item.title }}</h4>
-                <div class="edu-paired-item__meta">
-                  <span class="edu-tag">{{ item.type || '招标公告' }}</span>
-                  <span v-if="item.region" class="edu-tag edu-tag--accent">{{ item.region }}</span>
-                  <span v-if="item.stage">{{ item.stage }}</span>
-                  <span v-if="item.matchedIds?.length" class="edu-paired-item__match-info">→ {{ item.matchedIds.length }} 个中标</span>
-                </div>
-                <div class="edu-paired-item__sub">
-                  <el-icon><OfficeBuilding /></el-icon>
-                  <span>{{ item.school || '待确认' }}</span>
-                </div>
-              </div>
-            </div>
-            <el-empty v-if="filteredProcurement.length === 0" description="暂无采购公告" />
-          </div>
-        </div>
-
-        <!-- 中间连接符 -->
-        <div class="edu-paired-view__connector">
-          <div class="edu-paired-view__connector-inner" :class="{ 'is-connected': activeDisplayMode === 'single' && displayedWinning.length > 0 }">
-            <el-icon :size="28"><Link /></el-icon>
-          </div>
-        </div>
-
-        <!-- 右侧：中标公告（根据选中状态动态显示） -->
-        <div class="edu-paired-view__col">
+        <div class="edu-paired-view__col edu-paired-view__col--full">
           <div class="edu-paired-view__header edu-paired-view__header--right">
             <el-icon><Trophy /></el-icon>
-            <span>{{ activeDisplayMode === 'single' ? '匹配的中标公告' : '中标公告（全量）' }}</span>
-            <el-tag size="small" type="success">{{ displayedWinning.length }}</el-tag>
-            <el-button v-if="activeDisplayMode === 'single'" type="primary" link size="small" @click="clearSelection">↺ 查看全部</el-button>
+            <span>中标公告</span>
+            <el-tag size="small" type="success">{{ filteredWinning.length }}</el-tag>
           </div>
-          <div class="edu-paired-list edu-paired-list--right">
-            <!-- 有匹配结果 -->
-            <template v-if="displayedWinning.length > 0">
+          <div class="edu-paired-list edu-paired-list--full">
+            <template v-if="filteredWinning.length > 0">
               <div
-                v-for="item in displayedWinning"
+                v-for="item in pagedWinning"
                 :key="item.id"
                 class="edu-paired-item edu-paired-item--winning"
               >
@@ -129,22 +78,43 @@
                     <span class="edu-paired-item__attachs">📎 {{ item.attachCount || item.attachments?.length || 0 }} 份附件</span>
                   </div>
                   <div class="edu-paired-item__sub">
-                    <el-icon><OfficeBuilding /></el-icon>
-                    <span>{{ item.school || '待确认' }}</span>
-                    <span class="edu-paired-item__divider">·</span>
-                    <span>{{ item.stage }}</span>
+                    <div class="edu-paired-item__sub-row">
+                      <el-icon><OfficeBuilding /></el-icon>
+                      <span>{{ item.school || '待确认' }}</span>
+                    </div>
+                    <div v-if="item.stage" class="edu-paired-item__sub-row">
+                      <span class="edu-paired-item__sub-label">学段</span>
+                      <span>{{ item.stage }}</span>
+                    </div>
+                    <div v-if="item.winningBidder" class="edu-paired-item__sub-row">
+                      <span class="edu-paired-item__sub-label">中标方</span>
+                      <span>{{ item.winningBidder }}</span>
+                    </div>
                   </div>
                 </div>
+                <a
+                  v-if="item.sourceUrl"
+                  class="edu-paired-item__source"
+                  :href="item.sourceUrl"
+                  target="_blank"
+                  rel="noopener"
+                  title="跳转到广东省政府采购网的对应公告页面"
+                >
+                  <el-icon><Link /></el-icon> 政府采购网原文
+                </a>
               </div>
             </template>
-            <!-- 选中了采购但没匹配上 -->
-            <div v-else-if="activeDisplayMode === 'single'" class="edu-paired-empty">
-              <el-icon :size="48" color="#CBD5E1"><WarningFilled /></el-icon>
-              <p class="edu-paired-empty__title">暂未匹配到中标公告</p>
-              <p class="edu-paired-empty__desc">该采购公告可能尚未发布中标结果，或项目名称存在差异导致未自动关联。</p>
-            </div>
-            <!-- 全量模式 -->
-            <el-empty v-else description="暂无中标公告数据" />
+            <el-empty v-else description="暂无匹配的中标公告" />
+          </div>
+          <!-- 分页：每页 9 条（3 列 × 3 行） -->
+          <div class="edu-paired-pagination" v-if="filteredWinning.length > PAGE_SIZE">
+            <el-pagination
+              v-model:current-page="currentPage"
+              :page-size="PAGE_SIZE"
+              :total="filteredWinning.length"
+              layout="total, prev, pager, next"
+              background
+            />
           </div>
         </div>
       </div>
@@ -152,63 +122,37 @@
       <!-- 底部提示 -->
       <div class="edu-bidding-tip edu-card">
         <el-icon><InfoFilled /></el-icon>
-        <span>💡 <strong>使用提示：</strong>点击左侧任意采购公告，右侧将展示对应匹配的中标公告；点击"↺ 查看全部"可恢复全量视图。匹配逻辑基于学校名称 + 项目关键词自动关联，后续将通过解析 PDF/Docx 提取结构化字段提升准确率。</span>
+        <span>💡 <strong>使用提示：</strong>本页只展示中标（成交）结果公告，点击卡片上的「政府采购网原文」可跳转查看广东省政府采购网对应公告页面。筛选支持项目/学校关键词、地区与学段；后续将通过解析 PDF/Docx 提取结构化字段提升准确率。</span>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import {
-  Files, Search, Refresh, ShoppingCart, Trophy, CircleCheckFilled, QuestionFilled,
-  Link, OfficeBuilding, WarningFilled, InfoFilled
+  Files, Search, Refresh, Trophy, Link, OfficeBuilding, InfoFilled
 } from '@element-plus/icons-vue'
 
 const rawData = ref({ procurement: [], winning: [], updated: '—' })
 const keyword = ref('')
 const regionFilter = ref('')
 const stageFilter = ref('')
-const matchFilter = ref('')
-const activeProcurementId = ref(null) // null = 显示全部中标；有值 = 只显示该采购匹配的中标
 const updated = ref('—')
 
-const procurementList = computed(() => rawData.value.procurement || [])
-const winningList = computed(() => rawData.value.winning || [])
+// 分页：每页 9 条（3 列 × 3 行）
+const PAGE_SIZE = 9
+const currentPage = ref(1)
 
-const hasMatched = (procItem) => !!procItem.matchedIds && procItem.matchedIds.length > 0
+const winningList = computed(() => rawData.value.winning || [])
 
 const regions = computed(() => {
   const set = new Set()
-  procurementList.value.forEach(p => p.region && set.add(p.region))
   winningList.value.forEach(w => w.region && set.add(w.region))
   return [...set].sort()
 })
 
-const filteredProcurement = computed(() => {
-  return procurementList.value.filter(item => {
-    if (keyword.value && !item.title?.toLowerCase().includes(keyword.value.toLowerCase()) &&
-        !item.school?.includes(keyword.value)) return false
-    if (regionFilter.value && item.region !== regionFilter.value) return false
-    if (stageFilter.value && item.stage !== stageFilter.value) return false
-    if (matchFilter.value === 'matched' && !hasMatched(item)) return false
-    if (matchFilter.value === 'unmatched' && hasMatched(item)) return false
-    return true
-  })
-})
-
-const activeProcurement = computed(() =>
-  activeProcurementId.value ? procurementList.value.find(p => p.id === activeProcurementId.value) : null
-)
-
-const activeDisplayMode = computed(() => activeProcurement.value ? 'single' : 'all')
-
-const displayedWinning = computed(() => {
-  if (activeDisplayMode.value === 'single') {
-    const ids = activeProcurement.value?.matchedIds || []
-    return winningList.value.filter(w => ids.includes(w.id))
-  }
-  // 全量视图也受左侧筛选条件影响
+const filteredWinning = computed(() => {
   let list = winningList.value
   if (regionFilter.value) list = list.filter(w => w.region === regionFilter.value)
   if (stageFilter.value) list = list.filter(w => w.stage === stageFilter.value)
@@ -219,21 +163,24 @@ const displayedWinning = computed(() => {
   return list
 })
 
-const procurementCount = computed(() => procurementList.value.length)
-const winningCount = computed(() => winningList.value.length)
-const matchedCount = computed(() => procurementList.value.filter(p => hasMatched(p)).length)
-const unmatchedProcurement = computed(() => procurementCount.value - matchedCount.value)
+// 当前页切片：翻页 / 筛选都从这里出数据
+const pagedWinning = computed(() => {
+  const start = (currentPage.value - 1) * PAGE_SIZE
+  return filteredWinning.value.slice(start, start + PAGE_SIZE)
+})
 
-const selectProcurement = (id) => {
-  activeProcurementId.value = activeProcurementId.value === id ? null : id
-}
-const clearSelection = () => { activeProcurementId.value = null }
+// 筛选条件变化 → 回到第 1 页（避免停留在超出范围的空页）
+watch([keyword, regionFilter, stageFilter], () => { currentPage.value = 1 })
+
+const winningCount = computed(() => winningList.value.length)
+const regionCount = computed(() => regions.value.length)
+const schoolCount = computed(() => new Set(winningList.value.map(w => w.school).filter(Boolean)).size)
+const linkedCount = computed(() => winningList.value.filter(w => w.sourceUrl).length)
 
 const resetFilter = () => {
   keyword.value = ''
   regionFilter.value = ''
   stageFilter.value = ''
-  matchFilter.value = ''
 }
 
 onMounted(async () => {
@@ -325,6 +272,72 @@ onMounted(async () => {
   display: flex;
   gap: var(--edu-space-3);
   margin-bottom: var(--edu-space-5);
+}
+.edu-paired-view__col--full { flex: 1 1 100%; width: 100%; }
+/* 三列网格：中标公告卡片 */
+.edu-paired-list.edu-paired-list--full {
+  max-height: none;
+  overflow-y: visible;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--edu-space-3);
+  padding: var(--edu-space-3);
+}
+.edu-paired-list--full .edu-paired-item,
+.edu-paired-list--full .edu-paired-item:last-child {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--edu-space-2);
+  border: 1px solid var(--edu-border-light);
+  border-radius: var(--edu-radius-md);
+  margin: 0;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.edu-paired-list--full .edu-paired-item:hover {
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+.edu-paired-list--full .edu-paired-item__status { padding-top: 0; }
+.edu-paired-list--full .edu-paired-item__title {
+  -webkit-line-clamp: 3;
+  min-height: 3.2em;
+}
+.edu-paired-item__source {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  align-self: flex-start;
+  font-size: var(--edu-font-xs);
+  font-weight: 600;
+  color: var(--edu-primary);
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid var(--edu-primary-light);
+  border-radius: var(--edu-radius-md);
+  background: var(--edu-primary-lighter);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.edu-paired-item__source .el-icon { font-size: 13px; }
+.edu-paired-item__source:hover {
+  color: #fff;
+  background: var(--edu-primary);
+  border-color: var(--edu-primary);
+}
+@media (max-width: 1200px) {
+  .edu-paired-list--full { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .edu-paired-list--full { grid-template-columns: 1fr; }
+}
+
+/* 分页条 */
+.edu-paired-pagination {
+  display: flex;
+  justify-content: center;
+  padding: var(--edu-space-3) 0 var(--edu-space-2);
 }
 .edu-paired-view__col {
   flex: 1;
@@ -444,13 +457,29 @@ onMounted(async () => {
 }
 .edu-paired-item__sub {
   display: flex;
-  align-items: center;
-  gap: 4px;
+  flex-direction: column;
+  gap: 5px;
   font-size: var(--edu-font-xs);
   color: var(--edu-text-secondary);
 }
-.edu-paired-item__sub .el-icon { font-size: 12px; }
-.edu-paired-item__divider { margin: 0 4px; color: var(--edu-border); }
+.edu-paired-item__sub-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  line-height: 1.5;
+}
+.edu-paired-item__sub-row .el-icon {
+  font-size: 12px;
+  align-self: center;
+  flex-shrink: 0;
+}
+.edu-paired-item__sub-label {
+  flex-shrink: 0;
+  color: var(--edu-text-placeholder);
+}
+.edu-paired-item__sub-row span:last-child {
+  word-break: break-all;
+}
 
 /* 空状态 */
 .edu-paired-empty {

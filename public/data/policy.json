@@ -1,9 +1,9 @@
 {
   "site": {
     "title": "教育政策资料库",
-    "updated": "2026-10-09"
+    "updated": "2026-10-12"
   },
-  "updated": "2026-10-09",
+  "updated": "2026-10-12",
   "categories": [
     {
       "id": "guangdong",
@@ -177,6 +177,14 @@
       "name": "全国通用政策",
       "source": "http://www.moe.gov.cn/jyb_xxgk/zywj_btlj/index.html",
       "items": [
+        {
+          "title": "moe_关于印发《2027年全国硕士研究生招生工作管理规定》的通知.html",
+          "mediaId": "html_3deb9906c10f388deed86711b305f0e8_c92b295be3dfdeb0969cfd6e69c259367508334806566436",
+          "doc_no": "",
+          "date": "2026-09-24",
+          "url": "",
+          "source": "教育部"
+        },
         {
           "title": "教育部关于印发《2027年全国硕士研究生招生工作管理规定》的通知",
           "mediaId": "weburl_3deb9906c10f388deed86711b305f0e8_79771923f29cdcaccd94990b4e844a137508334806566436",
@@ -407,14 +415,6 @@
           "doc_no": "教基厅函〔2026〕17号",
           "date": "2026-07-01",
           "url": "http://www.moe.gov.cn/srcsite/A06/s3321/202607/t20260701_1442258.html",
-          "source": "教育部"
-        },
-        {
-          "title": "moe_关于印发《2027年全国硕士研究生招生工作管理规定》的通知.html",
-          "mediaId": "html_3deb9906c10f388deed86711b305f0e8_c92b295be3dfdeb0969cfd6e69c259367508334806566436",
-          "doc_no": "",
-          "date": "2026-09-24",
-          "url": "",
           "source": "教育部"
         }
       ]

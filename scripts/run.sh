@@ -56,3 +56,15 @@ else
   log "❌ 同步失败 (exit code: $RC)"
   exit $RC
 fi
+
+# 政采网原文链接反查：sync.js/parse_match.py 每次会重新生成 bidding.json，
+# sourceUrl 会丢，必须跟一脚本回写（幂等，已有链接的条目自动跳过）。
+# 失败不阻断部署（线上数据仍为最新，链接明日重试自动补回）。
+log "🔗 反查政采网原文链接 (link_bidding_source.py)..."
+python3 scripts/link_bidding_source.py 2>&1 | tee -a "$LOG"
+RC2=${PIPESTATUS[0]}
+if [ $RC2 -eq 0 ]; then
+  log "✅ 原文链接回写完成"
+else
+  log "⚠️ 原文链接反查失败 (exit code: $RC2)，不阻断本次部署，明日自动重试"
+fi

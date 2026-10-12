@@ -129,11 +129,14 @@ function saveMeta(procList, winList) {
 }
 
 // ========== Python 解析 ==========
+// 允许用环境变量 PYTHON3 指定解释器（默认系统 python3）
+const PYTHON3 = process.env.PYTHON3 || 'python3'
+
 function runPython() {
   const pyPath = join(__dirname, 'parse_match.py')
-  const cmd = `python3 "${pyPath}"`
+  const cmd = `"${PYTHON3}" "${pyPath}"`
   log(`执行 Python 解析...`)
-  execSync(cmd, { stdio: 'inherit' })
+  execSync(cmd, { stdio: 'inherit', shell: true })
 }
 
 function cleanTitle(t) {
@@ -249,7 +252,7 @@ function main() {
     const enrichPath = join(__dirname, 'policy_enrich.py')
     if (existsSync(enrichPath)) {
       try {
-        execSync(`python3 "${enrichPath}"`, { stdio: 'inherit' })
+        execSync(`"${PYTHON3}" "${enrichPath}"`, { stdio: 'inherit', shell: true })
       } catch (e) {
         log(`补全跳过（不阻塞主流程）: ${e.message}`)
       }
