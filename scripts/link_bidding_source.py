@@ -116,18 +116,54 @@ def detail_url(r):
             f"&openTenderCode={urllib.parse.quote(r.get('openTenderCode') or '无')}"
             f"&channelName={urllib.parse.quote(r.get('channelName') or '')}")
 
+def load_prev_links():
+    """从 git HEAD 里的上一版 bidding.json 继承 sourceUrl。
+
+    每日 Actions 重新生成 bidding.json 会丢链接，但 HEAD 里提交的是昨天
+    回写过的版本——按 projectCode（主）/ 标题前 30 字（辅）继承，完全离线。
+    """
+    links = {}
+    try:
+        p = subprocess.run(
+            ["git", "-C", ROOT, "show", "HEAD:public/data/bidding.json"],
+            capture_output=True, text=True, timeout=20)
+        if p.returncode == 0:
+            for w in (json.loads(p.stdout).get("winning") or []):
+                u = w.get("sourceUrl")
+                if not u:
+                    continue
+                code = (w.get("projectCode") or "").strip()
+                if code:
+                    links[code] = u
+                t = clean_title(w.get("title"))
+                if t:
+                    links["T:" + t] = u
+    except Exception:
+        pass
+    return links
+
+
 def main():
     with open(BIDDING_JSON, encoding="utf-8") as f:
         data = json.load(f)
     winning = data.get("winning") or []
+    prev = load_prev_links()
 
-    hit = miss = skip = 0
+    hit = miss = carried = skip = 0
     for it in winning:
         if it.get("sourceUrl"):
             skip += 1
             continue
         code = (it.get("projectCode") or "").strip()
         kw = clean_title(it.get("title"))
+        # ① 离线继承：上一版已有链接的直接拿回来（同公告 projectCode 恒定）
+        inherited = (prev.get(code) if code else None) or prev.get("T:" + kw)
+        if inherited:
+            it["sourceUrl"] = inherited
+            carried += 1
+            print(f"CARRY {code or '(无编号)'} → {it.get('title','')[:40]}")
+            continue
+        # ② 在线反查：只处理上一版也没有链接的（真正的新条目）
         try:
             rows = query(code, kw)
         except Exception as e:
@@ -148,7 +184,7 @@ def main():
 
     with open(BIDDING_JSON, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
-    print(f"\n=== 命中 {hit} / 未中 {miss} / 跳过已有 {skip}（共 {len(winning)} 条中标） ===")
+    print(f"\n=== 命中 {hit} / 继承 {carried} / 未中 {miss} / 跳过已有 {skip}（共 {len(winning)} 条中标） ===")
     print(f"已写回 {BIDDING_JSON}")
 
 if __name__ == "__main__":
