@@ -2,9 +2,9 @@
 """智库观察数据抓取：权威教育网站的智库报告/观察视角/行业趋势 → public/data/thinktank.json
 
 数据源（权威站点，直连抓取，失败自动跳过不阻断）：
-  jyb.cn（中国教育新闻网，教育部直属中国教育报刊社主办）——首页 + 要闻 + 思想理论等
-  列表页做文章池，按关键词（智库/报告/蓝皮书/观察/研究/调查/趋势/视点）过滤出
-  智库报告与行业观察类文章；不足 12 条用最新深度资讯回填。
+  edu.cn / cernet.edu.cn（中国教育和科研计算机网 CERNET，教育信息化领域权威媒体）——
+  首页 + 教育信息化资讯 + 理论研讨（专家专栏）做文章池，关键词过滤出
+  教育信息化前沿报告 / 行业趋势 / 观察视角类文章；不足 12 条用最新资讯回填。
 
 每篇文章抓详情页抽 description 摘要 + 正文图（过滤 logo/广告图）。
 产物字段：{updatedAt, items:[{id,title,url,image,summary,date,source}]}，最多保留 24 条。
@@ -26,19 +26,18 @@ MAX_ITEMS = 12   # 老大拍板：12 条就够
 MAX_ARTICLES = 14  # 最多抓多少篇文章详情（12 条 + 余量）
 
 # 智库报告/行业观察相关关键词（标题过滤用）
-KEYWORDS = ('智库', '报告', '蓝皮书', '白皮书', '观察', '研究', '调查', '趋势',
-            '洞察', '视点', '指数', '研讨', '综述', '素养', '人才培养', '育人',
-            '教育生态', '产教融合', '教育强国', '教师队伍', '评价改革', '课程',
-            '治理', '路径', '范式', '办学', '立德树人', '教育改革', '高质量发展')
+KEYWORDS = ('人工智能', 'AI', '智能体', '信息化', '数字化', '数智', '智慧',
+            '趋势', '报告', '观察', '洞察', '前沿', '研究', '治理', '转型',
+            '大数据', '网络安全', 'IPv6', '平台', '大模型', '云计算')
 # 标题黑名单（明显无关的时政/招生类）
 BLOCKWORDS = ('招生', '招聘', '放假', '运动会', '录取', '成绩查询', '考试时间',
               '冠军', '颁奖典礼', '来华培训', '起源之谜', '收费管理办法', '榜样',
               '启动仪式', '展演', '比赛')
 
-JYB_LISTS = (
-    'http://www.jyb.cn/',
-    'http://www.jyb.cn/rmtzcg/xwy/wzxw/',
-    'http://www.jyb.cn/rmtlistllzk/',
+CERNET_LISTS = (
+    'https://www.edu.cn/',
+    'https://www.cernet.edu.cn/info/',
+    'https://www.cernet.edu.cn/info/focus/li_lun_yj/',
 )
 
 # 直连（本机环境代理会劫持教育类站点，参照 gdgpo 链路约定显式禁代理）。
@@ -85,13 +84,13 @@ _JYB_POOL_CACHE = []  # collect_jyb_articles() 顺带缓存全量文章池，供
 
 
 def collect_jyb_articles():
-    """jyb.cn 首页 + 新闻中心列表 → [(title, url, date)]，标题关键词过滤"""
+    """edu.cn 首页 + 信息化资讯 + 理论研讨列表 → [(title, url, date)]，标题关键词过滤"""
     pool, seen = [], set()
-    for list_url in JYB_LISTS:
+    for list_url in CERNET_LISTS:
         html = fetch(list_url)
         if not html:
             continue
-        for m in re.finditer(r'<a[^>]+href="((?:https?://www\.jyb\.cn)?/[^"]*?/202[4-6]\d{2}/t\d{8}_\d+\.html)"[^>]*>([^<]{6,80})</a>', html):
+        for m in re.finditer(r'<a[^>]+href="([^"]*202[5-6]\d{2}/t\d{8}_\d+\.shtml)"[^>]*>([^<]{6,80})</a>', html):
             url = urljoin(list_url, m.group(1))
             title = text_of(m.group(2))
             if url in seen or not title:
@@ -99,11 +98,11 @@ def collect_jyb_articles():
             seen.add(url)
             pool.append({'title': title, 'url': url, 'date': date_from_jyb_url(url)})
     _JYB_POOL_CACHE.extend(pool)
-    print(f'jyb.cn 文章池：{len(pool)} 条（过滤前）')
+    print(f'CERNET 文章池：{len(pool)} 条（过滤前）')
     hit = [a for a in pool
            if any(k in a['title'] for k in KEYWORDS)
            and not any(b in a['title'] for b in BLOCKWORDS)]
-    print(f'jyb.cn 关键词命中：{len(hit)} 条')
+    print(f'CERNET 关键词命中：{len(hit)} 条')
     # 按日期倒序（日期取自 URL，可靠）
     hit.sort(key=lambda a: a['date'], reverse=True)
     return hit
@@ -114,8 +113,9 @@ IMG_BLOCK = re.compile(r'logo|icon|Ad/|banner|avatar|user\.png|qrcode|share', re
 
 
 def enrich_article(article):
-    """抓文章详情：description 摘要 + 正文图（过滤 logo/广告）"""
-    html = fetch(article['url'], retries=1)
+    """抓文章详情：description 摘要 + 正文图（过滤 logo/广告）。
+    www.edu.cn 对脚本请求经常读超时，改抓其 302 目标镜像 www.cernet.edu.cn（内容一致）。"""
+    html = fetch(article['url'].replace('://www.edu.cn/', '://www.cernet.edu.cn/'), retries=1)
     if not html:
         return
     m = re.search(r'<meta[^>]+name="description"[^>]+content="([^"]{10,300})"', html)
@@ -128,9 +128,10 @@ def enrich_article(article):
             if len(para) >= 30:
                 article['summary'] = para[:160]
                 break
-    # 图片：优先 og:image，其次正文内容图（TRS 系 W0 命名优先），过滤 logo/广告/公共徽章
+    # 图片：优先 og:image（必须是真实图片 URL——cernet 详情页 og:image 常是站点空值 'https://www.edu.cn'），
+    # 其次正文内容图，过滤 logo/广告/公共徽章
     img = ''
-    mog = re.search(r'<meta[^>]+property="og:image"[^>]+content="([^"]+)"', html)
+    mog = re.search(r'<meta[^>]+property="og:image"[^>]+content="([^"]+\.(?:jpg|jpeg|png)[^"]*)"', html)
     if mog and not IMG_BLOCK.search(mog.group(1)):
         img = urljoin(article['url'], mog.group(1))
     if not img:
@@ -161,7 +162,7 @@ def main():
         backfill.sort(key=lambda a: a['date'], reverse=True)
         need = MAX_ITEMS - len(articles)
         articles += backfill[:need]
-        print(f'回填 jyb 最新资讯 {min(need, len(backfill))} 条')
+        print(f'回填 CERNET 最新资讯 {min(need, len(backfill))} 条')
 
     # 详情 enrich（限制请求量）
     for a in articles[:MAX_ARTICLES]:
@@ -177,8 +178,8 @@ def main():
         if a.get('image') and img_count.get(a['image'], 0) >= 3:
             a['image'] = ''
 
-    # 无摘要的条目降权排后；有图有摘优先
-    articles.sort(key=lambda a: (a.get('image') != '', bool(a.get('summary')), a.get('date') or ''),
+    # 有图有摘优先（bool() 兜住未 enrich 条目的 None：None != '' 恒为 True 会导致未抓详情的条目反排最前）
+    articles.sort(key=lambda a: (bool(a.get('image')), bool(a.get('summary')), a.get('date') or ''),
                   reverse=True)
     items, seen = [], set()
     for a in articles:
@@ -192,7 +193,7 @@ def main():
             'image': a.get('image') or '',
             'summary': a.get('summary') or '',
             'date': a.get('date') or '',
-            'source': '中国教育新闻网',
+            'source': '中国教育和科研计算机网',
         })
         if len(items) >= MAX_ITEMS:
             break
