@@ -147,11 +147,7 @@
         </div>
       </div>
 
-      <!-- 底部提示 -->
-      <div class="edu-bidding-tip edu-card">
-        <el-icon><InfoFilled /></el-icon>
-        <span>💡 <strong>使用提示：</strong>本页只展示中标（成交）结果公告，条目直接取自 ima 知识库；标题展示项目名称（悬浮可看完整原标题），中标方与摘要摘自公告正文（只选取、不做推断）。卡片底部：「采购公告」「中标公告」跳转广东省政府采购网对应页面，「下载采购文件」为政采网原件 zip（内含 Word 招标文件）。筛选支持项目/学校关键词、地区与学段。</span>
-      </div>
+      <!-- 底部提示：老大指示不展示（2026-10-13） -->
     </div>
   </div>
 </template>
@@ -159,7 +155,7 @@
 <script setup>
 import { ref, computed, watch, onMounted } from 'vue'
 import {
-  Files, Search, Refresh, Trophy, Link, Download, OfficeBuilding, InfoFilled
+  Files, Search, Refresh, Trophy, Link, Download, OfficeBuilding
 } from '@element-plus/icons-vue'
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -558,20 +554,6 @@ onMounted(async () => {
   margin: 0;
   line-height: 1.6;
 }
-
-/* 提示条 */
-.edu-bidding-tip {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--edu-space-3);
-  padding: var(--edu-space-3) var(--edu-space-4);
-  background: #FFFBEB;
-  border: 1px solid #FDE68A;
-  color: #92400E;
-  font-size: var(--edu-font-sm);
-  line-height: 1.7;
-}
-.edu-bidding-tip .el-icon { flex-shrink: 0; font-size: 18px; padding-top: 2px; }
 
 @media (max-width: 1200px) {
   .edu-bidding-summary__value { font-size: 26px; }
