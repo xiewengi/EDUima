@@ -1,0 +1,1483 @@
+{
+ "updated": "2026-10-12",
+ "matchStats": {
+  "procurementTotal": 57,
+  "winningTotal": 11,
+  "matchedCount": 35,
+  "unmatchedCount": 22,
+  "matchedWinIds": [
+   "W001",
+   "W002",
+   "W003",
+   "W004",
+   "W005",
+   "W007",
+   "W011"
+  ]
+ },
+ "procurement": [
+  {
+   "id": "P000",
+   "num": "",
+   "title": "广东江门幼儿师范高等专科学校“一站式”学生社区场地改造项目工程",
+   "school": "广东江门幼儿师范高等专科学校",
+   "region": "江门",
+   "type": "竞争性磋商",
+   "stage": "高等教育",
+   "procCode": "440701-2026-02177",
+   "budget": "2500000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "广东江门幼儿师范高等专科学校“一站式”学生社区场地改造项目工程竞争性磋商公告_广东江门幼儿师范高等专科学校“一站式”学生社区场地改造项目工程磋商文件（2026100801）.docx",
+   "mediaId": "word_cls1_3deb9906c10f388deed86711b305f0e8_6a50779839d95e4919a475dfbe8b30287508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "汕尾市2026-2027学年度普通高中、市直义务教育阶段学校教学质量监测项目",
+   "school": "汕尾市教师发展中心",
+   "region": "汕尾",
+   "type": "竞争性磋商",
+   "stage": "基础教育",
+   "procCode": "441501-2026-01651",
+   "budget": "2524840.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "汕尾市2026-2027学年度普通高中、市直义务教育阶段学校教学质量监测项目竞争性磋商公告_汕尾市2026-2027学年度普通高中、市直义务教育阶段学校教学质量监测项目磋商文件（2026100808）.docx",
+   "mediaId": "word_cls1_3deb9906c10f388deed86711b305f0e8_74ef07129bd0417ef044b7acde464a9e7508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校产教融合实训基地（车路云一体化实训室）采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-07484",
+   "budget": "1895100.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市汽车技术学校产教融合实训基地（车路云一体化实训室）采购项目招标公告_东莞市汽车技术学校产教融合实训基地（车路云一体化实训室）采购项目招标文件（2026101003）.docx",
+   "mediaId": "word_cls1_3deb9906c10f388deed86711b305f0e8_7fde58e33c6e86e4259a3c1262b9dfcb7508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "五华县中小学校（幼儿园）2026-2028年校园财产保险服务采购项目",
+   "school": "广东省五华县教育局",
+   "region": "",
+   "type": "招标公告",
+   "stage": "学前教育",
+   "procCode": "441424-2026-01468",
+   "budget": "15000000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": "2026-09-01",
+   "docFile": "五华县中小学校（幼儿园）2026-2028年校园财产保险服务采购项目招标公告_五华县中小学校（幼儿园）2026-2028年校园财产保险服务采购项目招标文件（2026100910）.docx",
+   "mediaId": "word_cls1_3deb9906c10f388deed86711b305f0e8_b9f734d28a8b9f2798311884d5b4c0c57508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校智能网联汽车智能传感器实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-07483",
+   "budget": "3318780.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市汽车技术学校智能网联汽车智能传感器实训室采购项目招标公告_东莞市汽车技术学校智能网联汽车智能传感器实训室采购项目招标文件（2026100902）.docx",
+   "mediaId": "word_cls1_3deb9906c10f388deed86711b305f0e8_259b3d251863675997d82c9a4b5f14797508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "阳西县程村学校学生营养餐配送服务采购项目",
+   "school": "阳西县程村学校",
+   "region": "",
+   "type": "竞争性磋商",
+   "stage": "基础教育",
+   "procCode": "441721-2026-02393",
+   "budget": "1100000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "阳西县程村学校学生营养餐配送服务采购项目竞争性磋商公告_阳西县程村学校学生营养餐配送服务采购项目磋商文件（2026100802）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_153410df123e681cab507be4ccd470a47508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞理工学校电商产教融合中心采购项目",
+   "school": "东莞理工学校",
+   "region": "揭阳",
+   "type": "招标公告",
+   "stage": "职业教育",
+   "procCode": "441901-2026-07030",
+   "budget": "1134990.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "揭阳捷和职业技术学校食堂自营食材配送及运营管理服务采购项目(二次)招标公告_揭阳捷和职业技术学校食堂自营食材配送及运营管理服务采购项目(二次)招标文件（2026100802）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_ebeeb4ffe4d026e7fef12a2b518e94de7508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞理工学校台式计算机报废更新和电脑操作系统软件采购项目",
+   "school": "东莞理工学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-07034",
+   "budget": "11420000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市商业学校“双优”建设交通运输城轨车辆综合实训室配套教学设备采购招标公告_东莞市商业学校“双优”建设交通运输城轨车辆综合实训室配套教学设备采购招标文件（2026100802）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_7097d60ca8d91e9ecdda48ddfc1929ed7508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市电子科技学校实训用工作站采购项目",
+   "school": "东莞市电子科技学校",
+   "region": "阳江",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-07393",
+   "budget": "5440000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "阳江市体育运动学校食堂食材及相关物品采购项目招标公告_阳江市体育运动学校食堂食材及相关物品采购项目招标文件（2026093001）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_917d0ae0dd5d3b38d9989cd84666cf8d7508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市商业学校“双优”建设物联网技术应用专业人工智能实训室设备采购",
+   "school": "东莞市商业学校",
+   "region": "",
+   "type": "招标公告",
+   "stage": "学前教育",
+   "procCode": "441901-2026-07433",
+   "budget": "2251175.14",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "道滘镇公办学校、幼儿园保安服务项目招标公告_道滘镇公办学校、幼儿园保安服务项目招标文件（2026093002）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_b7d45fac309bb7feb8dd3ff1527237fd7508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "广州市黄埔职业技术学校智能网联实训室及新能源实训室教学设备采购",
+   "school": "广州市黄埔职业技术学校",
+   "region": "广州",
+   "type": "招标公告",
+   "stage": "职业教育",
+   "procCode": "440112-2026-04615",
+   "budget": "2500000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "广州市城市建设职业学校元宇宙内容创作实训平台服务项目（CZ2026-0829）招标公告_广州市城市建设职业学校元宇宙内容创作实训平台服务项目招标文件（2026093001）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_2593588e22b53cb0ab5496675d82a4307508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "汕尾市高级技工学校二期项目一号实训楼实训室建设项目",
+   "school": "汕尾市人力资源和社会保障局",
+   "region": "广州",
+   "type": "竞争性磋商",
+   "stage": "基础教育",
+   "procCode": "441501-2026-01483",
+   "budget": "8588737.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "广州市启新学校花山二期标识系统采购项目竞争性磋商公告_广州市启新学校花山二期标识系统采购项目磋商文件（2026093004）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_ee541798bef6e9d7bd78c0162c4816667508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "汕尾市职业技术学校食堂加工管理服务",
+   "school": "汕尾市职业技术学校",
+   "region": "云浮",
+   "type": "竞争性磋商",
+   "stage": "基础教育",
+   "procCode": "441501-2026-01578",
+   "budget": "1350000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "云浮市云安区鲲鹏学校2026年9月至2027年8月学生食堂商品采购竞争性磋商公告_云浮市云安区鲲鹏学校2026年9月至2027年8月学生食堂商品采购磋商文件（2026092901）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_c233b37ed959a74e1f6aa89147a079277508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "文德路小学校园基础设施提升改造项目信息化设备采购项目",
+   "school": "广州市越秀区文德路小学",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "440104-2026-02691",
+   "budget": "7805114.20",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞理工学校莞邑现场工程师培育中心采购项目招标公告_东莞理工学校莞邑现场工程师培育中心采购项目招标文件（2026092801）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_f4bc9f2d1df27d1ad95f986010f3f08a7508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "惠州市体育运动学校合同能源管理（节能技改）服务项目",
+   "school": "惠州市体育运动学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441301-2026-03531",
+   "budget": "2480000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞理工学校电商产教融合中心采购项目招标公告_东莞理工学校电商产教融合中心采购项目招标文件（2026093002）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_5694491fb9230553cdba66d3424723d17508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "广州市白云区广州空港实验中学2026年新开办学校建设项目（高考考场）",
+   "school": "广州市白云区广州空港实验中学",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "440111-2026-04580",
+   "budget": "3094500.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞理工学校台式计算机报废更新和电脑操作系统软件采购项目招标公告_东莞理工学校台式计算机报废更新和电脑操作系统软件采购项目招标文件（2026092804）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_95bf225713b8f1840efe25457791ad797508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "广州市白云区培英实验学校2026年建设项目功能场室设备采购(二次)",
+   "school": "广州市白云区培英实验学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "440111-2026-03701",
+   "budget": "2032500.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市电子科技学校实训用工作站采购项目招标公告_东莞市电子科技学校实训用工作站采购项目招标文件（2026093006）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_c9aac4e3fb30e13e4d21e18a520a22c07508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "广州市海珠工艺美术职业学校图形工作站采购",
+   "school": "广州市海珠工艺美术职业学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "440105-2026-03885",
+   "budget": "1539450.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市商业学校“双优”建设物联网技术应用专业人工智能实训室设备采购招标公告_东莞市商业学校“双优”建设物联网技术应用专业人工智能实训室设备采购招标文件（2026093004）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_18163372c4a1a66cec1a13099bcb0ce07508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "广州市信息技术职业学校电子电气综合实训及智能化考核实训室项目(三次)",
+   "school": "广州市信息技术职业学校",
+   "region": "广州",
+   "type": "招标公告",
+   "stage": "职业教育",
+   "procCode": "440101-2026-01343",
+   "budget": "3357520.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "广州市黄埔职业技术学校智能网联实训室及新能源实训室教学设备采购（项目编号：0835-260Z6620_广州市黄埔职业技术学校智能网联实训室及新能源实训室教学设备采购招标文件（2026100601）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_ca38b2c59827adac5972e1866285760f7508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "博罗县博罗中学校园升级改造（二期）工程",
+   "school": "博罗县博罗中学",
+   "region": "",
+   "type": "竞争性磋商",
+   "stage": "基础教育",
+   "procCode": "441322-2026-04087",
+   "budget": "3538895.33",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "新兴县第一中学校园安保、学生宿舍管理及校园保洁服务采购项目竞争性磋商公告_新兴县第一中学校园安保、学生宿舍管理及校园保洁服务采购项目磋商文件（2026092801）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_66e1d47daa6dbfdd8411557dba25740a7508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "乡道Y116线新丰县左坑学校至亚子坑公路改造工程",
+   "school": "新丰县地方公路事务中心",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "440233-2026-01078",
+   "budget": "3515391.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市慧雅学校厨房设备设施、餐桌椅及配套小件采购项目招标公告_东莞市慧雅学校厨房设备设施、餐桌椅及配套小件采购项目招标文件（2026092801）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_972a2cc5e198ce600cf1d2c6777defbe7508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "中山市火炬科学技术学校2027-2028年学生教材供应商采购",
+   "school": "中山市火炬科学技术学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "442000-2026-02994",
+   "budget": "4500000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": "2027-01-01",
+   "docFile": "东莞市信息技术学校现场工程师专项-工业机器人实训基地建设项目招标公告_东莞市信息技术学校现场工程师专项-工业机器人实训基地建设项目招标文件（2026092801）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_58e20e6b14dc9d9317364706a674a3437508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "中山市中山纪念中学学校后山运动场维修工程",
+   "school": "中山市中山纪念中学",
+   "region": "",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "442000-2026-03325",
+   "budget": "2371853.17",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "博罗中等专业学校机电类专业实训条件提升项目招标公告_博罗中等专业学校机电类专业实训条件提升项目招标文件（2026092401）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_b57a26486380b19f661d4d30634d3ce57508334806566436",
+   "matchedIds": [
+    "W007"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞理工学校集成电路全产业链现场工程师学院建设项目（二期）",
+   "school": "东莞理工学校",
+   "region": "高唐",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-06945",
+   "budget": "3180300.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "高唐路东侧AT0305237地块学校造价咨询服务招标公告_高唐路东侧AT0305237地块学校造价咨询服务招标文件（2026092202）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_006eeacad44d492c93a0c3b0d785df207508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市电子商贸学校新一代融创中心",
+   "school": "东莞市电子商贸学校",
+   "region": "韶关",
+   "type": "招标公告",
+   "stage": "职业教育",
+   "procCode": "441901-2026-06474",
+   "budget": "3270000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "韶关市曲江区职业技术学校智慧图书馆建设项目招标公告_韶关市曲江区职业技术学校智慧图书馆建设项目招标文件（2026092203）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_0b1a45670400b6cf3b51fcece466fc957508334806566436",
+   "matchedIds": [
+    "W003",
+    "W004",
+    "W005"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市电子商贸学校AIGC创意与交互设计实训室",
+   "school": "东莞市电子商贸学校",
+   "region": "",
+   "type": "招标公告",
+   "stage": "职业教育",
+   "procCode": "441901-2026-06477",
+   "budget": "1060000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "陆丰市高级技工学校新建项目教学设备、实训设备采购安装招标公告_陆丰市高级技工学校新建项目教学设备、实训设备采购安装招标文件（2026092401）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_d732972717a4d929e31ad324552eda5f7508334806566436",
+   "matchedIds": [
+    "W003",
+    "W004",
+    "W005"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市电子商贸学校5G区块链现场工程师实训室建设",
+   "school": "东莞市电子商贸学校",
+   "region": "清远",
+   "type": "招标公告",
+   "stage": "职业教育",
+   "procCode": "441901-2026-06484",
+   "budget": "1360000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "清远工贸职业技术学校直饮水和热水系统维保项目招标公告_清远工贸职业技术学校直饮水和热水系统维保项目招标文件（2026092003）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_74c7a2a99aea701d461844143d2fb5f77508334806566436",
+   "matchedIds": [
+    "W003",
+    "W004",
+    "W005"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校虚拟仿真基地采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "汕尾",
+   "type": "招标公告",
+   "stage": "职业教育",
+   "procCode": "441901-2026-07076",
+   "budget": "3800000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "汕尾市高级技工学校二期项目电商直播基地建设项目招标公告_汕尾市高级技工学校二期项目电商直播基地建设项目招标文件（2026092101）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_b67639babeacdfda6167125e26099aeb7508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校航空服务运营实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "汕尾",
+   "type": "招标公告",
+   "stage": "职业教育",
+   "procCode": "441901-2026-06593",
+   "budget": "2798050.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "汕尾市高级技工学校二期项目珠宝系实训室建设项目招标公告_汕尾市高级技工学校二期项目珠宝系实训室建设项目招标文件（2026092101）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_ee35a994d32cd448cc5fe698d32051017508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校汽车基础知识实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "汕尾",
+   "type": "招标公告",
+   "stage": "职业教育",
+   "procCode": "441901-2026-07161",
+   "budget": "3912000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "汕尾市高级技工学校二期项目机电系实训室建设项目招标公告_汕尾市高级技工学校二期项目机电系实训室建设项目招标文件（2026092101）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_3150ab4cb7f4cf4ff1f77c2c615d58a37508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校机电一体化实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "汕尾",
+   "type": "招标公告",
+   "stage": "职业教育",
+   "procCode": "441901-2026-07073",
+   "budget": "1756400.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "汕尾市高级技工学校二期项目工业数字技能应用与运维实训室建设项目招标公告_汕尾市高级技工学校二期项目工业数字技能应用与运维实训室建设项目招标文件（2026092102）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_08450d58fbdf7d7e203da48d036bb57b7508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校工业机器人实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "汕尾",
+   "type": "招标公告",
+   "stage": "职业教育",
+   "procCode": "441901-2026-07062",
+   "budget": "2556400.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "汕尾市高级技工学校二期项目信息系实训室建设项目招标公告_汕尾市高级技工学校二期项目信息系实训室建设项目招标文件（2026092101）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_c4fce6c2fb29011c9e0487e6cc49bce67508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校城市轨道交通综合实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "汕尾",
+   "type": "招标公告",
+   "stage": "职业教育",
+   "procCode": "441901-2026-06592",
+   "budget": "5476000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "汕尾市高级技工学校二期项目二号实训楼实训室建设项目招标公告_汕尾市高级技工学校二期项目二号实训楼实训室建设项目招标文件（2026092101）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_9603d36552cd154e6b0c4c2e593845e27508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "2026年郁南县公办学校食堂大宗食材采购配送服务（片区四）(四次)",
+   "school": "郁南县教育局",
+   "region": "汕尾",
+   "type": "招标公告",
+   "stage": "职业教育",
+   "procCode": "445322-2026-01101",
+   "budget": "284000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "汕尾市高级技工学校二期项目一号实训楼实训室建设项目招标公告_汕尾市高级技工学校二期项目一号实训楼实训室建设项目招标文件（2026092101）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_32de27e5773b344c2fe2d479d3a5ea267508334806566436",
+   "matchedIds": [
+    "W011"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "韶关市曲江区职业技术学校智慧图书馆建设项目",
+   "school": "韶关市曲江区职业技术学校",
+   "region": "汕尾",
+   "type": "竞争性磋商",
+   "stage": "职业教育",
+   "procCode": "440205-2026-00879",
+   "budget": "1809800.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "汕尾市职业技术学校食堂加工管理服务竞争性磋商公告_汕尾市职业技术学校食堂加工管理服务磋商文件（2026091902）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_739bbb46eec559218ad38dbf6531ef067508334806566436",
+   "matchedIds": []
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校工业机器人实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "文德",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-07062",
+   "budget": "2556400.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "文德路小学校园基础设施提升改造项目信息化设备采购项目（CZ2026-0986）招标公告_文德路小学校园基础设施提升改造项目信息化设备采购项目招标文件（2026092102）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_bd45d1a17c282932cd2495a2de27439e7508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校城市轨道交通综合实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "惠州",
+   "type": "竞争性磋商",
+   "stage": "基础教育",
+   "procCode": "441901-2026-06592",
+   "budget": "5476000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "惠州市体育运动学校合同能源管理（节能技改）服务项目竞争性磋商公告_惠州市体育运动学校合同能源管理（节能技改）服务项目磋商文件（2026092401）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_be27eac7b8eb4e6756daf1eadae7e3fd7508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "2026年郁南县公办学校食堂大宗食材采购配送服务（片区四）(四次)",
+   "school": "郁南县教育局",
+   "region": "广州",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "445322-2026-01101",
+   "budget": "284000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "广州市白云区广州空港实验中学2026年新开办学校建设项目（高考考场）招标公告_广州市白云区广州空港实验中学2026年新开办学校建设项目（高考考场）招标文件（2026092101）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_f0faeee540122fb5b00c7114733201a27508334806566436",
+   "matchedIds": [
+    "W011"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市电子商贸学校新一代融创中心",
+   "school": "东莞市电子商贸学校",
+   "region": "广州",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-06474",
+   "budget": "3270000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "广州市白云区培英实验学校2026年建设项目功能场室设备采购(二次)招标公告_广州市白云区培英实验学校2026年建设项目功能场室设备采购(二次)招标文件（2026091803）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_d681c009c410d6720957a6056388b50b7508334806566436",
+   "matchedIds": [
+    "W003",
+    "W004",
+    "W005"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市电子商贸学校AIGC创意与交互设计实训室",
+   "school": "东莞市电子商贸学校",
+   "region": "广州",
+   "type": "竞争性磋商",
+   "stage": "职业教育",
+   "procCode": "441901-2026-06477",
+   "budget": "1060000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "广州市海珠工艺美术职业学校图形工作站采购竞争性磋商公告_广州市海珠工艺美术职业学校图形工作站采购磋商文件（2026091701）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_b21786d2a36dab9ac3da8e313de037d97508334806566436",
+   "matchedIds": [
+    "W003",
+    "W004",
+    "W005"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市电子商贸学校5G区块链现场工程师实训室建设",
+   "school": "东莞市电子商贸学校",
+   "region": "广州",
+   "type": "招标公告",
+   "stage": "职业教育",
+   "procCode": "441901-2026-06484",
+   "budget": "1360000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "广州市信息技术职业学校电子电气综合实训及智能化考核实训室项目[CZ2026-0107](三次)招标公_广州市信息技术职业学校电子电气综合实训及智能化考核实训室项目(三次)招标文件（2026092103）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_c85541988106b64ed0c42e2e794933b57508334806566436",
+   "matchedIds": [
+    "W003",
+    "W004",
+    "W005"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校虚拟仿真基地采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "",
+   "type": "竞争性磋商",
+   "stage": "基础教育",
+   "procCode": "441901-2026-07076",
+   "budget": "3800000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "博罗县博罗中学校园升级改造（二期）工程竞争性磋商公告_博罗县博罗中学校园升级改造（二期）工程磋商文件（2026091802）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_93645254591cff3e97547bee5b72bbce7508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校航空服务运营实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "",
+   "type": "竞争性磋商",
+   "stage": "基础教育",
+   "procCode": "441901-2026-06593",
+   "budget": "2798050.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "乡道Y116线新丰县左坑学校至亚子坑公路改造工程竞争性磋商公告_乡道Y116线新丰县左坑学校至亚子坑公路改造工程磋商文件（2026091802）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_1cbeadfea621d1df18094544b0d511777508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校汽车基础知识实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "中山",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-07161",
+   "budget": "3912000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "中山市火炬科学技术学校2027-2028年学生教材供应商采购招标公告_中山市火炬科学技术学校2027-2028年学生教材供应商采购招标文件（2026092201）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_e0cc1bcbd98c2c557b564b1c70cc27427508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校机电一体化实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "中山",
+   "type": "竞争性磋商",
+   "stage": "基础教育",
+   "procCode": "441901-2026-07073",
+   "budget": "1756400.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "中山市中山纪念中学学校后山运动场维修工程竞争性磋商公告_中山市中山纪念中学学校后山运动场维修工程磋商文件（2026092006）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_6b78002984e1cf43f4eafbf48194ece57508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校无人机实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "高等教育",
+   "procCode": "441901-2026-07051",
+   "budget": "2511469.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞理工学校集成电路全产业链现场工程师学院建设项目（二期）招标公告_东莞理工学校集成电路全产业链现场工程师学院建设项目（二期）招标文件（2026092002）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_53d32dee294585a152e27f0572753d217508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校工业机器人实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-07062",
+   "budget": "2556400.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市电子商贸学校新一代融创中心招标公告_东莞市电子商贸学校新一代融创中心招标文件（2026090902）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_376a021dcf1d64f4e9339242be6374807508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校城市轨道交通综合实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-06592",
+   "budget": "5476000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市电子商贸学校AIGC创意与交互设计实训室招标公告_东莞市电子商贸学校AIGC创意与交互设计实训室招标文件（2026090802）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_182c4c569e9466f7cc7f655c63ad99377508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "2026年郁南县公办学校食堂大宗食材采购配送服务（片区四）(四次)",
+   "school": "郁南县教育局",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "445322-2026-01101",
+   "budget": "284000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市电子商贸学校5G区块链现场工程师实训室建设招标公告_东莞市电子商贸学校5G区块链现场工程师实训室建设招标文件（2026092203）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_45c46e8201e9d27c9125752e61ddcad67508334806566436",
+   "matchedIds": [
+    "W011"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校城市轨道交通综合实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-06592",
+   "budget": "5476000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市汽车技术学校虚拟仿真基地采购项目招标公告_东莞市汽车技术学校虚拟仿真基地采购项目招标文件（2026092302）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_941cf9b5117899a9a4d24ab962b922f77508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "2026年郁南县公办学校食堂大宗食材采购配送服务（片区四）(四次)",
+   "school": "郁南县教育局",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "445322-2026-01101",
+   "budget": "284000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市汽车技术学校航空服务运营实训室采购项目招标公告_东莞市汽车技术学校航空服务运营实训室采购项目招标文件（2026092001）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_ac52f6f2ff0d1544a9f3a0757899faf87508334806566436",
+   "matchedIds": [
+    "W011"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校汽车基础知识实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-07161",
+   "budget": "3912000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市汽车技术学校汽车基础知识实训室采购项目招标公告_东莞市汽车技术学校汽车基础知识实训室采购项目招标文件（2026092302）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_4df95291a51ee6dffc13c854fa318ad57508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校机电一体化实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-07073",
+   "budget": "1756400.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市汽车技术学校机电一体化实训室采购项目招标公告_东莞市汽车技术学校机电一体化实训室采购项目招标文件（2026092301）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_21600dd6b2511935a2f8c213652926f57508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校无人机实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-07051",
+   "budget": "2511469.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市汽车技术学校无人机实训室采购项目招标公告_东莞市汽车技术学校无人机实训室采购项目招标文件（2026092302）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_b1d2f4112cb4366d57c60f94ae6dcc827508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校工业机器人实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-07062",
+   "budget": "2556400.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市汽车技术学校工业机器人实训室采购项目招标公告_东莞市汽车技术学校工业机器人实训室采购项目招标文件（2026092301）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_58c57b4cc39de01f2f0f942aa5475b4c7508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "东莞市汽车技术学校城市轨道交通综合实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "东莞",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "441901-2026-06592",
+   "budget": "5476000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "东莞市汽车技术学校城市轨道交通综合实训室采购项目招标公告_东莞市汽车技术学校城市轨道交通综合实训室采购项目招标文件（2026092101）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_8f8b5a84261b14f36a16f1882f5d06ac7508334806566436",
+   "matchedIds": [
+    "W001",
+    "W002"
+   ]
+  },
+  {
+   "id": "P000",
+   "num": "",
+   "title": "2026年郁南县公办学校食堂大宗食材采购配送服务（片区四）(四次)",
+   "school": "郁南县教育局",
+   "region": "",
+   "type": "招标公告",
+   "stage": "基础教育",
+   "procCode": "445322-2026-01101",
+   "budget": "284000.00",
+   "packs": [
+    "1"
+   ],
+   "bidDeadline": null,
+   "docFile": "2026年郁南县公办学校食堂大宗食材采购配送服务（片区四）(四次)招标公告_2026年郁南县公办学校食堂大宗食材采购配送服务（片区四）(四次)招标文件（2026091801）.docx",
+   "mediaId": "word_3deb9906c10f388deed86711b305f0e8_b06ea62047d1018b6a53b3ca5812d4957508334806566436",
+   "matchedIds": [
+    "W011"
+   ]
+  }
+ ],
+ "winning": [
+  {
+   "title": "东莞市汽车技术学校新能源汽车配件实训室采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "东莞",
+   "projectCode": "441901-2026-06457",
+   "stage": "基础教育",
+   "winningBidder": "广州聚满智创科技有限公司",
+   "winningAmount": "2669680.00",
+   "publishDate": "2026-10-10",
+   "attachments": [
+    {
+     "type": "main",
+     "file": "东莞市汽车技术学校新能源汽车配件实训室采购项目结果公告.html",
+     "mediaId": "html_cls1_3deb9906c10f388deed86711b305f0e8_e2a5f1c7d20da5eec21f2ad101e08a5a7508334806566436"
+    }
+   ],
+   "id": "W001",
+   "num": "1",
+   "contractNo": "合同包1",
+   "attachCount": 1,
+   "matchedProcurementIds": [
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000"
+   ],
+   "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=a6102368-05bb-46cb-a99f-6cd59648bc9c&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=441901-2026-06457&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF"
+  },
+  {
+   "title": "东莞市汽车技术学校整车实训中心采购项目",
+   "school": "东莞市汽车技术学校",
+   "region": "东莞",
+   "projectCode": "441901-2026-06504",
+   "stage": "基础教育",
+   "winningBidder": "中国移动通信集团广东有限公司东莞分公司",
+   "winningAmount": "1395000.00",
+   "publishDate": "2026-10-10",
+   "attachments": [
+    {
+     "type": "main",
+     "file": "东莞市汽车技术学校整车实训中心采购项目结果公告.html",
+     "mediaId": "html_cls1_3deb9906c10f388deed86711b305f0e8_51f159f1c823d978038a2041dfa74dbd7508334806566436"
+    }
+   ],
+   "id": "W002",
+   "num": "2",
+   "contractNo": "合同包1",
+   "attachCount": 1,
+   "matchedProcurementIds": [
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000"
+   ],
+   "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=6d20b124-655d-4dc5-b0fb-8640f18c0057&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=441901-2026-06504&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF"
+  },
+  {
+   "title": "东莞市电子商贸学校新一代融创中心",
+   "school": "东莞市电子商贸学校",
+   "region": "东莞",
+   "projectCode": "441901-2026-06474",
+   "stage": "基础教育",
+   "winningBidder": "中国移动通信集团广东有限公司东莞分公司",
+   "winningAmount": "3255000.00",
+   "publishDate": "2026-10-10",
+   "attachments": [
+    {
+     "type": "main",
+     "file": "东莞市电子商贸学校新一代融创中心结果公告.html",
+     "mediaId": "html_cls1_3deb9906c10f388deed86711b305f0e8_ea3fe18221eb1afdaad47ebf2f69f4ec7508334806566436"
+    }
+   ],
+   "id": "W003",
+   "num": "3",
+   "contractNo": "合同包1",
+   "attachCount": 1,
+   "matchedProcurementIds": [
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000"
+   ],
+   "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=c58be993-e573-4abb-a1f8-660bcad544fe&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=441901-2026-06474&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF"
+  },
+  {
+   "title": "东莞市电子商贸学校AIGC创意与交互设计实训室",
+   "school": "东莞市电子商贸学校",
+   "region": "东莞",
+   "projectCode": "441901-2026-06477",
+   "stage": "基础教育",
+   "winningBidder": "广州中长康达信息技术有限公司",
+   "winningAmount": "869200.00",
+   "publishDate": "2026-10-09",
+   "attachments": [
+    {
+     "type": "main",
+     "file": "东莞市电子商贸学校AIGC创意与交互设计实训室结果公告.html",
+     "mediaId": "html_cls1_3deb9906c10f388deed86711b305f0e8_e9738075c9b1b609afa592b42a76f60f7508334806566436"
+    }
+   ],
+   "id": "W004",
+   "num": "4",
+   "contractNo": "合同包1",
+   "attachCount": 1,
+   "matchedProcurementIds": [
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000"
+   ],
+   "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=8ad6dd33-32bc-420f-b3a4-7aa470ce2972&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=441901-2026-06477&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF"
+  },
+  {
+   "title": "东莞市电子商贸学校智慧化平安校园建设",
+   "school": "东莞市电子商贸学校",
+   "region": "东莞",
+   "projectCode": "441901-2026-06475",
+   "stage": "基础教育",
+   "winningBidder": "广州云羲网络科技有限公司",
+   "winningAmount": "1461527.40",
+   "publishDate": "2026-10-08",
+   "attachments": [
+    {
+     "type": "main",
+     "file": "东莞市电子商贸学校智慧化平安校园建设结果公告.html",
+     "mediaId": "html_3deb9906c10f388deed86711b305f0e8_fd0b82fa9ff07c816d4a4c34acb1ba367508334806566436"
+    }
+   ],
+   "id": "W005",
+   "num": "5",
+   "contractNo": "合同包1",
+   "attachCount": 1,
+   "matchedProcurementIds": [
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000"
+   ],
+   "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=6e352055-ad1c-4aff-a2b4-821cbb596ffb&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=441901-2026-06475&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF"
+  },
+  {
+   "title": "东莞滨海湾未来学校2026年开办家具采购项目(二次)",
+   "school": "东莞滨海湾未来学校",
+   "region": "东莞",
+   "projectCode": "441900011-2026-00109",
+   "stage": "基础教育",
+   "winningBidder": "广东兆生家具有限公司",
+   "winningAmount": "4728180.00",
+   "publishDate": "2026-10-08",
+   "attachments": [
+    {
+     "type": "main",
+     "file": "东莞滨海湾未来学校2026年开办家具采购项目(二次)结果公告.html",
+     "mediaId": "html_3deb9906c10f388deed86711b305f0e8_afdedc099be9becaf72a1844d3b609757508334806566436"
+    }
+   ],
+   "id": "W006",
+   "num": "6",
+   "contractNo": "合同包1",
+   "attachCount": 1,
+   "matchedProcurementIds": [],
+   "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=19baad8c-67c6-4688-8a6f-0082050eb5be&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=441900011-2026-00109&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF"
+  },
+  {
+   "title": "中山市中山纪念中学学校后山运动场维修工程",
+   "school": "中山市中山纪念中学",
+   "region": "中山",
+   "projectCode": "ZSCC-026-JZG-0080",
+   "stage": "基础教育",
+   "winningBidder": "广东祺商建设集团有限公司",
+   "winningAmount": "2170245.65",
+   "publishDate": "2026-10-09",
+   "attachments": [
+    {
+     "type": "main",
+     "file": "中山市中山纪念中学学校后山运动场维修工程结果公告.html",
+     "mediaId": "html_cls1_3deb9906c10f388deed86711b305f0e8_a8b62e26ca119a185c34fd6e2d95f8ad7508334806566436"
+    }
+   ],
+   "id": "W007",
+   "num": "7",
+   "contractNo": "合同包1",
+   "attachCount": 1,
+   "matchedProcurementIds": [
+    "P000"
+   ],
+   "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=ae066212-34a1-4731-b91e-e80a154028f2&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=ZSCC-026-JZG-0080&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF"
+  },
+  {
+   "title": "广州市城市建设职业学校跨境电商实训室购置项目",
+   "school": "广州市城市建设职业学校",
+   "region": "广州",
+   "projectCode": "GZSW26000HG3203",
+   "stage": "职业教育",
+   "winningBidder": "广州广昴信息技术有限公司",
+   "winningAmount": "395600.00",
+   "publishDate": "2026-10-08",
+   "attachments": [
+    {
+     "type": "main",
+     "file": "广州市城市建设职业学校跨境电商实训室购置项目结果公告.html",
+     "mediaId": "html_3deb9906c10f388deed86711b305f0e8_8215a4a84397ddc2e46afa1bc05167f07508334806566436"
+    }
+   ],
+   "id": "W008",
+   "num": "8",
+   "contractNo": "合同包1",
+   "attachCount": 1,
+   "matchedProcurementIds": [],
+   "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=07fdc723-9380-46ae-a179-d31fd6d472e0&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=GZSW26000HG3203&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF"
+  },
+  {
+   "title": "校方责任保险及学校安全综合险经纪服务",
+   "school": "肇庆市教育局",
+   "region": "",
+   "projectCode": "GDLKX026-007",
+   "stage": "基础教育",
+   "winningBidder": "同昌保险经纪股份有限公司",
+   "winningAmount": "10968426.00",
+   "publishDate": "2026-10-08",
+   "attachments": [
+    {
+     "type": "main",
+     "file": "校方责任保险及学校安全综合险经纪服务结果公告.html",
+     "mediaId": "html_3deb9906c10f388deed86711b305f0e8_943933ea1419ff03bcab6689b26914587508334806566436"
+    }
+   ],
+   "id": "W009",
+   "num": "9",
+   "contractNo": "合同包1",
+   "attachCount": 1,
+   "matchedProcurementIds": [],
+   "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=bca17de1-4e8b-45dd-a46f-9273426dbd29&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=GDLKX026-007&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF"
+  },
+  {
+   "title": "2026年学校维修改造打包项目采购",
+   "school": "茂名市第一职业技术学校",
+   "region": "",
+   "projectCode": "MMGPC2026GC042",
+   "stage": "基础教育",
+   "winningBidder": "广东中圆建设工程有限公司",
+   "winningAmount": "1974800.00",
+   "publishDate": "2026-10-10",
+   "attachments": [
+    {
+     "type": "main",
+     "file": "2026年学校维修改造打包项目采购结果公告.html",
+     "mediaId": "html_cls1_3deb9906c10f388deed86711b305f0e8_0ba11ed43bef252478f87234b53840517508334806566436"
+    }
+   ],
+   "id": "W010",
+   "num": "10",
+   "contractNo": "合同包1",
+   "attachCount": 1,
+   "matchedProcurementIds": [],
+   "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=b944bec2-8651-420a-bb93-5da54893a69d&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=MMGPC2026GC042&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF"
+  },
+  {
+   "title": "2026年郁南县公办学校食堂大宗食材采购配送服务（片区四）(四次)",
+   "school": "郁南县教育局",
+   "region": "",
+   "projectCode": "445322-2026-01101",
+   "stage": "基础教育",
+   "winningBidder": "云浮市云城区永信食品厂",
+   "winningAmount": "84.00",
+   "publishDate": "2027-07-31",
+   "attachments": [
+    {
+     "type": "main",
+     "file": "2026年郁南县公办学校食堂大宗食材采购配送服务（片区四）(四次)结果公告.html",
+     "mediaId": "html_cls1_3deb9906c10f388deed86711b305f0e8_8000cf90a47012e390c0cd887b4b7bf27508334806566436"
+    }
+   ],
+   "id": "W011",
+   "num": "11",
+   "contractNo": "合同包1",
+   "attachCount": 1,
+   "matchedProcurementIds": [
+    "P000",
+    "P000",
+    "P000",
+    "P000",
+    "P000"
+   ],
+   "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=875806c9-08ed-4691-a6a7-a416cb5b749c&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=445322-2026-01101&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF"
+  }
+ ]
+}

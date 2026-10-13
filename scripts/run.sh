@@ -51,20 +51,28 @@ node scripts/sync.js "$@" 2>&1 | tee -a "$LOG"
 RC=${PIPESTATUS[0]}
 
 if [ $RC -eq 0 ]; then
-  log "✅ 同步完成"
+  log "✅ 政策数据同步完成"
 else
   log "❌ 同步失败 (exit code: $RC)"
   exit $RC
 fi
 
-# 政采网原文链接反查：sync.js/parse_match.py 每次会重新生成 bidding.json，
-# sourceUrl 会丢，必须跟一脚本回写（幂等，已有链接的条目自动跳过）。
-# 失败不阻断部署（线上数据仍为最新，链接明日重试自动补回）。
-log "🔗 反查政采网原文链接 (link_bidding_source.py)..."
-python3 scripts/link_bidding_source.py 2>&1 | tee -a "$LOG"
-RC2=${PIPESTATUS[0]}
-if [ $RC2 -eq 0 ]; then
-  log "✅ 原文链接回写完成"
-else
-  log "⚠️ 原文链接反查失败 (exit code: $RC2)，不阻断本次部署，明日自动重试"
-fi
+# ── 招投标数据（bidding.json）新链路（2026-10-13 切换，取值逻辑对齐医疗站）──
+# fetch-bids.cjs 需要本机 WorkBuddy 的 ima 凭据（~/.workbuddy/connectors），
+# GitHub Actions 上没有 → fetch 失败不阻断，用仓库里已提交的 data/_raw 快照继续跑后三步。
+log "📥 拉取 ima 招投标快照与正文 (fetch-bids.cjs)..."
+node scripts/fetch-bids.cjs 2>&1 | tee -a "$LOG" || log "⚠️ fetch-bids 失败（本地无 ima 凭据时正常），用既有快照继续"
+
+gen_bids() { python3 scripts/gen-bids.py 2>&1 | tee -a "$LOG"; }
+
+log "🧩 字段化生成 bidding.json (gen-bids.py)..."
+gen_bids
+
+log "🏆 抽取采购结果 (extract-award-info.py)..."
+python3 scripts/extract-award-info.py 2>&1 | tee -a "$LOG" || log "⚠️ 采购结果抽取失败，不阻断"
+
+log "🔗 反查政采网原文链接 (link-bids-source.py)..."
+python3 scripts/link-bids-source.py 2>&1 | tee -a "$LOG" || log "⚠️ 原文链接反查失败，不阻断，明日自动重试"
+
+log "🔁 重跑 gen-bids.py 合并链接与采购结果..."
+gen_bids

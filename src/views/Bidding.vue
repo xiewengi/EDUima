@@ -70,17 +70,18 @@
                   <el-icon class="is-winning"><Trophy /></el-icon>
                 </div>
                 <div class="edu-paired-item__body">
-                  <h4 class="edu-paired-item__title">{{ item.title }}</h4>
+                  <!-- 取值口径同医疗站：标题展示「项目名称」（确定性裁剪），悬浮显示完整原标题 -->
+                  <h4 class="edu-paired-item__title" :title="item.title">{{ item.projectName || item.title }}</h4>
                   <div class="edu-paired-item__meta">
                     <span v-if="item.projectCode" class="edu-tag edu-tag--accent">{{ item.projectCode }}</span>
                     <span v-if="item.region" class="edu-tag">{{ item.region }}</span>
                     <span v-if="item.contractNo">📦 {{ item.contractNo }}</span>
-                    <span class="edu-paired-item__attachs">📎 {{ item.attachCount || item.attachments?.length || 0 }} 份附件</span>
+                    <span v-if="item.attachCount || item.attachments?.length" class="edu-paired-item__attachs">📎 {{ item.attachCount || item.attachments?.length }} 份附件</span>
                   </div>
                   <div class="edu-paired-item__sub">
-                    <div class="edu-paired-item__sub-row">
+                    <div v-if="item.school" class="edu-paired-item__sub-row">
                       <el-icon><OfficeBuilding /></el-icon>
-                      <span>{{ item.school || '待确认' }}</span>
+                      <span>{{ item.school }}</span>
                     </div>
                     <div v-if="item.stage" class="edu-paired-item__sub-row">
                       <span class="edu-paired-item__sub-label">学段</span>
@@ -122,7 +123,7 @@
       <!-- 底部提示 -->
       <div class="edu-bidding-tip edu-card">
         <el-icon><InfoFilled /></el-icon>
-        <span>💡 <strong>使用提示：</strong>本页只展示中标（成交）结果公告，点击卡片上的「政府采购网原文」可跳转查看广东省政府采购网对应公告页面。筛选支持项目/学校关键词、地区与学段；后续将通过解析 PDF/Docx 提取结构化字段提升准确率。</span>
+        <span>💡 <strong>使用提示：</strong>本页只展示中标（成交）结果公告，条目直接取自 ima 知识库；标题展示项目名称（悬浮可看完整原标题），中标方与摘要摘自公告正文（只选取、不做推断），点击「政府采购网原文」可跳转广东省政府采购网对应公告页面。筛选支持项目/学校关键词、地区与学段。</span>
       </div>
     </div>
   </div>
@@ -134,7 +135,14 @@ import {
   Files, Search, Refresh, Trophy, Link, OfficeBuilding, InfoFilled
 } from '@element-plus/icons-vue'
 
-const rawData = ref({ procurement: [], winning: [], updated: '—' })
+// ─────────────────────────────────────────────────────────────────────────────
+// 取值逻辑照抄医疗平台知识库站点（bids.html + app.js，2026-10-13）：
+//   · 数据直接取自 ima 知识库「教育平台」招投标文件夹（fetch-bids.cjs 快照 + 正文存档），
+//     由 gen-bids.py 字段化（projectName 裁剪 / 定向挑段摘要 / 采购结果抽取 / gdgpo 反查链接）
+//   · 只展示中标（成交）结果公告（isAward 过滤口径同医疗站）
+//   · 摘要、供应商、金额均摘自公告正文，只做选取不做推断；原文没有的留空
+// ─────────────────────────────────────────────────────────────────────────────
+const rawData = ref({ updatedAt: '—', items: [] })
 const keyword = ref('')
 const regionFilter = ref('')
 const stageFilter = ref('')
@@ -144,7 +152,13 @@ const updated = ref('—')
 const PAGE_SIZE = 9
 const currentPage = ref(1)
 
-const winningList = computed(() => rawData.value.winning || [])
+/** 只保留中标（成交）结果：group / 标题含「中标|结果|成交」（同医疗站 isAward） */
+const isAward = (b) => {
+  const hay = (b.group || '') + ' ' + (b.title || '')
+  return hay.includes('中标') || hay.includes('结果') || hay.includes('成交')
+}
+
+const winningList = computed(() => (rawData.value.items || []).filter(isAward))
 
 const regions = computed(() => {
   const set = new Set()
@@ -157,8 +171,11 @@ const filteredWinning = computed(() => {
   if (regionFilter.value) list = list.filter(w => w.region === regionFilter.value)
   if (stageFilter.value) list = list.filter(w => w.stage === stageFilter.value)
   if (keyword.value) {
+    // 搜索口径同医疗站：项目名称 / 原标题 / 编号 / 摘要 / 学校 / 分组
     const kw = keyword.value.toLowerCase()
-    list = list.filter(w => w.title?.toLowerCase().includes(kw) || w.school?.includes(keyword.value))
+    list = list.filter(w => [
+      w.projectName, w.title, w.docNo, w.projectCode, w.summary, w.school, w.group,
+    ].join(' ').toLowerCase().includes(kw))
   }
   return list
 })
@@ -186,8 +203,10 @@ const resetFilter = () => {
 onMounted(async () => {
   try {
     const res = await fetch(import.meta.env.BASE_URL + 'data/bidding.json?v=' + Date.now())
-    rawData.value = await res.json()
-    updated.value = rawData.value.updated || '—'
+    const data = await res.json()
+    // 兼容两种结构：新链路 { updatedAt, items } / 旧链路 { updated, winning }
+    rawData.value = data
+    updated.value = data.updatedAt || data.updated || '—'
   } catch (e) {
     console.error('Failed to load bidding data:', e)
   }

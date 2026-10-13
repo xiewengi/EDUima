@@ -129,7 +129,10 @@ function saveMeta(procList, winList) {
 }
 
 // ========== Python 解析 ==========
-// 允许用环境变量 PYTHON3 指定解释器（默认系统 python3）
+// ⚠️ 2026-10-13 取值链路切换：招投标数据（bidding.json）改由新链路生成
+//   fetch-bids.cjs（ima 快照+正文）→ gen-bids.py → extract-award-info.py
+//   → link-bids-source.py → gen-bids.py 重跑合并（见 run.sh）。
+// parse_match.py（下载原件解析匹配）退役，本脚本只负责政策数据（policy.json）。
 const PYTHON3 = process.env.PYTHON3 || 'python3'
 
 function runPython() {
@@ -217,38 +220,19 @@ function main() {
   log('═══════════════════════════════════════')
 
   try {
-    // 1. 拉列表
-    log('Step 1: 从 IMA 拉取文件列表...')
-    const procList = fetchAll(CONFIG.FOLDERS.procurement, '采购公告')
-    const winList  = fetchAll(CONFIG.FOLDERS.winning,  '中标公告')
+    // 1. 拉列表（招投标两个文件夹已切到新链路，这里只拉政策文件夹）
+    log('Step 1: 从 IMA 拉取政策文件列表...')
     const gdList   = fetchAll(CONFIG.FOLDERS.gd_policy, '广东政策')
     const natList  = fetchAll(CONFIG.FOLDERS.nat_policy, '全国政策')
 
-    if (DRY_RUN) { log('[dry-run] 跳过下载和解析'); return }
+    if (DRY_RUN) { log('[dry-run] 跳过后续步骤'); return }
 
-    // 2. 下载（增量）
-    if (!SKIP_DOWNLOAD) {
-      log('Step 2: 下载文件（增量）...')
-      const prog = loadProgress()
-      downloadAll(procList, 'proc', prog)
-      downloadAll(winList,  'win',  prog)
-      prog.lastSync = new Date().toISOString()
-      saveProgress(prog)
-    }
-
-    // 3. 保存元数据
-    saveMeta(procList, winList)
-
-    // 4. Python 解析 + 匹配 → 生成 bidding.json
-    log('Step 3: Python 解析文件内容 + 精准匹配...')
-    runPython()
-
-    // 5. 更新 policy.json（保留已有文号/日期/URL 合并）
-    log('Step 4: 更新 policy.json...')
+    // 2. 更新 policy.json（保留已有文号/日期/URL 合并）
+    log('Step 2: 更新 policy.json...')
     updatePolicyJson(gdList, natList)
 
-    // 6. 政策数据补全（URL 抓文号+日期，缓存，每次 5 条）
-    log('Step 5: 政策文号/日期自动补全...')
+    // 3. 政策数据补全（URL 抓文号+日期，缓存，每次 5 条）
+    log('Step 3: 政策文号/日期自动补全...')
     const enrichPath = join(__dirname, 'policy_enrich.py')
     if (existsSync(enrichPath)) {
       try {
