@@ -76,3 +76,13 @@ python3 scripts/link-bids-source.py 2>&1 | tee -a "$LOG" || log "⚠️ 原文�
 
 log "🔁 重跑 gen-bids.py 合并链接与采购结果..."
 gen_bids
+
+# ── 重磅展会（exhibition.json）：jyb.cn + 教育装备采购网，失败不阻断 ──
+log "🎪 抓取重磅展会资讯 (fetch-exhibition.py)..."
+python3 scripts/fetch-exhibition.py 2>&1 | tee -a "$LOG" || log "⚠️ 展会抓取失败，不阻断，用仓库既有数据"
+
+
+# ── 重磅展会（exhibition.json）：jyb.cn + 教育装备采购网，失败不阻断 ──
+log "🎪 抓取重磅展会资讯 (fetch-exhibition.py)..."
+python3 scripts/fetch-exhibition.py 2>&1 | tee -a "$LOG" || log "⚠️ 展会抓取失败，不阻断，用仓库既有数据"
+
