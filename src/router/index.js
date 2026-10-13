@@ -25,6 +25,18 @@ const routes = [
         meta: { title: '政策动态' }
       },
       {
+        path: 'exhibition',
+        name: 'Exhibition',
+        component: () => import('@/views/Exhibition.vue'),
+        meta: { title: '重磅展会' }
+      },
+      {
+        path: 'thinktank',
+        name: 'ThinkTank',
+        component: () => import('@/views/ThinkTank.vue'),
+        meta: { title: '智库观察' }
+      },
+      {
         path: 'solutions',
         name: 'Solutions',
         component: () => import('@/views/Solutions.vue'),

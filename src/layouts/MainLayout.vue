@@ -110,6 +110,8 @@
           <ul class="edu-footer__links">
             <li><router-link to="/policy">政策动态</router-link></li>
             <li><router-link to="/bidding">招投标信息</router-link></li>
+            <li><router-link to="/exhibition">重磅展会</router-link></li>
+            <li><router-link to="/thinktank">智库观察</router-link></li>
             <li><router-link to="/solutions">解决方案</router-link></li>
             <li><router-link to="/ecosystem">生态图谱</router-link></li>
           </ul>
@@ -130,7 +132,7 @@
 
 <script setup>
 import { useRoute, useRouter } from 'vue-router'
-import { Reading, Search, Menu, Close, HomeFilled, Document, Files, Lightning, Share } from '@element-plus/icons-vue'
+import { Reading, Search, Menu, Close, HomeFilled, Document, Files, Lightning, Share, Flag, View } from '@element-plus/icons-vue'
 import { computed, ref, watch, onMounted } from 'vue'
 import { ElMessage } from 'element-plus'
 
@@ -146,6 +148,8 @@ const menuItems = [
   { path: '/home', name: '首页', icon: HomeFilled },
   { path: '/bidding', name: '招投标', icon: Files },
   { path: '/policy', name: '政策动态', icon: Document },
+  { path: '/exhibition', name: '重磅展会', icon: Flag },
+  { path: '/thinktank', name: '智库观察', icon: View },
   { path: '/solutions', name: '解决方案', icon: Lightning },
   { path: '/ecosystem', name: '生态图谱', icon: Share }
 ]
