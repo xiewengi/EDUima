@@ -81,8 +81,14 @@ gen_bids
 log "🎪 抓取重磅展会资讯 (fetch-exhibition.py)..."
 python3 scripts/fetch-exhibition.py 2>&1 | tee -a "$LOG" || log "⚠️ 展会抓取失败，不阻断，用仓库既有数据"
 
+log "🔭 抓取智库观察资讯 (fetch-thinktank.py)..."
+python3 scripts/fetch-thinktank.py 2>&1 | tee -a "$LOG" || log "⚠️ 智库抓取失败，不阻断，用仓库既有数据"
+
 
 # ── 重磅展会（exhibition.json）：jyb.cn + 教育装备采购网，失败不阻断 ──
 log "🎪 抓取重磅展会资讯 (fetch-exhibition.py)..."
 python3 scripts/fetch-exhibition.py 2>&1 | tee -a "$LOG" || log "⚠️ 展会抓取失败，不阻断，用仓库既有数据"
+
+log "🔭 抓取智库观察资讯 (fetch-thinktank.py)..."
+python3 scripts/fetch-thinktank.py 2>&1 | tee -a "$LOG" || log "⚠️ 智库抓取失败，不阻断，用仓库既有数据"
 
