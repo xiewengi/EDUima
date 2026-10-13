@@ -21,19 +21,19 @@
           <div class="edu-paired-list edu-paired-list--full">
             <template v-if="items.length > 0">
               <div
-                v-for="item in items"
+                v-for="(item, idx) in items"
                 :key="item.id"
                 class="edu-exhibition-card"
               >
-                <!-- 头图：无图用渐变占位 -->
+                <!-- 头图：无图用本地主题图轮换，再失败降级渐变 -->
                 <a class="edu-exhibition-card__cover" :href="item.url" target="_blank" rel="noopener">
                   <img
-                    v-if="item.image"
-                    :src="item.image"
+                    v-if="!item._fbFail"
+                    :src="item.image || fallbackImg(idx)"
                     :alt="item.title"
                     referrerpolicy="no-referrer"
                     loading="lazy"
-                    @error="item.image = ''"
+                    @error="onImgError(item)"
                   />
                   <div v-else class="edu-exhibition-card__fallback"><span>📣</span></div>
                   <span class="edu-exhibition-card__source">{{ item.source }}</span>
@@ -70,6 +70,17 @@ import { Flag, Link } from '@element-plus/icons-vue'
 
 const items = ref([])
 const updated = ref('—')
+
+// 无图条目的本地主题占位图（Unsplash 免费图，已入库 public/images/exhibition/），按序轮换
+const FALLBACKS = ['fb-classroom.jpg', 'fb-tablet.jpg', 'fb-collab.jpg', 'fb-digital.jpg']
+const fallbackImg = (idx) =>
+  import.meta.env.BASE_URL + 'images/exhibition/' + FALLBACKS[idx % FALLBACKS.length]
+
+// 原图挂了 → 降到本地占位图；占位图也挂了 → 渐变 emoji
+const onImgError = (item) => {
+  if (item.image) item.image = ''
+  else item._fbFail = true
+}
 
 onMounted(async () => {
   try {
