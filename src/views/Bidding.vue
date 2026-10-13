@@ -91,18 +91,45 @@
                       <span class="edu-paired-item__sub-label">中标方</span>
                       <span>{{ item.winningBidder }}</span>
                     </div>
+                    <!-- 摘要：摘自公告正文开头段落（gen-bids.py 定向挑段，只截取不改写），同医疗站 policy-summary -->
+                    <div v-if="item.summary" class="edu-paired-item__sub-row">
+                      <span class="edu-paired-item__sub-label">摘要</span>
+                      <span class="edu-paired-item__summary">{{ item.summary }}</span>
+                    </div>
                   </div>
                 </div>
-                <a
-                  v-if="item.sourceUrl"
-                  class="edu-paired-item__source"
-                  :href="item.sourceUrl"
-                  target="_blank"
-                  rel="noopener"
-                  title="跳转到广东省政府采购网的对应公告页面"
-                >
-                  <el-icon><Link /></el-icon> 政府采购网原文
-                </a>
+                <!-- 底部链接区：同医疗站 bidCard 的 foot 三件套 -->
+                <div v-if="item.purchaseUrl || item.purchaseZipUrl || item.sourceUrl" class="edu-paired-item__links">
+                  <a
+                    v-if="item.purchaseUrl"
+                    class="edu-paired-item__source"
+                    :href="item.purchaseUrl"
+                    target="_blank"
+                    rel="noopener"
+                    title="跳转到广东省政府采购网的对应采购公告页面"
+                  >
+                    <el-icon><Link /></el-icon> 采购公告
+                  </a>
+                  <a
+                    v-if="item.purchaseZipUrl"
+                    class="edu-paired-item__source"
+                    :href="item.purchaseZipUrl"
+                    download
+                    :title="(item.purchaseZipName || '招标文件压缩包') + '（gdgpo 原件 zip，内含 Word 招标文件）'"
+                  >
+                    <el-icon><Download /></el-icon> 下载采购文件
+                  </a>
+                  <a
+                    v-if="item.sourceUrl"
+                    class="edu-paired-item__source"
+                    :href="item.sourceUrl"
+                    target="_blank"
+                    rel="noopener"
+                    title="跳转到广东省政府采购网的对应公告页面"
+                  >
+                    <el-icon><Link /></el-icon> 中标公告
+                  </a>
+                </div>
               </div>
             </template>
             <el-empty v-else description="暂无匹配的中标公告" />
@@ -123,7 +150,7 @@
       <!-- 底部提示 -->
       <div class="edu-bidding-tip edu-card">
         <el-icon><InfoFilled /></el-icon>
-        <span>💡 <strong>使用提示：</strong>本页只展示中标（成交）结果公告，条目直接取自 ima 知识库；标题展示项目名称（悬浮可看完整原标题），中标方与摘要摘自公告正文（只选取、不做推断），点击「政府采购网原文」可跳转广东省政府采购网对应公告页面。筛选支持项目/学校关键词、地区与学段。</span>
+        <span>💡 <strong>使用提示：</strong>本页只展示中标（成交）结果公告，条目直接取自 ima 知识库；标题展示项目名称（悬浮可看完整原标题），中标方与摘要摘自公告正文（只选取、不做推断）。卡片底部：「采购公告」「中标公告」跳转广东省政府采购网对应页面，「下载采购文件」为政采网原件 zip（内含 Word 招标文件）。筛选支持项目/学校关键词、地区与学段。</span>
       </div>
     </div>
   </div>
@@ -132,7 +159,7 @@
 <script setup>
 import { ref, computed, watch, onMounted } from 'vue'
 import {
-  Files, Search, Refresh, Trophy, Link, OfficeBuilding, InfoFilled
+  Files, Search, Refresh, Trophy, Link, Download, OfficeBuilding, InfoFilled
 } from '@element-plus/icons-vue'
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -344,6 +371,19 @@ onMounted(async () => {
   color: #fff;
   background: var(--edu-primary);
   border-color: var(--edu-primary);
+}
+/* 卡片底部链接区：采购公告 / 下载采购文件 / 中标公告 三件套（同医疗站 bidCard foot） */
+.edu-paired-item__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+/* 摘要正文：最多 3 行，超出省略 */
+.edu-paired-item__summary {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 @media (max-width: 1200px) {
   .edu-paired-list--full { grid-template-columns: repeat(2, 1fr); }
