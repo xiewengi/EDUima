@@ -1,190 +1,290 @@
 <template>
   <div class="edu-ecosystem edu-page">
     <div class="edu-container">
-      <div class="edu-placeholder edu-card">
-        <div class="edu-placeholder__icon">
-          <el-icon :size="64"><Share /></el-icon>
+      <!-- 页面标题 -->
+      <div class="edu-page-header">
+        <div>
+          <h1 class="edu-page-title">
+            <el-icon><Share /></el-icon> 生态图谱
+          </h1>
+          <p class="edu-page-subtitle">教育信息化 / 智能化<b>供应商名录</b>，涵盖主流厂商的简介与联系方式，点击卡片直达官网。</p>
         </div>
-        <h1 class="edu-placeholder__title">🌐 教育产业生态图谱</h1>
-        <p class="edu-placeholder__desc">政府部门 · 学校院校 · 教育科技企业 · 投资方 · 行业协会 关系网络可视化</p>
-
-        <!-- 模拟图谱 -->
-        <div class="edu-graph">
-          <div class="edu-graph__node edu-graph__node--center">
-            <span class="edu-graph__label">🏫 广东省教育厅</span>
-            <div class="edu-graph__dot"></div>
-          </div>
-          <div class="edu-graph__node edu-graph__node--1">
-            <span class="edu-graph__label">🎓 清华附中湾区学校</span>
-          </div>
-          <div class="edu-graph__node edu-graph__node--2">
-            <span class="edu-graph__label">🎓 东莞汽车技术学校</span>
-          </div>
-          <div class="edu-graph__node edu-graph__node--3">
-            <span class="edu-graph__label">🎓 广州幼儿师范高等专科学校</span>
-          </div>
-          <div class="edu-graph__node edu-graph__node--4">
-            <span class="edu-graph__label">🛠️ XX教育科技公司</span>
-          </div>
-          <div class="edu-graph__node edu-graph__node--5">
-            <span class="edu-graph__label">🛠️ YY智慧校园</span>
-          </div>
-          <div class="edu-graph__node edu-graph__node--6">
-            <span class="edu-graph__label">💰 ZZ投资集团</span>
-          </div>
-          <svg class="edu-graph__lines" viewBox="0 0 800 400" preserveAspectRatio="none">
-            <line x1="400" y1="200" x2="200" y2="100" class="edu-graph__line" />
-            <line x1="400" y1="200" x2="600" y2="100" class="edu-graph__line" />
-            <line x1="400" y1="200" x2="200" y2="300" class="edu-graph__line" />
-            <line x1="400" y1="200" x2="600" y2="300" class="edu-graph__line" />
-            <line x1="200" y1="100" x2="600" y2="300" class="edu-graph__line edu-graph__line--success" />
-            <line x1="600" y1="100" x2="200" y2="300" class="edu-graph__line edu-graph__line--success" />
-            <line x1="400" y1="200" x2="700" y2="200" class="edu-graph__line" />
-            <line x1="400" y1="200" x2="100" y2="200" class="edu-graph__line" />
-          </svg>
+        <div class="edu-page-meta">
+          <el-tag type="info">更新：{{ updated }}</el-tag>
+          <el-tag type="success">{{ filtered.length }} 家</el-tag>
         </div>
+      </div>
 
-        <!-- 图例 -->
-        <div class="edu-graph-legend">
-          <span><span class="edu-graph-legend__dot edu-graph-legend__dot--center"></span> 政府部门</span>
-          <span><span class="edu-graph-legend__dot edu-graph-legend__dot--school"></span> 学校院校</span>
-          <span><span class="edu-graph-legend__dot edu-graph-legend__dot--company"></span> 教育科技企业</span>
-          <span><span class="edu-graph-legend__dot edu-graph-legend__dot--investor"></span> 投资方</span>
-          <span><el-icon class="edu-graph-legend__link edu-graph-legend__link--normal"><Connection /></el-icon> 监管/合作</span>
-          <span><el-icon class="edu-graph-legend__link edu-graph-legend__link--success"><Connection /></el-icon> 中标/采购</span>
+      <!-- 分类筛选 + 搜索 -->
+      <div class="edu-eco-toolbar edu-card">
+        <div class="edu-eco-cats">
+          <button
+            v-for="c in catOptions"
+            :key="c.key"
+            class="edu-eco-cat"
+            :class="{ 'is-active': activeCat === c.key }"
+            @click="activeCat = c.key"
+          >
+            {{ c.label }}<span v-if="c.count" class="edu-eco-cat__num">{{ c.count }}</span>
+          </button>
         </div>
-
-        <el-alert
-          type="info"
-          :closable="false"
-          show-icon
-          title="本板块为示例占位"
-          description="后续将基于 ECharts 力导向图，接入真实的教育产业机构关系数据。点击节点可查看机构详情、相关中标记录与政策依据。"
-          style="margin-top: var(--edu-space-6)"
+        <el-input
+          v-model="keyword"
+          class="edu-eco-search"
+          placeholder="搜索厂商名称 / 简介，如：希沃、录播、一卡通"
+          clearable
+          :prefix-icon="Search"
         />
       </div>
+
+      <!-- 供应商卡片：三列网格 -->
+      <div v-if="filtered.length > 0" class="edu-eco-grid">
+        <div v-for="v in filtered" :key="v.id" class="edu-eco-card edu-card">
+          <span class="edu-eco-card__stripe" :style="{ background: catColor(v.category) }"></span>
+          <div class="edu-eco-card__head">
+            <h4 class="edu-eco-card__name" :title="v.fullName || v.name">{{ v.name }}</h4>
+            <span class="edu-eco-card__cat" :style="{ color: catColor(v.category) }">{{ v.category }}</span>
+          </div>
+          <div class="edu-eco-card__meta">
+            <span v-if="v.city" class="edu-eco-card__city">📍 {{ v.city }}</span>
+            <span v-if="v.fullName" class="edu-eco-card__full" :title="v.fullName">{{ v.fullName }}</span>
+          </div>
+          <p class="edu-eco-card__desc">{{ v.summary }}</p>
+          <div class="edu-eco-card__foot">
+            <span v-if="v.phone" class="edu-eco-card__phone">
+              <el-icon><Phone /></el-icon> {{ v.phone }}
+            </span>
+            <span v-else class="edu-eco-card__phone edu-eco-card__phone--none">电话待补充</span>
+            <a
+              class="edu-eco-card__link"
+              :href="v.website"
+              target="_blank"
+              rel="noopener"
+              title="前往供应商官网"
+            >
+              <el-icon><Link /></el-icon> 官网
+            </a>
+          </div>
+        </div>
+      </div>
+      <el-empty v-else-if="loaded" description="没有匹配的供应商，换个关键词试试" />
     </div>
   </div>
 </template>
 
 <script setup>
-import { Share, Connection } from '@element-plus/icons-vue'
+import { ref, computed, onMounted } from 'vue'
+import { Share, Link, Phone, Search } from '@element-plus/icons-vue'
+
+const items = ref([])
+const updated = ref('—')
+const loaded = ref(false)
+const activeCat = ref('all')
+const keyword = ref('')
+
+const CAT_COLORS = {
+  '智慧教学硬件': '#1E5AA8',
+  '软件平台与资源': '#8B5CF6',
+  'AI与教育大模型': '#D97706',
+  '网络与云服务': '#0E7490',
+  '网络安全': '#DC2626',
+  '职业教育实训': '#059669',
+  '考试信息化': '#7C3AED',
+  '校园安防与后勤': '#64748B',
+}
+const catColor = (c) => CAT_COLORS[c] || '#1E5AA8'
+
+const catOptions = computed(() => {
+  const opts = [{ key: 'all', label: '全部', count: items.value.length }]
+  const seen = []
+  items.value.forEach((v) => { if (!seen.includes(v.category)) seen.push(v.category) })
+  seen.forEach((c) => opts.push({
+    key: c, label: c, count: items.value.filter((v) => v.category === c).length,
+  }))
+  return opts
+})
+
+const filtered = computed(() => {
+  const kw = keyword.value.trim().toLowerCase()
+  return items.value.filter((v) => {
+    if (activeCat.value !== 'all' && v.category !== activeCat.value) return false
+    if (!kw) return true
+    return [v.name, v.fullName, v.summary, v.city].some((s) => (s || '').toLowerCase().includes(kw))
+  })
+})
+
+onMounted(async () => {
+  try {
+    const res = await fetch(import.meta.env.BASE_URL + 'data/ecosystem.json?v=' + Date.now())
+    const data = await res.json()
+    items.value = data.items || []
+    updated.value = (data.updatedAt || '').slice(0, 10) || '—'
+  } catch (e) {
+    console.error('Failed to load ecosystem data:', e)
+  } finally {
+    loaded.value = true
+  }
+})
 </script>
 
 <style scoped>
-.edu-placeholder {
-  padding: var(--edu-space-8) var(--edu-space-6);
-  text-align: center;
-  border-radius: var(--edu-radius-xl);
-}
-.edu-placeholder__icon {
-  color: var(--edu-primary);
-  margin-bottom: var(--edu-space-4);
-}
-.edu-placeholder__title {
-  font-size: var(--edu-font-2xl);
-  margin-bottom: var(--edu-space-2);
-}
-.edu-placeholder__desc {
-  color: var(--edu-text-secondary);
-  font-size: var(--edu-font-md);
-  margin-bottom: var(--edu-space-6);
-}
-
-.edu-graph {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  background: linear-gradient(135deg, var(--edu-primary-lighter) 0%, #F0F4FF 100%);
-  border-radius: var(--edu-radius-lg);
-  overflow: hidden;
+.edu-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: var(--edu-space-5);
+  flex-wrap: wrap;
+  gap: var(--edu-space-3);
 }
-.edu-graph__lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+.edu-page-title {
+  display: flex;
+  align-items: center;
+  gap: var(--edu-space-2);
+  font-size: var(--edu-font-2xl);
 }
-.edu-graph__line {
-  stroke: var(--edu-primary);
-  stroke-width: 2;
-  stroke-dasharray: 6 4;
-  opacity: 0.4;
+.edu-page-subtitle {
+  color: var(--edu-text-secondary);
+  font-size: var(--edu-font-sm);
+  margin-top: var(--edu-space-1);
 }
-.edu-graph__line--success {
-  stroke: var(--edu-success);
-  stroke-dasharray: none;
-  opacity: 0.6;
+.edu-page-meta {
+  display: flex;
+  gap: var(--edu-space-2);
 }
 
-.edu-graph__node {
-  position: absolute;
-  z-index: 2;
-  transform: translate(-50%, -50%);
+/* 工具条 */
+.edu-eco-toolbar {
+  padding: var(--edu-space-3) var(--edu-space-4);
+  margin-bottom: var(--edu-space-4);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--edu-space-1);
-  animation: pulse 3s ease-in-out infinite;
+  gap: var(--edu-space-3);
 }
-.edu-graph__node--center {
-  left: 50%;
-  top: 50%;
-}
-.edu-graph__node--1 { left: 25%; top: 25%; animation-delay: 0.3s; }
-.edu-graph__node--2 { left: 75%; top: 25%; animation-delay: 0.6s; }
-.edu-graph__node--3 { left: 25%; top: 75%; animation-delay: 0.9s; }
-.edu-graph__node--4 { left: 75%; top: 75%; animation-delay: 1.2s; }
-.edu-graph__node--5 { left: 87.5%; top: 50%; animation-delay: 1.5s; }
-.edu-graph__node--6 { left: 12.5%; top: 50%; animation-delay: 1.8s; }
-
-.edu-graph__label {
-  font-size: var(--edu-font-sm);
-  background: #fff;
-  padding: 4px 12px;
-  border-radius: var(--edu-radius-pill, 20px);
-  box-shadow: var(--edu-shadow-sm);
-  white-space: nowrap;
-}
-.edu-graph__dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--edu-primary);
-  box-shadow: 0 0 0 4px rgba(30, 90, 168, 0.2);
-}
-
-@keyframes pulse {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.05); }
-}
-
-.edu-graph-legend {
+.edu-eco-cats {
   display: flex;
-  justify-content: center;
-  gap: var(--edu-space-5);
   flex-wrap: wrap;
+  gap: 8px;
+}
+.edu-eco-cat {
+  border: 1px solid var(--edu-border-color, #ebeef5);
+  background: #fff;
+  border-radius: var(--edu-radius-pill, 20px);
+  padding: 5px 14px;
   font-size: var(--edu-font-sm);
   color: var(--edu-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
-.edu-graph-legend span {
+.edu-eco-cat:hover { border-color: var(--edu-primary); color: var(--edu-primary); }
+.edu-eco-cat.is-active {
+  background: var(--edu-primary);
+  border-color: var(--edu-primary);
+  color: #fff;
+}
+.edu-eco-cat__num {
+  font-size: var(--edu-font-xs, 12px);
+  opacity: 0.75;
+}
+.edu-eco-search { max-width: 360px; }
+
+/* 三列卡片 */
+.edu-eco-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--edu-space-4);
+}
+.edu-eco-card {
+  position: relative;
+  padding: var(--edu-space-4) var(--edu-space-4) var(--edu-space-3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.edu-eco-card__stripe {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+}
+.edu-eco-card__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--edu-space-2);
+  margin-bottom: 2px;
+}
+.edu-eco-card__name {
+  font-size: var(--edu-font-md);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.edu-eco-card__cat {
+  font-size: var(--edu-font-xs, 12px);
+  flex-shrink: 0;
+  font-weight: 500;
+}
+.edu-eco-card__meta {
+  display: flex;
+  gap: var(--edu-space-2);
+  align-items: center;
+  margin-bottom: var(--edu-space-2);
+  font-size: var(--edu-font-xs, 12px);
+  color: var(--edu-text-secondary);
+}
+.edu-eco-card__city { flex-shrink: 0; }
+.edu-eco-card__full {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.edu-eco-card__desc {
+  font-size: var(--edu-font-sm);
+  color: var(--edu-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--edu-space-3);
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.edu-eco-card__foot {
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: space-between;
+  gap: var(--edu-space-2);
+  border-top: 1px solid var(--edu-border-color, #ebeef5);
+  padding-top: var(--edu-space-2);
 }
-.edu-graph-legend__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  display: inline-block;
+.edu-eco-card__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--edu-font-xs, 12px);
+  color: var(--edu-text-secondary);
+  font-family: ui-monospace, Menlo, monospace;
 }
-.edu-graph-legend__dot--center { background: var(--edu-primary); }
-.edu-graph-legend__dot--school { background: var(--edu-success); }
-.edu-graph-legend__dot--company { background: var(--edu-accent); }
-.edu-graph-legend__dot--investor { background: #8B5CF6; }
-.edu-graph-legend__link--normal { color: var(--edu-primary); }
-.edu-graph-legend__link--success { color: var(--edu-success); }
+.edu-eco-card__phone--none { opacity: 0.5; font-style: italic; }
+.edu-eco-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--edu-font-sm);
+  color: var(--edu-primary);
+  text-decoration: none;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.edu-eco-card__link:hover { text-decoration: underline; }
+
+@media (max-width: 1080px) {
+  .edu-eco-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 680px) {
+  .edu-eco-grid { grid-template-columns: 1fr; }
+}
 </style>
