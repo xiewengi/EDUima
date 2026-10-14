@@ -30,3 +30,4 @@ logs/*.log
 fc-gpo*/
 fc-gpo-deploy.zip
 dist/fc-*/
+vite.config.js.timestamp-*.mjs

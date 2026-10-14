@@ -29,7 +29,7 @@
                 <a class="edu-thinktank-card__cover" :href="item.url" target="_blank" rel="noopener">
                   <img
                     v-if="!item._fbFail"
-                    :src="item.image || fallbackImg(idx)"
+                    :src="item.image || fallbackImg(item)"
                     :alt="item.title"
                     referrerpolicy="no-referrer"
                     loading="lazy"
@@ -71,15 +71,23 @@ import { View, Link } from '@element-plus/icons-vue'
 const items = ref([])
 const updated = ref('—')
 
-// 无图条目的本地主题占位图（Unsplash 免费图，已入库 public/images/exhibition/），按序轮换
-const FALLBACKS = ['fb-digital.jpg', 'fb-classroom.jpg', 'fb-collab.jpg', 'fb-tablet.jpg']
-const fallbackImg = (idx) =>
-  import.meta.env.BASE_URL + 'images/exhibition/' + FALLBACKS[idx % FALLBACKS.length]
+// 无图条目的本地主题占位图（中国教研/数据科技场景，AI 生成已入库 public/images/exhibition/）
+// ⚠️ 与 Exhibition.vue 的占位图池完全错开，两页之间不允许出现同一张图（2026-10-14 老大反馈）
+const FALLBACKS = [
+  'tt-conference.png', 'tt-datacenter.png', 'tt-screen.png',
+  'tt-ai.png', 'tt-lecture.png', 'tt-hall.png',
+]
+// 占位图按「无图卡片的序号」分配（不能用文章位次取模：无图位次稀疏时会撞同一张）
+let fbNext = 0
+const fallbackImg = (item) =>
+  import.meta.env.BASE_URL + 'images/exhibition/' + FALLBACKS[item._fb % FALLBACKS.length]
 
-// 原图挂了 → 降到本地占位图；占位图也挂了 → 渐变 emoji
+// 原图挂了 → 降到本地占位图（补发一个新序号）；占位图也挂了 → 渐变 emoji
 const onImgError = (item) => {
-  if (item.image) item.image = ''
-  else item._fbFail = true
+  if (item.image) {
+    item.image = ''
+    if (item._fb === undefined) item._fb = fbNext++
+  } else item._fbFail = true
 }
 
 onMounted(async () => {
@@ -87,6 +95,8 @@ onMounted(async () => {
     const res = await fetch(import.meta.env.BASE_URL + 'data/thinktank.json?v=' + Date.now())
     const data = await res.json()
     items.value = data.items || []
+    fbNext = 0
+    items.value.forEach((it) => { if (!it.image) it._fb = fbNext++ })
     updated.value = (data.updatedAt || '').slice(0, 10) || '—'
   } catch (e) {
     console.error('Failed to load thinktank data:', e)

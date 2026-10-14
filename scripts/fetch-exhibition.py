@@ -23,7 +23,7 @@ UA = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
       '(KHTML, like Gecko) Chrome/120.0 Safari/537.36')
 TIMEOUT = 15
 MAX_ITEMS = 12   # 老大拍板：12 条就够
-MAX_ARTICLES = 14  # 最多抓多少篇文章详情（12 条 + 余量）
+MAX_ARTICLES = 24  # 最多抓多少篇文章详情（多抓些提高有图率，减少占位图）
 
 # 学校信息化建设/展会相关关键词（标题过滤用）
 KEYWORDS = ('展会', '展示会', '博览会', '装备', '信息化', '智慧教育', '智慧校园',
@@ -121,7 +121,7 @@ def collect_caigou_expo():
     return out
 
 
-IMG_BLOCK = re.compile(r'logo|icon|Ad/|banner|avatar|user\.png|qrcode|share', re.I)
+IMG_BLOCK = re.compile(r'logo|icon|Ad/|banner|avatar|user\.png|qrcode|share|gongan|beian', re.I)
 
 
 def enrich_article(article):
@@ -182,26 +182,26 @@ def main():
         enrich_article(a)
         print(f"  ✓ {a['title'][:40]} img={'Y' if a.get('image') else 'N'}")
 
-    # 全局图片去重：同一图 URL 被 3+ 条引用 → 站点公共资源（徽章/默认图），全部置空走前端占位
-    from collections import Counter
-    img_count = Counter(a.get('image') for a in articles if a.get('image'))
-    for a in articles:
-        if a.get('image') and img_count.get(a['image'], 0) >= 3:
-            a['image'] = ''
-
     # 无摘要的条目降权排后；有图有摘优先
     articles.sort(key=lambda a: (a.get('image') != '', bool(a.get('summary')), a.get('date') or ''),
                   reverse=True)
-    items, seen = [], set()
+    items, seen, used_imgs = [], set(), set()
     for a in articles:
         if a['url'] in seen:
             continue
         seen.add(a['url'])
+        img = a.get('image') or ''
+        # 全局图片去重（keep-first）：同一图 URL 只保留排位最前的一条，其余置空走前端占位——
+        # 旧口径「3+ 条才置空」会放过 2 条重复（2026-10-14 老大反馈两页图片重复，踩）
+        if img and img in used_imgs:
+            img = ''
+        if img:
+            used_imgs.add(img)
         items.append({
             'id': re.sub(r'[^A-Za-z0-9]', '', a['url'])[-40:] or str(len(items)),
             'title': a['title'],
             'url': a['url'],
-            'image': a.get('image') or '',
+            'image': img,
             'summary': a.get('summary') or '',
             'date': a.get('date') or '',
             'source': '中国教育新闻网' if 'jyb.cn' in a['url'] else '中国教育装备采购网',
