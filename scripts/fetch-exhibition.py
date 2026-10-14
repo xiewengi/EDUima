@@ -78,9 +78,15 @@ def date_from_jyb_url(url):
 _JYB_POOL_CACHE = []  # collect_jyb_articles() 顺带缓存全量文章池，供 main() 回填
 
 
+def article_id(url):
+    """jyb.cn 同一篇文章也可能在多频道重复挂载（URL 不同、t日期_编号 相同），按 ID 去重"""
+    m = re.search(r't\d{8}_(\d+)\.s?html', url)
+    return m.group(1) if m else ''
+
+
 def collect_jyb_articles():
     """jyb.cn 首页 + 新闻中心列表 → [(title, url, date)]，标题关键词过滤"""
-    pool, seen = [], set()
+    pool, seen, seen_ids = [], set(), set()
     for list_url in (JYB_HOME, JYB_LIST):
         html = fetch(list_url)
         if not html:
@@ -88,9 +94,12 @@ def collect_jyb_articles():
         for m in re.finditer(r'<a[^>]+href="((?:https?://www\.jyb\.cn)?/[^"]*?/2026\d{2}/t\d{8}_\d+\.html)"[^>]*>([^<]{6,80})</a>', html):
             url = urljoin(list_url, m.group(1))
             title = text_of(m.group(2))
-            if url in seen or not title:
+            aid = article_id(url)
+            if url in seen or (aid and aid in seen_ids) or not title:
                 continue
             seen.add(url)
+            if aid:
+                seen_ids.add(aid)
             pool.append({'title': title, 'url': url, 'date': date_from_jyb_url(url)})
     _JYB_POOL_CACHE.extend(pool)
     print(f'jyb.cn 文章池：{len(pool)} 条（过滤前）')
@@ -185,11 +194,14 @@ def main():
     # 无摘要的条目降权排后；有图有摘优先
     articles.sort(key=lambda a: (a.get('image') != '', bool(a.get('summary')), a.get('date') or ''),
                   reverse=True)
-    items, seen, used_imgs = [], set(), set()
+    items, seen, seen_ids, used_imgs = [], set(), set(), set()
     for a in articles:
-        if a['url'] in seen:
+        aid = article_id(a['url'])
+        if a['url'] in seen or (aid and aid in seen_ids):
             continue
         seen.add(a['url'])
+        if aid:
+            seen_ids.add(aid)
         img = a.get('image') or ''
         # 全局图片去重（keep-first）：同一图 URL 只保留排位最前的一条，其余置空走前端占位——
         # 旧口径「3+ 条才置空」会放过 2 条重复（2026-10-14 老大反馈两页图片重复，踩）

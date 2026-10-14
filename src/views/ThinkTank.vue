@@ -75,7 +75,7 @@ const updated = ref('—')
 // ⚠️ 与 Exhibition.vue 的占位图池完全错开，两页之间不允许出现同一张图（2026-10-14 老大反馈）
 const FALLBACKS = [
   'tt-conference.png', 'tt-datacenter.png', 'tt-screen.png',
-  'tt-ai.png', 'tt-lecture.png', 'tt-hall.png',
+  'tt-ai.png', 'tt-lecture.png', 'tt-hall.png', 'tt-lab.png', 'tt-seminar.png',
 ]
 // 占位图按「无图卡片的序号」分配（不能用文章位次取模：无图位次稀疏时会撞同一张）
 let fbNext = 0

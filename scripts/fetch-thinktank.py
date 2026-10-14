@@ -83,9 +83,16 @@ def date_from_jyb_url(url):
 _JYB_POOL_CACHE = []  # collect_jyb_articles() 顺带缓存全量文章池，供 main() 回填
 
 
+def article_id(url):
+    """edu.cn 同一篇文章会在多个频道各挂一个 URL（路径不同、t日期_编号 相同），
+    URL 去重拦不住，必须按文章 ID 去重（2026-10-14 老大反馈「新型研究型大学」重复展示，踩）"""
+    m = re.search(r't\d{8}_(\d+)\.s?html', url)
+    return m.group(1) if m else ''
+
+
 def collect_jyb_articles():
     """edu.cn 首页 + 信息化资讯 + 理论研讨列表 → [(title, url, date)]，标题关键词过滤"""
-    pool, seen = [], set()
+    pool, seen, seen_ids = [], set(), set()
     for list_url in CERNET_LISTS:
         html = fetch(list_url)
         if not html:
@@ -93,9 +100,12 @@ def collect_jyb_articles():
         for m in re.finditer(r'<a[^>]+href="([^"]*202[5-6]\d{2}/t\d{8}_\d+\.shtml)"[^>]*>([^<]{6,80})</a>', html):
             url = urljoin(list_url, m.group(1))
             title = text_of(m.group(2))
-            if url in seen or not title:
+            aid = article_id(url)
+            if url in seen or (aid and aid in seen_ids) or not title:
                 continue
             seen.add(url)
+            if aid:
+                seen_ids.add(aid)
             pool.append({'title': title, 'url': url, 'date': date_from_jyb_url(url)})
     _JYB_POOL_CACHE.extend(pool)
     print(f'CERNET 文章池：{len(pool)} 条（过滤前）')
@@ -174,11 +184,14 @@ def main():
     # 有图有摘优先（bool() 兜住未 enrich 条目的 None：None != '' 恒为 True 会导致未抓详情的条目反排最前）
     articles.sort(key=lambda a: (bool(a.get('image')), bool(a.get('summary')), a.get('date') or ''),
                   reverse=True)
-    items, seen, used_imgs = [], set(), set()
+    items, seen, seen_ids, used_imgs = [], set(), set(), set()
     for a in articles:
-        if a['url'] in seen:
+        aid = article_id(a['url'])
+        if a['url'] in seen or (aid and aid in seen_ids):
             continue
         seen.add(a['url'])
+        if aid:
+            seen_ids.add(aid)
         img = a.get('image') or ''
         # 全局图片去重（keep-first）：同一图 URL 只保留排位最前的一条，其余置空走前端占位——
         # 旧口径「3+ 条才置空」会放过 2 条重复（2026-10-14 老大反馈两页图片重复，踩）
