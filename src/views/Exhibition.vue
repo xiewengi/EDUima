@@ -7,7 +7,7 @@
           <h1 class="edu-page-title">
             <el-icon><Flag /></el-icon> 重磅展会
           </h1>
-          <p class="edu-page-subtitle">权威教育媒体与教育装备行业的<b>学校信息化建设 / 展会资讯</b>精选，点击卡片直达原文。</p>
+          <p class="edu-page-subtitle">国内教育信息化领域<b>重点展会 / 大会</b>精选（装备展览 + 会议论坛），时间地点经人工核验，点击卡片直达官网或权威通知。</p>
         </div>
         <div class="edu-page-meta">
           <el-tag type="info">更新：{{ updated }}</el-tag>
