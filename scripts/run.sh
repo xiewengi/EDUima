@@ -77,6 +77,15 @@ python3 scripts/link-bids-source.py 2>&1 | tee -a "$LOG" || log "⚠️ 原文�
 log "🔁 重跑 gen-bids.py 合并链接与采购结果..."
 gen_bids
 
+# ── 自动提交+推送招投标数据（2026-10-14 固化）──
+# git push 失败自动走 Git Data API 兜底；无变化时不产生提交（幂等）。
+# 时序：Actions 02:00/02:15/02:30 爬虫传 ima → 本任务 02:45 拉快照生成并推送 → Actions 03:00 部署。
+# 仅本地跑（CI 上由 sync.yml 自己 build/deploy，不需要也不应走这里）。
+if [ -z "$CI" ]; then
+  log "📤 提交并推送招投标数据 (bids-autopush.py)..."
+  python3 scripts/bids-autopush.py 2>&1 | tee -a "$LOG" || log "⚠️ 招投标数据推送失败，不阻断（下次运行重试）"
+fi
+
 # ── 重磅展会（exhibition.json）：jyb.cn + 教育装备采购网，失败不阻断 ──
 log "🎪 抓取重磅展会资讯 (fetch-exhibition.py)..."
 python3 scripts/fetch-exhibition.py 2>&1 | tee -a "$LOG" || log "⚠️ 展会抓取失败，不阻断，用仓库既有数据"
