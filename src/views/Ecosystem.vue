@@ -37,9 +37,9 @@
         />
       </div>
 
-      <!-- 供应商卡片：三列网格 -->
-      <div v-if="filtered.length > 0" class="edu-eco-grid">
-        <div v-for="v in filtered" :key="v.id" class="edu-eco-card edu-card">
+      <!-- 供应商卡片：三列网格，每页 12 家 -->
+      <div v-if="pagedItems.length > 0" class="edu-eco-grid">
+        <div v-for="v in pagedItems" :key="v.id" class="edu-eco-card edu-card">
           <span class="edu-eco-card__stripe" :style="{ background: catColor(v.category) }"></span>
           <div class="edu-eco-card__head">
             <h4 class="edu-eco-card__name" :title="v.fullName || v.name">{{ v.name }}</h4>
@@ -68,19 +68,33 @@
         </div>
       </div>
       <el-empty v-else-if="loaded" description="没有匹配的供应商，换个关键词试试" />
+
+      <!-- 分页：每页 12 家 -->
+      <div v-if="filtered.length > PAGE_SIZE" class="edu-eco-pager">
+        <el-pagination
+          :current-page="currentPage"
+          :page-size="PAGE_SIZE"
+          :total="filtered.length"
+          layout="prev, pager, next, total"
+          background
+          @current-change="onPageChange"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { Share, Link, Phone, Search } from '@element-plus/icons-vue'
 
+const PAGE_SIZE = 12
 const items = ref([])
 const updated = ref('—')
 const loaded = ref(false)
 const activeCat = ref('all')
 const keyword = ref('')
+const currentPage = ref(1)
 
 const CAT_COLORS = {
   '智慧教学硬件': '#1E5AA8',
@@ -112,6 +126,19 @@ const filtered = computed(() => {
     return [v.name, v.fullName, v.summary, v.city].some((s) => (s || '').toLowerCase().includes(kw))
   })
 })
+
+// 每页 12 家；筛选/搜索变化时回到第 1 页
+const pagedItems = computed(() => {
+  const start = (currentPage.value - 1) * PAGE_SIZE
+  return filtered.value.slice(start, start + PAGE_SIZE)
+})
+watch([activeCat, keyword], () => { currentPage.value = 1 })
+
+const onPageChange = (page) => {
+  currentPage.value = page
+  // 换页后滚回列表顶部，避免停在长列表尾部
+  document.querySelector('.edu-eco-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 
 onMounted(async () => {
   try {
@@ -280,6 +307,13 @@ onMounted(async () => {
   flex-shrink: 0;
 }
 .edu-eco-card__link:hover { text-decoration: underline; }
+
+/* 分页 */
+.edu-eco-pager {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--edu-space-5);
+}
 
 @media (max-width: 1080px) {
   .edu-eco-grid { grid-template-columns: repeat(2, 1fr); }
