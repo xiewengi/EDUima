@@ -15,8 +15,9 @@
           <h1 class="home-hero__title">教育智服 · 知识领航</h1>
           <p class="home-hero__subtitle">教育知识服务平台</p>
           <p class="home-hero__desc">
-            汇聚广东省教育政策、招投标信息、行业解决方案与生态图谱，<br />
-            助力教育数字化转型升级。
+            面向教育行政部门、学校信息化与装备管理部门、教育信息化企业，<br />
+            打通「政策洞察 — 标讯跟踪 — 方案参考 — 生态认知」全链路，<br />
+            为智慧校园建设、行业研究与业务决策提供可检索、可追溯的信息底座。
           </p>
           <div class="home-hero__tags">
             <router-link v-for="t in heroTags" :key="t.path" :to="t.path" class="home-tag">
