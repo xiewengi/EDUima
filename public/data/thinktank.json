@@ -1,23 +1,95 @@
 {
-  "updatedAt": "2026-10-14T09:29:28+08:00",
+  "updatedAt": "2026-10-14T14:48:49+08:00",
   "total": 12,
   "items": [
     {
-      "id": "ucnxxhfocuszc202607t202607222758485shtml",
-      "title": "《深化互联网协议第六版（IPv6）技术创新和融合应...",
-      "url": "https://www.edu.cn/xxh/focus/zc/202607/t20260722_2758485.shtml",
-      "image": "https://www.edu.cn/xxh/focus/zc/202607/W020260722383736754046.png",
-      "summary": "近日，中央网络安全和信息化委员会印发《深化互联网协议第六版（IPv6）技术创新和融合应用实施方案（2026—2030年）》（以下简称《实施方案》）。《实施方案》坚持以习近平新时代中国特色社会主义思想为指导，深入贯彻党的二十大和二十届历次全会精神，认真落实四中全会部署，全面贯彻习近平总书记关于网络强国的重要思想，完整准确",
-      "date": "2026-07-22",
+      "id": "ofocuslilunyj202610t202610122781500shtml",
+      "title": "AI智能体广场构建高校教育新生态",
+      "url": "https://www.edu.cn/info/focus/li_lun_yj/202610/t20261012_2781500.shtml",
+      "image": "https://www.edu.cn/info/focus/li_lun_yj/202610/W020261012509657332094.png",
+      "summary": "在国家政策的布局与驱动下，高校信息化建设的核心命题已从是否接纳技术转变为如何深度融合，即怎样将宏观战略、通用技术与本校的学科特色、育人目标、治理体系有机结合，探寻一条特色鲜明、成效显著的数字化转型之路。",
+      "date": "2026-10-12",
+      "source": "中国教育和科研计算机网"
+    },
+    {
+      "id": "cninfofocusdf202610t202610122781533shtml",
+      "title": "湖南AI教育迎来新政",
+      "url": "https://www.edu.cn/info/focus/df/202610/t20261012_2781533.shtml",
+      "image": "https://www.edu.cn/info/zt/202110/W020211119614596263426.jpg",
+      "summary": "近日，湖南省教育厅印发《关于加强中小学人工智能教育工作的通知》（以下简称《通知》），明确从2026年秋季学期起，全省中小学普遍开展人工智能通识教育，每学年课时不少于8课时。",
+      "date": "2026-10-12",
+      "source": "中国教育和科研计算机网"
+    },
+    {
+      "id": "ogaoxiaozixun202610t202610122781358shtml",
+      "title": "新型研究型大学迎来黄金窗口期",
+      "url": "https://www.edu.cn/rd/gao_xiao_cheng_guo/gao_xiao_zi_xun/202610/t20261012_2781358.shtml",
+      "image": "https://www.edu.cn/rd/special_topic/202608/W020260818565285829966.png",
+      "summary": "10月9日，中共中央、国务院印发《关于发展新质生产力的意见》（下称《意见》）。",
+      "date": "2026-10-12",
+      "source": "中国教育和科研计算机网"
+    },
+    {
+      "id": "hfocuslilunyj202610t202610102780893shtml",
+      "title": "程蓓 曹培杰 : 抓好普及人工智能教育的关键点",
+      "url": "https://www.edu.cn/xxh/focus/li_lun_yj/202610/t20261010_2780893.shtml",
+      "image": "",
+      "summary": "随着人工智能教育由试点探索走向面向全体学生的普及，我国人工智能已迈入全域普及、常态长效实施的全新发展阶段。2026年教育部等五部门印发的《“人工智能+教育”行动计划》提出，推动人工智能教育全面纳入地方课程体系，指导各地研制人工智能课程指南，明确各学段课程目标、内容与课时要求。普及人工智能教育核心抓手，在于系统性降低中小",
+      "date": "2026-10-10",
+      "source": "中国教育和科研计算机网"
+    },
+    {
+      "id": "hfocuslilunyj202610t202610092780487shtml",
+      "title": "中南大学奎晓燕：教育数字化的终点是育人",
+      "url": "https://www.edu.cn/xxh/focus/li_lun_yj/202610/t20261009_2780487.shtml",
+      "image": "https://www.edu.cn/xxh/focus/li_lun_yj/202610/W020261009420606391388.png",
+      "summary": "面向9000多名本科生，AI通识课究竟该怎么上？面对这一真实的挑战，奎晓燕和团队开始了一场艰难的“拆解与重构”。也正是从这门课的备课桌前，她开始重新审视信息化部门在AI浪潮中的真实坐标：当技术不再只是后台的服务器和网线，而是直接走进课堂、介入业务时，信息化部门该如何跨越“能用就行”的舒适区，真正回应师生对“好用愿用”的",
+      "date": "2026-10-09",
+      "source": "中国教育和科研计算机网"
+    },
+    {
+      "id": "focusrdxinwen202607t202607292760919shtml",
+      "title": "\"中国IPv6发展大事记\" CERNET贡献三分之一",
+      "url": "https://www.edu.cn/info/focus/rd_xin_wen/202607/t20260729_2760919.shtml",
+      "image": "https://www.edu.cn/info/focus/rd_xin_wen/202607/W020260729340113826219.jpg",
+      "summary": "7月28日，第五届中国IPv6创新发展大会在河北雄安召开。本届大会首次展出《中国IPv6发展大事记》，大事记按照IPv6技术准备期、产业突破期、规模应用期和创新发展期的发展顺序，选取记录了54项对中国IPv6产生重要推动作用、具有里程碑意义的重大事件。在所有涉及的事件中，中国教育和科研计算机网CERNET入选项目最多，",
+      "date": "2026-07-29",
       "source": "中国教育和科研计算机网"
     },
     {
       "id": "lanwujianping202607t202607222758472shtml",
       "title": "推动IPv6赋能网络空间高质量发展",
       "url": "https://www.edu.cn/info/zhuan_jia_zhuan_lan/wu_jian_ping/202607/t20260722_2758472.shtml",
-      "image": "https://www.edu.cn/info/zt/202110/W020211119614596263426.jpg",
+      "image": "",
       "summary": "互联网是人工智能的承载底座，人工智能是互联网的智能延伸。当前，人工智能技术加速演进，正深刻改变着全球经济格局和竞争态势。在这一背景下，中央网信委印发《深化互联网协议第六版（IPv6）技术创新和融合应用的实施方案（2026—2030年）》（以下简称《实施方案》），强化IPv6技术攻关与成果转化，提升IPv6端到端贯通水平",
       "date": "2026-07-22",
+      "source": "中国教育和科研计算机网"
+    },
+    {
+      "id": "ogaoxiaozixun202607t202607152756409shtml",
+      "title": "教育部召开加强高校基础研究工作座谈会",
+      "url": "https://www.edu.cn/rd/gao_xiao_cheng_guo/gao_xiao_zi_xun/202607/t20260715_2756409.shtml",
+      "image": "https://www.edu.cn/rd/gao_xiao_cheng_guo/gao_xiao_zi_xun/202607/W020260715542223842898.jpg",
+      "summary": "7月13日，教育部在京召开加强高校基础研究工作座谈会，强调要深入学习贯彻习近平总书记在加强基础研究座谈会和在国家科学技术奖励大会、两院院士大会、中国科协第十一次全国代表大会上的重要讲话精神，充分发挥高水平研究型大学基础研究主力军、人才培养主阵地和重大科技突破策源地作用，一体推进教育科技人才发展，着力提升科技自主创新能力",
+      "date": "2026-07-15",
+      "source": "中国教育和科研计算机网"
+    },
+    {
+      "id": "cninfofocuszc202607t202607142755767shtml",
+      "title": "加强IPv6技术体系创新! 四部门发文",
+      "url": "https://www.edu.cn/info/focus/zc/202607/t20260714_2755767.shtml",
+      "image": "",
+      "summary": "贯彻落实党中央、国务院决策部署，为推动我国互联网基础资源高质量发展，塑造互联网发展新动能新优势，工业和信息化部、中央网信办、国家发展改革委、国家数据局等四部门近日联合印发《关于推动互联网基础资源高质量发展的指导意见》。",
+      "date": "2026-07-14",
+      "source": "中国教育和科研计算机网"
+    },
+    {
+      "id": "ofocuslilunyj202607t202607092754267shtml",
+      "title": "CourseClaw 一种课程智能体蚁群图景",
+      "url": "https://www.edu.cn/info/focus/li_lun_yj/202607/t20260709_2754267.shtml",
+      "image": "https://www.edu.cn/info/focus/li_lun_yj/202607/W020260709422598596973.png",
+      "summary": "“CourseClaw”课程智能体蚁群的特色在于，通过“知识点”的工业化生产与“超级连接”，奠定基础；通过数百万“课程智能体”实现“一人一课一体”的极致个性化陪伴与教学决策。",
+      "date": "2026-07-09",
       "source": "中国教育和科研计算机网"
     },
     {
@@ -36,78 +108,6 @@
       "image": "https://www.edu.cn/info/focus/li_lun_yj/202607/W020260706426000383866.png",
       "summary": "人工智能驱动的教育数智化转型，可理解为教育信息化的“版本升级”，亦有人称之为教育信息化的3.0阶段。",
       "date": "2026-07-06",
-      "source": "中国教育和科研计算机网"
-    },
-    {
-      "id": "ofocusxshuiyi202607t202607032752184shtml",
-      "title": "AI如何服务高校师生真实需求？",
-      "url": "https://www.edu.cn/info/focus/xs_hui_yi/202607/t20260703_2752184.shtml",
-      "image": "https://www.edu.cn/info/focus/xs_hui_yi/202607/W020260703406145077131.jpg",
-      "summary": "在本届中国教育和科研计算机网CERNET华中及西南地区2026年学术年会举办的“数智应用赋能”专题论坛上，来自四所高校的专家们从垂类大模型、课程智能体、智慧校园、AI生态等多个角度，分享了AI在教育教学场景中的落地实践与创新探索。",
-      "date": "2026-07-03",
-      "source": "中国教育和科研计算机网"
-    },
-    {
-      "id": "focusrdxinwen202606t202606262749596shtml",
-      "title": "准备好迎接下一波AI浪潮了吗？",
-      "url": "https://www.edu.cn/info/focus/rd_xin_wen/202606/t20260626_2749596.shtml",
-      "image": "",
-      "summary": "近日，国际互联网协会（Internet Society， ISOC）连续举办两场以“全球互联网基础设施是否已为AI做好准备？”为主题的热点议题研讨会。会议邀请来自互联网交换中心（IXP）、内容分发网络（CDN）、运营商及研究机构的代表，就当前AI浪潮下，互联网基础设施面临的压力和挑战展开讨论。",
-      "date": "2026-06-26",
-      "source": "中国教育和科研计算机网"
-    },
-    {
-      "id": "focusrdxinwen202606t202606182746522shtml",
-      "title": "下一代互联网视频课程上线国家智慧教育公共服务平台",
-      "url": "https://www.edu.cn/xxh/focus/rd_xin_wen/202606/t20260618_2746522.shtml",
-      "image": "https://www.edu.cn/xxh/focus/rd_xin_wen/202606/W020260618484573534674.png",
-      "summary": "6月10日，下一代互联网视频课程在国家智慧教育公共服务平台正式上线。",
-      "date": "2026-06-18",
-      "source": "中国教育和科研计算机网"
-    },
-    {
-      "id": "ucninfoxyxytp202606t202606172746057shtml",
-      "title": "高校如何打造好用的教育智能体?",
-      "url": "https://www.edu.cn/info/xy/xytp/202606/t20260617_2746057.shtml",
-      "image": "",
-      "summary": "教育智能体是人工智能（AI）与教育场景深度融合的新型应用形态，是驱动高等教育数字化转型、赋能高校内涵式高质量发展的核心抓手。这些走进校园的智能体，究竟能做什么？高校又是如何搭建好用的智能工具的？落地过程需要避开哪些坑、注意哪些风险和误区？",
-      "date": "2026-06-17",
-      "source": "中国教育和科研计算机网"
-    },
-    {
-      "id": "ogaoxiaozixun202610t202610142782151shtml",
-      "title": "东北大学成立工业具身智能交叉研究中心",
-      "url": "https://www.edu.cn/ke_yan_yu_fa_zhan/gao_xiao_cheng_guo/gao_xiao_zi_xun/202610/t20261014_2782151.shtml",
-      "image": "",
-      "summary": "",
-      "date": "2026-10-14",
-      "source": "中国教育和科研计算机网"
-    },
-    {
-      "id": "hfocuslilunyj202610t202610132781907shtml",
-      "title": "邬贺铨：智能体注册发现寻址与管理机制",
-      "url": "https://www.edu.cn/xxh/focus/li_lun_yj/202610/t20261013_2781907.shtml",
-      "image": "",
-      "summary": "",
-      "date": "2026-10-13",
-      "source": "中国教育和科研计算机网"
-    },
-    {
-      "id": "hfocuslilunyj202610t202610132781900shtml",
-      "title": "马严：IPv6单栈是构建“六张网”的统一协议底座",
-      "url": "https://www.edu.cn/xxh/focus/li_lun_yj/202610/t20261013_2781900.shtml",
-      "image": "",
-      "summary": "",
-      "date": "2026-10-13",
-      "source": "中国教育和科研计算机网"
-    },
-    {
-      "id": "ofocusxshuiyi202610t202610122781519shtml",
-      "title": "人工智能赋能教师发展现场会举行",
-      "url": "https://www.edu.cn/info/focus/xs_hui_yi/202610/t20261012_2781519.shtml",
-      "image": "",
-      "summary": "",
-      "date": "2026-10-12",
       "source": "中国教育和科研计算机网"
     }
   ]
