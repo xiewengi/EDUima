@@ -175,6 +175,9 @@ def main():
     })
     api('PATCH', 'git/refs/heads/%s' % BRANCH, {'sha': commit['sha'], 'force': False})
     log('API 推送成功：远端 %s = %s ✓' % (BRANCH, commit['sha'][:12]))
+    # 丢弃本地平行 commit（改动退回暂存区），远端已有内容等价提交，避免平行历史越积越多
+    r = git(['reset', '--soft', 'HEAD~1'])
+    log('本地平行 commit 已退回暂存区' if r.returncode == 0 else '⚠️ reset --soft 失败（不影响远端）')
     return 0
 
 
