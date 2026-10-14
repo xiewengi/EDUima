@@ -336,18 +336,6 @@ onMounted(async () => {
   transform: translateY(-2px);
   outline: none;
 }
-/* 卡片右下角「查看详情」提示，悬停浮现 */
-.edu-eco-card::after {
-  content: '查看详情 →';
-  position: absolute;
-  right: var(--edu-space-3);
-  bottom: var(--edu-space-2);
-  font-size: var(--edu-font-xs, 12px);
-  color: var(--edu-primary);
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.edu-eco-card:hover::after { opacity: 0.85; }
 .edu-eco-card__stripe {
   position: absolute;
   left: 0; top: 0; bottom: 0;
@@ -442,7 +430,13 @@ onMounted(async () => {
 }
 :global(.edu-eco-dialog .el-dialog__header) { padding: 0; margin-right: 0; }
 :global(.edu-eco-dialog .el-dialog__body) { padding: var(--edu-space-4) var(--edu-space-5); }
-:global(.edu-eco-dialog .el-dialog__footer) { border-top: 1px solid #ebeef5; }
+:global(.edu-eco-dialog .el-dialog__footer) {
+  padding: var(--edu-space-3) var(--edu-space-5);
+  border-top: 1px solid #ebeef5;
+}
+/* 底部按钮留足呼吸感（间距 + 统一最小宽度） */
+:global(.edu-eco-dialog .el-dialog__footer .el-button + .el-button) { margin-left: 14px; }
+:global(.edu-eco-dialog .el-dialog__footer .el-button) { min-width: 88px; }
 
 .edu-eco-detail__head {
   position: relative;
