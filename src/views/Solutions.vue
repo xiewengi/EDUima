@@ -15,7 +15,7 @@
         </div>
       </div>
 
-      <!-- 三列卡片：配图 + 摘要 + 官网方案页 / 方案彩页下载（无公开彩页则不展示下载） -->
+      <!-- 三列卡片：配图 + 摘要 + 跳转官网方案页（口径 2026-10-14：不做彩页下载，只跳官网） -->
       <div v-if="items.length > 0" class="edu-solutions-grid">
         <div v-for="item in items" :key="item.id" class="edu-solution-card edu-card">
           <div class="edu-solution-card__cover">
@@ -47,16 +47,6 @@
               >
                 <el-icon><Link /></el-icon> 官网方案
               </a>
-              <a
-                v-if="item.pdfUrl"
-                class="edu-solution-card__link edu-solution-card__link--pdf"
-                :href="item.pdfUrl"
-                target="_blank"
-                rel="noopener"
-                title="下载厂商官网公开的方案彩页"
-              >
-                <el-icon><Download /></el-icon> 下载彩页
-              </a>
             </div>
           </div>
         </div>
@@ -68,7 +58,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { Lightning, Link, Download } from '@element-plus/icons-vue'
+import { Lightning, Link } from '@element-plus/icons-vue'
 
 const items = ref([])
 const updated = ref('—')
@@ -214,9 +204,6 @@ onMounted(async () => {
 }
 .edu-solution-card__link:hover {
   text-decoration: underline;
-}
-.edu-solution-card__link--pdf {
-  color: var(--edu-success, #10b981);
 }
 
 @media (max-width: 1080px) {
