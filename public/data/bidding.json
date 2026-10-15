@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-10-15T02:45:23+08:00",
-  "updated": "2026-10-15",
-  "total": 77,
+  "updatedAt": "2026-10-16T02:45:52+08:00",
+  "updated": "2026-10-16",
+  "total": 81,
   "counts": {
-    "bids": 77,
-    "winning": 16,
-    "withContent": 77
+    "bids": 81,
+    "winning": 20,
+    "withContent": 81
   },
   "items": [
     {
@@ -1396,6 +1396,162 @@
           "mediaId": "html_cls1_3deb9906c10f388deed86711b305f0e8_8000cf90a47012e390c0cd887b4b7bf27508334806566436"
         }
       ]
+    },
+    {
+      "id": "html_cls1_3deb9906c10f388deed86711b305f0e8_d8a750a8e3cc53ba3be2b04168ee2e737508334806566436",
+      "title": "广州市白云区广州空港实验中学2026年新开办学校建设项目（高考考场）结果公告.html",
+      "projectName": "广州市白云区广州空港实验中学2026年新开办学校建设项目（高考考场）",
+      "docNo": "",
+      "group": "中标公告（广东省）",
+      "summary": "品目名称：其他专业技术服务；采购标的：广州市白云区广州空港实验中学2026年新开办学校建设项目（高考考场）；服务时间：根据招标文件要求",
+      "tags": [],
+      "mediaType": "HTML",
+      "mediaTypeIcon": "https://img.ima.qq.com/wupload/xy/ima_tool/UvxmODLE.png",
+      "fileSize": 18646,
+      "createdAt": "2026-10-15T03:00:24+08:00",
+      "parseState": "解析完成",
+      "imaMediaId": "html_cls1_3deb9906c10f388deed86711b305f0e8_d8a750a8e3cc53ba3be2b04168ee2e737508334806566436",
+      "imaLink": "",
+      "from": "ima",
+      "sourceKey": "bids",
+      "sourceLabel": "教育平台",
+      "contentFile": "062_广州市白云区广州空港实验中学2026年新开办学校建设项目（高考考场）结果公告.html_1eirvc.md",
+      "contentPath": "_raw/bids-md/062_广州市白云区广州空港实验中学2026年新开办学校建设项目（高考考场）结果公告.html_1eirvc.md",
+      "hasContent": true,
+      "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=c868b166-fbb0-456d-93bb-11a77f7be4ff&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=ZDA-BY-2026091501&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=b7da5d97-92fc-486b-80be-2ef93dcfcdeb&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=ZDA-BY-2026091501&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseZipUrl": "https://gdgpo.czt.gd.gov.cn/freecms/download/gpx-bid-file/440111/gpx-tender/2026/9/21/8a7e9d4ca0750d0301a0c282bb8b03b0.zip?accessCode=740fc791a5ca8201fee379605eaa68a3",
+      "purchaseZipName": "广州市白云区广州空港实验中学2026年新开办学校建设项目（高考考场）招标文件（2026092101）.zip",
+      "projectCode": "ZDA-BY-2026091501",
+      "publishDate": "2026-10-14",
+      "awardInfo": [
+        {
+          "pkg": "1",
+          "pkgName": "广州市白云区广州空港实验中学2026年新开办学校建设项目（高考考场",
+          "supplier": "广东邦力建设有限公司",
+          "amount": "3,077,365.00元"
+        }
+      ],
+      "winningBidder": "广东邦力建设有限公司",
+      "winningAmount": "3,077,365.00元",
+      "contractNo": "合同包1"
+    },
+    {
+      "id": "html_cls1_3deb9906c10f388deed86711b305f0e8_495de2f9ffc21a706012ef6eb568a1127508334806566436",
+      "title": "东莞市电子科技学校实训室设备及配套建设项目结果公告.html",
+      "projectName": "东莞市电子科技学校实训室设备及配套建设项目",
+      "docNo": "",
+      "group": "中标公告（广东省）",
+      "summary": "品目名称：教学仪器；采购标的：实训室设备；品牌：详细见投标文件分项报价表；规格型号：详细见投标文件分项报价表；采购标的：智能机器人；品牌：乐聚；规格型号：KUAVO5进阶版",
+      "tags": [],
+      "mediaType": "HTML",
+      "mediaTypeIcon": "https://img.ima.qq.com/wupload/xy/ima_tool/UvxmODLE.png",
+      "fileSize": 18846,
+      "createdAt": "2026-10-15T03:00:21+08:00",
+      "parseState": "解析完成",
+      "imaMediaId": "html_cls1_3deb9906c10f388deed86711b305f0e8_495de2f9ffc21a706012ef6eb568a1127508334806566436",
+      "imaLink": "",
+      "from": "ima",
+      "sourceKey": "bids",
+      "sourceLabel": "教育平台",
+      "contentFile": "063_东莞市电子科技学校实训室设备及配套建设项目结果公告.html_87jha1.md",
+      "contentPath": "_raw/bids-md/063_东莞市电子科技学校实训室设备及配套建设项目结果公告.html_87jha1.md",
+      "hasContent": true,
+      "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=a6cce4e3-808c-4e92-a8ec-ebb7f5417f2d&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=441901-2026-05417&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=97a1ecbd-71b6-4286-a76e-0464e2b0d950&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=441901-2026-05417&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseZipUrl": "https://gdgpo.czt.gd.gov.cn/freecms/download/gpx-bid-file/441901/gpx-tender/2026/8/4/8a7e8bdf9c42e616019fca7e3a000c8d.zip?accessCode=c939cf2ad601984868a8d95b2ebafc4a",
+      "purchaseZipName": "东莞市电子科技学校实训室设备及配套建设项目招标文件（2026080401）.zip",
+      "projectCode": "441901-2026-05417",
+      "publishDate": "2026-10-14",
+      "awardInfo": [
+        {
+          "pkg": "1",
+          "pkgName": "东莞市电子科技学校实训室设备及配套建设项目",
+          "supplier": "东莞市创华信息科技有限公司",
+          "amount": "1,790,000.00元"
+        }
+      ],
+      "winningBidder": "东莞市创华信息科技有限公司",
+      "winningAmount": "1,790,000.00元",
+      "contractNo": "合同包1"
+    },
+    {
+      "id": "html_cls1_3deb9906c10f388deed86711b305f0e8_b5118576d09a77c87bd7ba441e32e0a37508334806566436",
+      "title": "广东海洋大学校级教学实验室公共算力集群平台（一期）结果公告.html",
+      "projectName": "广东海洋大学校级教学实验室公共算力集群平台（一期）",
+      "docNo": "",
+      "group": "中标公告（广东省）",
+      "summary": "品目名称：其他信息化设备；采购标的：GPU云桌面计算节点；品牌：H3C；规格型号：H3C UniServer R5300 G6；采购标的：VGPU显卡虚拟化授权；规格型号：定制；采购标的：云桌面管理节点；规格型号：H3C UniServer R4900 G5；品目名称：交换设备；采购标的：汇聚交换机；规格型号：H3C S6520X-54QC-EI；采购标的：云桌面授权；品牌：OS-Easy；规格型号：噢易教育融合桌面云软件V6.0；品目…",
+      "tags": [],
+      "mediaType": "HTML",
+      "mediaTypeIcon": "https://img.ima.qq.com/wupload/xy/ima_tool/UvxmODLE.png",
+      "fileSize": 20008,
+      "createdAt": "2026-10-15T03:00:19+08:00",
+      "parseState": "解析完成",
+      "imaMediaId": "html_cls1_3deb9906c10f388deed86711b305f0e8_b5118576d09a77c87bd7ba441e32e0a37508334806566436",
+      "imaLink": "",
+      "from": "ima",
+      "sourceKey": "bids",
+      "sourceLabel": "教育平台",
+      "contentFile": "064_广东海洋大学校级教学实验室公共算力集群平台（一期）结果公告.html_mtn8o1.md",
+      "contentPath": "_raw/bids-md/064_广东海洋大学校级教学实验室公共算力集群平台（一期）结果公告.html_mtn8o1.md",
+      "hasContent": true,
+      "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=35d99b70-51f3-4efc-81ce-858c8b43991c&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=YDZB26ZJ043&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=364f55b1-4541-4772-8030-f60fe6118e12&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=YDZB26ZJ043&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseZipUrl": "https://gdgpo.czt.gd.gov.cn/freecms/download/gpx-bid-file/440001/gpx-tender/2026/9/9/8a7edc65a0750b8801a085049b7d7fdd.zip?accessCode=f557f12ec788918af9afe2e9d28e70f8",
+      "purchaseZipName": "广东海洋大学校级教学实验室公共算力集群平台（一期）招标文件（2026090902）.zip",
+      "projectCode": "YDZB26ZJ043",
+      "publishDate": "2026-10-14",
+      "awardInfo": [
+        {
+          "pkg": "1",
+          "pkgName": "广东海洋大学校级教学实验室公共算力集群平台（一期",
+          "supplier": "中国移动通信集团广东有限公司湛江分公司",
+          "amount": "2,179,000.00元"
+        }
+      ],
+      "winningBidder": "中国移动通信集团广东有限公司湛江分公司",
+      "winningAmount": "2,179,000.00元",
+      "contractNo": "合同包1"
+    },
+    {
+      "id": "html_cls1_3deb9906c10f388deed86711b305f0e8_4fcdd227cdd9c6a0eaa1f3e71717347e7508334806566436",
+      "title": "韶关市曲江区职业技术学校智慧图书馆建设项目结果公告.html",
+      "projectName": "韶关市曲江区职业技术学校智慧图书馆建设项目",
+      "docNo": "",
+      "group": "中标公告（广东省）",
+      "summary": "品目名称：其他图书档案设备；采购标的：智慧图书馆管理系统；品牌：天卷；规格型号：V1.0.0.0；采购标的：网络功放终端；品牌：Bvoice；规格型号：BVS-9386；采购标的：交换机；品牌：华为；规格型号：S5735-L24P4S-A1；采购标的：天花喇叭；规格型号：BVS-108；采购标的：图书馆文化长廊改造；品牌：悦创；规格型号：订制；采购标的：机柜；品牌：金盾；规格型号：ND6642",
+      "tags": [],
+      "mediaType": "HTML",
+      "mediaTypeIcon": "https://img.ima.qq.com/wupload/xy/ima_tool/UvxmODLE.png",
+      "fileSize": 31625,
+      "createdAt": "2026-10-15T03:00:17+08:00",
+      "parseState": "解析完成",
+      "imaMediaId": "html_cls1_3deb9906c10f388deed86711b305f0e8_4fcdd227cdd9c6a0eaa1f3e71717347e7508334806566436",
+      "imaLink": "",
+      "from": "ima",
+      "sourceKey": "bids",
+      "sourceLabel": "教育平台",
+      "contentFile": "065_韶关市曲江区职业技术学校智慧图书馆建设项目结果公告.html_1fl9b2.md",
+      "contentPath": "_raw/bids-md/065_韶关市曲江区职业技术学校智慧图书馆建设项目结果公告.html_1fl9b2.md",
+      "hasContent": true,
+      "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=2322ac26-3a9f-40f0-aa95-601b9274830e&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=JL26GZ0603&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=3708067c-c3e5-439c-9381-df99376a0c74&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=JL26GZ0603&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseZipUrl": "https://gdgpo.czt.gd.gov.cn/freecms/download/gpx-bid-file/440205/gpx-tender/2026/9/22/8a7edc65a0750b8801a0c929947b6ade.zip?accessCode=e69ac9d2bd5d689985ba4ae2ff797dff",
+      "purchaseZipName": "韶关市曲江区职业技术学校智慧图书馆建设项目招标文件（2026092203）.zip",
+      "projectCode": "JL26GZ0603",
+      "publishDate": "2026-10-14",
+      "awardInfo": [
+        {
+          "pkg": "1",
+          "pkgName": "韶关市曲江区职业技术学校智慧图书馆建设项目",
+          "supplier": "韶关市悦创书业有限公司",
+          "amount": "1,772,490.00元"
+        }
+      ],
+      "winningBidder": "韶关市悦创书业有限公司",
+      "winningAmount": "1,772,490.00元",
+      "contractNo": "合同包1"
     },
     {
       "id": "html_cls1_3deb9906c10f388deed86711b305f0e8_9b624a6fdbb84d7b098e47cfa56ef5c07508334806566436",
