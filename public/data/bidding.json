@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-10-18T03:45:51+08:00",
-  "updated": "2026-10-18",
+  "updatedAt": "2026-10-19T03:08:09+08:00",
+  "updated": "2026-10-19",
   "total": 94,
   "counts": {
     "bids": 94,
     "winning": 29,
-    "withContent": 93
+    "withContent": 94
   },
   "items": [
     {
@@ -1491,7 +1491,7 @@
       "projectName": "高唐路东侧AT0305237地块学校造价咨询服务",
       "docNo": "",
       "group": "中标公告（广东省）",
-      "summary": "一、项目编号：FCZ2026-0068二、项目名称：高唐路东侧AT0305237地块学校造价咨询服务三、采购结果合同包1(全过程造价咨询服务):供应商名称供应商地址中标（成交）金额广州市建𬭎建筑技术咨询有限公司广州市黄埔区知凤街9号知识大厦7楼17-20室813,510.00元合同包2(预算编制服务):供应商名称供应商地址中标（成交）金额永道工程咨询有限公司广州市天河区华强路9号2701、2710房271,172.14元四、主要标的信息…",
+      "summary": "品目名称：其他咨询服务；采购标的：全过程造价咨询服务；服务时间：按招标文件要求执行；采购标的：预算编制服务；服务时间：按招标文件要求",
       "tags": [],
       "mediaType": "HTML",
       "mediaTypeIcon": "https://img.ima.qq.com/wupload/xy/ima_tool/UvxmODLE.png",
@@ -1503,13 +1503,32 @@
       "from": "ima",
       "sourceKey": "bids",
       "sourceLabel": "教育平台",
-      "contentFile": "",
-      "contentPath": "",
-      "hasContent": false,
+      "contentFile": "066_高唐路东侧AT0305237地块学校造价咨询服务结果公告.html_1wg87g.md",
+      "contentPath": "_raw/bids-md/066_高唐路东侧AT0305237地块学校造价咨询服务结果公告.html_1wg87g.md",
+      "hasContent": true,
       "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=96862b20-00f4-4fd4-8be1-70b6f6392ec5&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=FCZ2026-0068&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
       "purchaseUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=d2daffc4-d804-46e2-9472-5d16a058d716&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=FCZ2026-0068&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseZipUrl": "https://gdgpo.czt.gd.gov.cn/freecms/download/gpx-bid-file/440106/gpx-tender/2026/9/22/8a7eaa5ea0750c1901a0c85a4e8616d1.zip?accessCode=3a1195624a25a44df0ceac905d6093d8",
+      "purchaseZipName": "高唐路东侧AT0305237地块学校造价咨询服务招标文件（2026092202）.zip",
       "projectCode": "FCZ2026-0068",
-      "publishDate": "2026-10-16"
+      "publishDate": "2026-10-16",
+      "awardInfo": [
+        {
+          "pkg": "1",
+          "pkgName": "全过程造价咨询服务",
+          "supplier": "广州市建𬭎建筑技术咨询有限公司",
+          "amount": "813,510.00元"
+        },
+        {
+          "pkg": "2",
+          "pkgName": "预算编制服务",
+          "supplier": "永道工程咨询有限公司",
+          "amount": "271,172.14元"
+        }
+      ],
+      "winningBidder": "广州市建𬭎建筑技术咨询有限公司",
+      "winningAmount": "813,510.00元",
+      "contractNo": "合同包1"
     },
     {
       "id": "html_cls1_3deb9906c10f388deed86711b305f0e8_128ade3b1359de58960bd793aaebf9867508334806566436",
@@ -1534,6 +1553,8 @@
       "hasContent": true,
       "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=ec00d084-2511-40a1-bd67-4e1687133d17&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=441901-2026-06484&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
       "purchaseUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=b50a8b79-be10-4590-87bc-941c8e1b8bdf&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=441901-2026-06484&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseZipUrl": "https://gdgpo.czt.gd.gov.cn/freecms/download/gpx-bid-file/441901/gpx-tender/2026/9/22/8a7eaa5ea0750c1901a0c88b15180c4c.zip?accessCode=b00e0ecef5f9ed93614c48b97afe1643",
+      "purchaseZipName": "东莞市电子商贸学校5G区块链现场工程师实训室建设招标文件（2026092203）.zip",
       "projectCode": "441901-2026-06484",
       "publishDate": "2026-10-16",
       "awardInfo": [
@@ -1609,6 +1630,9 @@
       "contentPath": "_raw/bids-md/069_化州市罗江东区学校建设项目设备购置配置项目二结果公告.html_1vl30k.md",
       "hasContent": true,
       "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=9ec5530e-b6ad-4d48-ada4-8fb3bf5fb0a6&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=HZGPC2026HG001&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=96468be5-7c35-4854-9525-72d1284dda6f&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=HZGPC2026HG001&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseZipUrl": "https://gdgpo.czt.gd.gov.cn/freecms/download/gpx-bid-file/440982/gpx-tender/2026/9/2/8a7e3a939c42e6a301a0611aef562553.zip?accessCode=f064fe4886237ee4bb4a5ede4593a947",
+      "purchaseZipName": "化州市罗江东区学校建设项目设备购置配置项目二招标文件（2026090102）.zip",
       "projectCode": "HZGPC2026HG001",
       "publishDate": "2026-10-15",
       "awardInfo": [
@@ -1645,6 +1669,9 @@
       "contentPath": "_raw/bids-md/070_陆丰市高级技工学校新建项目教学设备、实训设备采购安装中标公告.html_dm5f3b.md",
       "hasContent": true,
       "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=58b3593f-4ecf-4d4a-abd4-02ab10cf2e31&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=GDHH026-0952&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=174b854f-437e-457a-b784-1c9829493d1b&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=GDHH026-0952&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseZipUrl": "https://gdgpo.czt.gd.gov.cn/freecms/download/gpx-bid-file/441581/gpx-tender/2026/9/24/8a7e8bdba07509ad01a0d18ec3d769bf.zip?accessCode=4d3a91dc2de6816fad8734060635ed8c",
+      "purchaseZipName": "陆丰市高级技工学校新建项目教学设备、实训设备采购安装招标文件（2026092401）.zip",
       "projectCode": "GDHH026-0952",
       "publishDate": "2026-10-15",
       "awardInfo": [
@@ -1681,6 +1708,7 @@
       "contentPath": "_raw/bids-md/071_湛江市高级技工学校实训能力提升项目(首期)----实训设备设施采购项目结果公告.html_165ha1.md",
       "hasContent": true,
       "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=68f3d3cc-3590-4d82-afe9-c34afc45ea52&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=0692-2631ZJ085812&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=501fbae0-51c3-4e57-8734-334734f5536a&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=0692-2631ZJ085812&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
       "projectCode": "0692-2631ZJ085812",
       "publishDate": "2026-10-15",
       "awardInfo": [
@@ -1741,6 +1769,9 @@
       "contentPath": "_raw/bids-md/072_广州市轻工职业学校三维虚拟仿真实训基地购置项目（CZ2026-1285）结果公告.html_1esua9.md",
       "hasContent": true,
       "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=57d0fd81-cc9c-4fe9-a9fd-1e38aa52c03b&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=CZ2026-1285&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=1fb2e5c6-d692-4cc1-bb28-9fe9bac97981&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=CZ2026-1285&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseZipUrl": "https://gdgpo.czt.gd.gov.cn/freecms/download/gpx-bid-file/440101/gpx-tender/2026/9/3/8a7e8bdf9c42e61601a066f3822359c1.zip?accessCode=3c8ac799ebdbf98fd39666eae999c1a4",
+      "purchaseZipName": "广州市轻工职业学校三维虚拟仿真实训基地购置项目招标文件（2026090301）.zip",
       "projectCode": "CZ2026-1285",
       "publishDate": "2026-10-15",
       "awardInfo": [
@@ -1777,6 +1808,9 @@
       "contentPath": "_raw/bids-md/073_云浮市云安区鲲鹏学校2026年9月至2027年8月学生食堂商品采购结果公告.html_1jtvaw.md",
       "hasContent": true,
       "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=f943bb65-ea6c-4174-9b26-ca488284c2aa&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=YXG2026CS22&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=c1df4fa7-1160-48f0-ac35-fc017ea94224&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=YXG2026CS22&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseZipUrl": "https://gdgpo.czt.gd.gov.cn/freecms/download/gpx-bid-file/445303/gpx-tender/2026/9/30/8a7edc65a0750b8801a0efaf2f7b64ef.zip?accessCode=e48c88058c8e5973a789f8369cd28547",
+      "purchaseZipName": "云浮市云安区鲲鹏学校2026年9月至2027年8月学生食堂商品采购磋商文件（2026092901）.zip",
       "projectCode": "YXG2026CS22",
       "publishDate": "2026-10-15",
       "awardInfo": [
@@ -1813,6 +1847,9 @@
       "contentPath": "_raw/bids-md/074_东莞市汽车技术学校PLC与气动实训室采购项目结果公告.html_m7toq.md",
       "hasContent": true,
       "sourceUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=31d9dfe4-0927-4743-93c3-8aa32f807e3b&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=441901-2026-06815&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseUrl": "https://gdgpo.czt.gd.gov.cn/maincms-web/noticeGd?type=notice&id=591daf08-4ea7-4c22-84ab-a2185833d16c&channel=fca71be5-fc0c-45db-96af-f513e9abda9d&openTenderCode=441901-2026-06815&channelName=%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF",
+      "purchaseZipUrl": "https://gdgpo.czt.gd.gov.cn/freecms/download/gpx-bid-file/441901/gpx-tender/2026/9/16/8a7e6f06a0750c4101a0a95964353a1c.zip?accessCode=ca2c4a8f0a66ddb4a2d13ee8849622d4",
+      "purchaseZipName": "东莞市汽车技术学校PLC与气动实训室采购项目招标文件（2026091604）.zip",
       "projectCode": "441901-2026-06815",
       "publishDate": "2026-10-15",
       "awardInfo": [
